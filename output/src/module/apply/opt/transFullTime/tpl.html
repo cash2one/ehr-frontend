@@ -1,0 +1,111 @@
+<div class="apply-opt">
+    <div class="apply-opt-transFullTime">
+        <div class="modal-header">
+            <button type="button" class="close"
+                    ng-click="closeHandler()"
+                    data-dismiss="modal"><span
+                    aria-hidden="true">&times;</span><span
+                    class="sr-only">Close</span>
+            </button>
+            <h4 class="modal-title">实习/劳务转正式申请</h4>
+        </div>
+
+        <div class="modal-body ">
+            <h5>
+                员工信息
+            </h5>
+
+            <div class="container" apply-staff-info number="{{number}}">
+            </div>
+            <h5>
+                转正信息
+            </h5>
+
+            <form class="form-horizontal" role="form" novalidate
+                  name="transFullTimeForm">
+                <div class="form-group">
+                    <div input-control options="inputOptions.internsEndDate"
+                         ng-model="internsEndDate">
+                    </div>
+                    <div input-control options="inputOptions.positiveDate"
+                         ng-model="positiveDate">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div input-control options="inputOptions.formalDate"
+                         ng-model="formalDate">
+                    </div>
+                    <div input-control options="inputOptions.socialSecurityCity"
+                         ng-model="socialSecurityCity">
+                    </div>
+                </div>
+                <hr/>
+                <div class="form-group">
+                    <div input-control options="inputOptions.structure"
+                         ng-model="structure">
+                    </div>
+                    <div input-control options="inputOptions.leader"
+                         ng-model="leader">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div input-control options="inputOptions.level"
+                         ng-model="level">
+                    </div>
+                    <div input-control options="inputOptions.position"
+                         ng-model="position">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div input-control options="inputOptions.baseSalary"
+                         ng-model="baseSalary">
+                    </div>
+                    <div input-control
+                         options="inputOptions.probationarySalary"
+                         ng-model="probationarySalary">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div input-control options="inputOptions.salaryType"
+                         ng-model="salaryType">
+                    </div>
+                    <div input-control options="inputOptions.socialSecurityBase"
+                         ng-model="socialSecurityBase">
+                    </div>
+                </div>
+                <div five-base class="form-group" ng-show="needFiveBase">
+                </div>
+                <div class="form-group">
+                    <div input-control
+                         options="inputOptions.houseFundBase"
+                         ng-model="houseFundBase">
+                    </div>
+                    <div input-control
+                         options="inputOptions.mobileSubsidy"
+                         ng-model="mobileSubsidy">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div input-control options="inputOptions.trafficSubsidy"
+                         ng-model="trafficSubsidy">
+                    </div>
+                </div>
+                <div class="form-group detail">
+                    <div input-control options="inputOptions.reason"
+                         ng-model="reason">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary"
+                            ng-click="save(transFullTimeForm)">提交
+                    </button>
+                    <button type="button" class="btn btn-default"
+                            ng-click="closeHandler()"
+                            data-dismiss="modal">关闭
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

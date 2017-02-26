@@ -1,0 +1,1 @@
+define(["require","../../app"],function(e){var t=e("../../app");t.directive("popoverHtmlUnsafePopup",function(){return{restrict:"EA",replace:!0,scope:{title:"@",content:"@",placement:"@",animation:"&",isOpen:"&"},templateUrl:"src/common/directive/popoverHtmlUnsafePopup/tpl.html",link:function(e,t,n){e.closePopover=function(){e.$parent.tt_isOpen=!1,t.remove()}}}})});

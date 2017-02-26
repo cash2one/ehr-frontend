@@ -1,0 +1,75 @@
+.directive-table {
+    position: relative;
+    .page-container {
+        text-align: right;
+    }
+    .table-area {
+        width: 100%;
+        overflow-x: auto;
+    }
+    .no-data {
+        top:-23px;
+        position: relative;
+        text-align: center;
+        border-top: 0px;
+        height: 200px;
+        border: 1px solid @gray4;
+    }
+    .no-data-tip {
+        display: inline-block;
+        border: 1px solid @gray4;
+        line-height: 40px;
+        padding: 0 20px;
+        margin-top: 80px;
+        background: @yellow3;
+    }
+    .header {
+        position: absolute;
+        top: -27px;
+        padding-left: 15px;
+        .count {
+            color: @blue1;
+        }
+    }
+    .checkbox-col {
+        width: 30px;
+    }
+    .td-head {
+        text-align: center;
+        vertical-align: middle;
+    }
+    .tbody {
+        td {
+            vertical-align: middle;
+        }
+    }
+    .body-scroll {
+        .tbody {
+            display: block;
+            max-height: 400px;
+            overflow-y: scroll;
+            td {
+                word-wrap: break-word;
+                word-break: break-all;
+            }
+        }
+        .tbody-head {
+            display: block;
+        }
+        .tbody-head {
+            td {
+                background: white;
+            }
+            overflow-y: scroll;
+        }
+        thead tr {
+            display: block;
+        }
+        th {
+            display: block;
+        }
+    }
+    .table > tbody + tbody {
+        border-top: 0px solid #ddd;
+    }
+}

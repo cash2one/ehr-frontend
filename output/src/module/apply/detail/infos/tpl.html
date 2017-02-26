@@ -1,0 +1,48 @@
+<div class="apply-detail">
+    <div class="apply-detail-structureAndSalary">
+        <h5>
+            员工信息
+        </h5>
+
+        <div class="container" apply-staff-info number="{{number}}">
+        </div>
+        <h5>
+            {{subTitle}}
+        </h5>
+
+        <div class="change-info-container">
+            <div ng-repeat="item in changeList" class="change-info row">
+                <div class="col-sm-2">
+                    {{item.fieldName}}:
+                </div>
+                <div class="col-sm-4">
+                    {{item.oldVal|emptyFormat}}
+                </div>
+                <div class="col-sm-2">
+                    变更为:
+                </div>
+                <div class="col-sm-4">
+                    {{item.newVal|emptyFormat}}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-2">
+                    生效日期:
+                </div>
+                <div class="col-sm-9">
+                    {{applyInfo.executeDate|dateFormat}}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-2">
+                    变更原因:
+                </div>
+                <div class="col-sm-9">
+                    {{applyInfo.reason}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

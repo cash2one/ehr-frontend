@@ -1,0 +1,48 @@
+<div class="directive-fiveBase">
+    <table>
+        <tr class="thead">
+            <td class="col1">&nbsp;</td>
+            <td>养老</td>
+            <td>失业</td>
+            <td>医疗</td>
+            <td>工伤</td>
+            <td>生育</td>
+        </tr>
+        <tr>
+            <td class="col1">
+                <span class="blue" ng-show="fiveBaseInitOptions.required">
+                    *</span>{{fiveBaseInitOptions
+                .fieldName}}：</td>
+            <td class="endow">
+                <div input-control
+                     options="fiveBaseOptions.endowBase"
+                     ng-model="endowBase">
+                </div>
+            </td>
+            <td>
+                <div input-control
+                     options="fiveBaseOptions.unemployBase"
+                     ng-model="unemployBase">
+                </div>
+            </td>
+            <td>
+                <div input-control
+                     options="fiveBaseOptions.medicalBase"
+                     ng-model="medicalBase">
+                </div>
+            </td>
+            <td>
+                <div input-control
+                     options="fiveBaseOptions.injuryBase"
+                     ng-model="injuryBase">
+                </div>
+            </td>
+            <td>
+                <div input-control
+                     options="fiveBaseOptions.maternityBase"
+                     ng-model="maternityBase">
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

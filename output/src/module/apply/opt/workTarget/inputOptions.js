@@ -1,0 +1,1 @@
+define(["require","module/config"],function(e){return function(t,n){var r=e("module/config"),i={detail:{required:!0,displayName:"目标设定",maxLength:1e3,minLength:200,name:"detail",formName:t,placeholder:"该工作计划将作为考察员工试用期是否符合正式录用的依据，请与上级协商后再进行填写。（不少于200字，不超过1000字）",mode:"textarea"}};return i}});

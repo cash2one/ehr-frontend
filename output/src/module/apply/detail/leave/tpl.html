@@ -1,0 +1,38 @@
+<div class="apply-detail-leave">
+    <h5>
+        员工信息
+    </h5>
+
+    <div class="container" apply-staff-info number="{{number}}">
+    </div>
+    <h5>
+        离职信息
+    </h5>
+
+    <div class="change-info-container">
+        <div class="row">
+            <div class="col-sm-2">
+                最后工作时间:
+            </div>
+            <div class="col-sm-9">
+                {{applyInfo.contentAfter.leaveDate|dateFormat}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                离职原因:
+            </div>
+            <div class="col-sm-9">
+                {{applyInfo.contentAfter.reasonName}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                离职详细信息:
+            </div>
+            <div class="col-sm-9">
+                {{applyInfo.contentAfter.detail}}
+            </div>
+        </div>
+    </div>
+</div>

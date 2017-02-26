@@ -1,0 +1,28 @@
+<div class="apply-detail-leave">
+    <h5>
+        员工信息
+    </h5>
+
+    <div class="container" apply-staff-info number="{{number}}">
+    </div>
+    <h5>
+        试用期员工转正申请
+    </h5>
+
+    <div class="change-info-container">
+        <div class="row">
+            <div class="col-sm-2">
+                目标设定：
+            </div>
+            <div class="col-sm-9" ng-bind-html="applyInfo.workTarget">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                转正申请：
+            </div>
+            <div class="col-sm-9" ng-bind-html="applyInfo.contentAfter.formalApply">
+            </div>
+        </div>
+    </div>
+</div>

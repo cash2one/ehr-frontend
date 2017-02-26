@@ -1,0 +1,40 @@
+<div class="apply-detail-offerChange">
+    <h5>
+        变动信息
+    </h5>
+
+    <div class="change-info-container">
+        <div ng-repeat="item in changeList" class="change-info row">
+            <div>
+                <div class="col-sm-2 before-title">
+                    {{item.fieldName}}:
+                </div>
+                <div class="col-sm-4" ng-if="item.field!='resumeUrl'">
+                    {{item.oldVal}}
+                </div>
+                <div class="col-sm-4" ng-if="item.field=='resumeUrl'">
+                    <a href="{{item.oldVal}}" target="_blank">下载</a>
+                </div>
+                <div class="col-sm-1">
+                    变更为:
+                </div>
+                <div class="col-sm-4" ng-if="item.field!='resumeUrl'">
+                    {{item.newVal}}
+                </div>
+                <div class="col-sm-4" ng-if="item.field=='resumeUrl'">
+                    <a href="{{item.newVal}}" target="_blank">下载</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-2">
+                变更原因:
+            </div>
+            <div class="col-sm-9">
+                {{applyInfo.reason}}
+            </div>
+        </div>
+    </div>
+    <div ui-view></div>
+</div>

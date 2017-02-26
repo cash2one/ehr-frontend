@@ -1,0 +1,259 @@
+<div class="hr-agent hr hr-staffInfo">
+<h5>
+    <span>{{title}}</span>
+</h5>
+
+<form class="form-horizontal" name="agentEnterForm"
+      onkeydown="if(event.keyCode==13)return false;"
+      novalidate="novalidate">
+    <div class="content-container">
+        <div class="content-block">
+            <p class="sub-title">自然信息</p>
+
+            <div class="form-group">
+                <div input-control options="baseOptions.lawName"
+                     ng-model="lawName">
+                </div>
+                <div input-control options="baseOptions.name"
+                     ng-model="name">
+                </div>
+            </div>
+            <div class="form-group">
+                <div input-control options="baseOptions.namePinyin"
+                     ng-model="namePinyin">
+                </div>
+                <div input-control options="baseOptions.sex" ng-model="sex">
+                </div>
+            </div>
+            <div class="form-group">
+                <div input-control options="baseOptions.degree"
+                     ng-model="degree">
+                </div>
+                <div input-control options="baseOptions.accountLocation"
+                     ng-model="accountLocation">
+                </div>
+            </div>
+            <div class="form-group">
+                <div input-control options="baseOptions.birthday"
+                     ng-model="birthday">
+                </div>
+                <div input-control options="baseOptions.beginWorkTime"
+                     ng-model="beginWorkTime">
+                </div>
+            </div>
+            <div class="form-group">
+                <div input-control options="baseOptions.isForeign"
+                     ng-model="isForeign">
+                </div>
+                <div input-control options="baseOptions.idCardNumber"
+                     ng-model="idCardNumber">
+                </div>
+            </div>
+        </div>
+
+        <!---联系方式-->
+        <div class="content-block">
+            <p class="sub-title">联系方式</p>
+
+            <div class="form-group">
+                <div input-control options="contactOptions.mobile"
+                     ng-model="mobile">
+                </div>
+                <div input-control options="contactOptions.personalEmail"
+                     ng-model="personalEmail">
+                </div>
+            </div>
+        </div>
+
+
+        <!---基本信息-->
+        <div class="content-block">
+            <p class="sub-title">基本信息</p>
+
+            <div class="form-group">
+                <div input-control options="infoOptions.promiseEnterDate"
+                     ng-model="promiseEnterDate">
+                </div>
+                <div input-control options="infoOptions.leader"
+                     ng-model="leader">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div input-control options="infoOptions.structure"
+                     class=""
+                     ng-model="structure">
+                </div>
+                <div input-control options="infoOptions.level"
+                     ng-model="levelIndex">
+                </div>
+            </div>
+            <div class="form-group">
+                <div input-control options="infoOptions.position"
+                     ng-model="position">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="content-container">
+    <!-- 个人信息-->
+    <div class="content-block">
+        <p class="sub-title">个人信息
+            <span class="clearFloat">
+                <span class="edit" ng-click="onEditPart2()">
+                <i class="glyphicon glyphicon-pencil"></i>
+                    编辑
+                </span>
+            </span>
+        </p>
+
+        <div>
+            教育经历
+            <span class="add" ng-click="educationAdd.addClick()"
+            ng-show="!isReadOnly2">
+                <i class="glyphicon glyphicon-plus"></i>
+                    添加
+            </span>
+        </div>
+
+        <div class="wraper-edit" ng-show="addingEducation">
+            <form class="form-horizontal" name="educationAddForm"
+                novalidate="novalidate">
+                <div class="form-group">
+                    <div input-control options="educationAddOptions.start"
+                        ng-model="educationAdd.start">
+                    </div>
+                    <div input-control options="educationAddOptions.end"
+                        ng-model="educationAdd.end">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div input-control options="educationAddOptions.school"
+                        ng-model="educationAdd.school">
+                    </div>
+                    <div input-control options="educationAddOptions.discipline"
+                        ng-model="educationAdd.discipline">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div input-control options="educationAddOptions.degree"
+                        ng-model="educationAdd.degree">
+                    </div>
+                </div>
+                <span class="btn btn-sm btn-warning"
+                    ng-click="educationAdd.onSave(educationAddForm)">添加
+                </span>
+                <span class="btn btn-sm btn-default"
+                    ng-click="educationAdd.onCancel()">取消
+                </span>
+        </form>
+    </div>
+    <div education-info
+     ng-repeat="item in educationList" ng-model="item"></div>
+
+    <div>
+        <div class="work-title">
+            工作经历
+            <span class="add" ng-click="workExpAdd.addClick()"
+                ng-show="!isReadOnly2">
+                <i class="glyphicon glyphicon-plus"></i>添加
+            </span>
+        </div>
+    </div>
+        <div class="wraper-edit" ng-show="addingWorkExp">
+            <form class="form-horizontal" name="workExpAddForm"
+                novalidate="novalidate">
+                <div class="form-group">
+                    <div input-control options="workExpAddOptions.start"
+                        ng-model="workExpAdd.start">
+                    </div>
+                    <div input-control options="workExpAddOptions.end"
+                        ng-model="workExpAdd.end">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div input-control options="workExpAddOptions.company"
+                        ng-model="workExpAdd.company">
+                    </div>
+                    <div input-control options="workExpAddOptions.position"
+                         ng-model="workExpAdd.position">
+                    </div>
+                </div>
+            <span class="btn btn-sm btn-warning"
+                ng-click="workExpAdd.onSave(workExpAddForm)">添加</span>
+                <span class="btn btn-sm btn-default"
+                    ng-click="workExpAdd.onCancel()">取消</span>
+            </form>
+        </div>
+        <div work-info ng-repeat="item in workExpList" ng-model="item">
+        </div>
+
+        <form class="form-horizontal">
+            <div class="form-group" ng-show="!isReadOnly2" style="margin: 10px 0 0">
+                <div class="col-sm-12 center">
+                    <button class="btn btn-sm btn-default" ng-show="!isReadOnly2"
+                        ng-click="cancelPart2()">取消
+                    </button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<form class="form-horizontal" name="otherInfoForm"
+                novalidate="novalidate">
+    <!---其他信息-->
+<div class="content-container">
+    <div class="content-block">
+        <p class="sub-title">其他信息</p>
+
+        <div class="form-group">
+            <div input-control options="otherOptions.resumeStorageId"
+                 ng-model="resumeStorageId">
+            </div>
+        </div>
+        <div class="form-group">
+            <div input-control options="otherOptions.recommendType"
+                 ng-model="recommendType">
+            </div>
+            <div input-control options="otherOptions.recommendDetail"
+                 ng-model="recommendDetail">
+            </div>
+        </div>
+        <div class="form-group">
+            <div input-control options="otherOptions.idCardAndContract"
+                 ng-model="idCardAndContract">
+            </div>
+        </div>
+        <div class="form-group">
+            <div input-control options="otherOptions.idCardUpload"
+                 ng-model="idCardUpload">
+            </div>
+        </div>
+        <div class="form-group">
+            <div input-control options="otherOptions.limitAgreement"
+                 ng-model="limitAgreement">
+            </div>
+        </div>
+        <div class="form-group">
+            <div input-control options="otherOptions.detail"
+                 ng-model="detail">
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+<div class="text-muted" ng-hide="isReadOnly">提示：
+        <span class="red">*</span>为提交的必填项
+    </div>
+<div class="btn-area">
+    <button class="btn btn-primary btn-sm" type="submit"
+            ng-hide="hideSubmit || isReadOnly"
+            ng-click="submit()">提交
+    </button>
+</div>
+</div>

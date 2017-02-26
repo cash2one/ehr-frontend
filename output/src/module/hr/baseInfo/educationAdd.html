@@ -1,0 +1,30 @@
+<div class="wraper-edit" ng-show="addingEducation">
+    <form class="form-horizontal" name="educationAddForm"
+          novalidate="novalidate">
+        <div class="form-group">
+            <div input-control options="educationAddOptions.start"
+                 ng-model="educationAdd.start">
+            </div>
+            <div input-control options="educationAddOptions.end"
+                 ng-model="educationAdd.end">
+            </div>
+        </div>
+        <div class="form-group">
+            <div input-control options="educationAddOptions.school"
+                 ng-model="educationAdd.school">
+            </div>
+            <div input-control options="educationAddOptions.discipline"
+                 ng-model="educationAdd.discipline">
+            </div>
+        </div>
+        <div class="form-group">
+            <div input-control options="educationAddOptions.degree"
+                 ng-model="educationAdd.degree">
+            </div>
+        </div>
+        <span class="btn btn-sm btn-warning"
+              ng-click="educationAdd.onSave(educationAddForm)">添加</span>
+            <span class="btn btn-sm btn-default"
+                  ng-click="educationAdd.onCancel()">取消</span>
+    </form>
+</div>

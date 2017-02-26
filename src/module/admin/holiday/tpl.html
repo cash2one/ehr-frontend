@@ -1,0 +1,53 @@
+<h5>
+    <span>工作日配置</span>
+</h5>
+<div class="admin">
+    <div class="admin-holiday row">
+        <div class="col-sm-6 border-right">
+            <div class="table-opt-area">
+                <button class="btn btn-sm btn-primary"
+                        ng-click="add({})">新增模板
+                </button>
+            </div>
+            <div options="tableOptions" table-control></div>
+        </div>
+        <div class="col-sm-6">
+            <div>{{curName}}</div>
+            <div class="form-inline ">
+                <div class="form-group">
+                    <label>请选择年份：</label>
+                    <select class="form-control"
+                            ng-model="query.year" ng-change="yearChangeHandler()"
+                            ng-options="m for m in years">
+                    </select>
+                </div>
+                <div>
+                <span single-select
+                      ng-model="query.month"
+                      click-handler='monthChangeHandler(val,index)'
+                      values="months">
+
+                </span>
+                </div>
+            </div>
+
+            <div class="date-pick-wrap">
+                <div class="header">{{query.year}}年{{query.month}}月</div>
+                <ul class="content">
+                    <li ng-repeat="val in weeks">
+                        <span>{{val}}</span>
+                    </li>
+                    <li ng-repeat="item in days"
+                        ng-class="{'holiday': item.isHoliday}"
+                        ng-click="dayClickHandler(item)">
+                        <span>{{item.value}}</span>
+                        <span ng-show="item.isHoliday" class="holiday-icon">休</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="row" style="text-align: center">
+                <span class="btn btn-primary" ng-click="saveHandler()">保存</span>
+            </div>
+        </div>
+    </div>
+</div>

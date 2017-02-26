@@ -1,0 +1,1 @@
+define(["require","../app","module/nameConfig"],function(e){var t=e("../app"),n=e("module/nameConfig");t.filter("salary",function(){return function(e){return e===null||typeof e=="undefined"||typeof e.value=="undefined"?n.EMPTY_VALUE:e.value+n.SALARY_TYPE[e.salaryType]}})});

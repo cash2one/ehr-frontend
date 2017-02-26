@@ -1,0 +1,1 @@
+define(["require","../app"],function(e){var t=e("../app");t.controller("applyListCtrl",["$scope","$state","applyRequest",function(e,t,n){}])});

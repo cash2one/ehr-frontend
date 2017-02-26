@@ -1,0 +1,173 @@
+<div class="hr-staffInfo">
+    <h5>
+        <span>{{pageTitle}}</span>
+    </h5>
+
+    <div class="container-fluid" common-info number="{{number}}">
+    </div>
+    <div class="opt-btn">
+        <!--zhanwentao-->
+        <button class="btn btn-default pointer"
+                style="background-color: #618fe4;"
+                ng-show="showJoinBtn"
+                ng-click="getJobNumber()"
+                ng-disabled="hasGetJobNumber"
+                ng-show="!isAgent"
+                >
+            <span ng-if="!hasGetJobNumber">生成工号</span>
+            <span ng-if="hasGetJobNumber">已生成工号</span>
+        </button>
+        <button class="btn btn-primary pointer"
+                ng-click="joinWorkClick()"
+                ng-show="showJoinBtn && !isAgent"
+                >
+            入职
+        </button>
+
+        <button class="btn btn-default pointer"
+                ng-show="canSeeInitInfo"
+                ng-click="initInfoClick()"
+                >
+            查看初始信息
+        </button>
+    </div>
+    <div class="bg-danger" ng-show="showJoinBtn">
+        备注： {{detail}}
+    </div>
+    <ul class="nav nav-tabs">
+        <li role="presentation"
+            ng-class="{active: $state.includes('*.*.baseInfo')}"
+            ng-show="canReadBaseInfo">
+            <a
+                    ui-sref="{{entryName}}.baseInfo">个人资料</a>
+        </li>
+        <li role="presentation"
+            ng-class="{active: $state.includes('*.*.workInfo')}"
+            ng-show="canReadWorkInfo">
+            <a ui-sref="{{entryName}}.workInfo">岗位信息</a>
+        </li>
+        <li role="presentation"
+            ng-class="{active: $state.includes('*.*.salaryInfo')}"
+            ng-show="canReadSalaryInfo && !isAgent">
+            <a ui-sref="{{entryName}}.salaryInfo">薪酬信息</a>
+        </li>
+        <li role="presentation"
+            ng-class="{active: $state.includes('*.*.secretInfo')}"
+            ng-show="canReadSecretInfo && !isAgent">
+            <a ui-sref="{{entryName}}.secretInfo">隐私信息</a>
+        </li>
+        <li role="presentation"
+            ng-class="{active: $state.includes('*.*.changeInfo')}"
+            ng-show="canReadChangeInfo">
+            <a ui-sref="{{entryName}}.changeInfo">岗位变动历史</a>
+        </li>
+        <li role="presentation"
+            ng-class="{active: $state.includes('*.*.salaryChangeInfo')}"
+            ng-show="canReadSalaryInfo && !isAgent">
+            <a ui-sref="{{entryName}}.salaryChangeInfo">薪酬变动历史</a>
+        </li>
+        <li role="presentation"
+            ng-class="{active: $state.includes('*.*.leaveInfo')}"
+            ng-show="canReadLeaveInfo">
+            <a ui-sref="{{entryName}}.leaveInfo">员工离职</a>
+        </li>
+        <li role="presentation"
+            ng-class="{active: $state.includes('*.*.workTargetInfo')}"
+            ng-show="canReadWorkTargetInfo">
+            <a ui-sref="{{entryName}}.workTargetInfo">试用期工作目标</a>
+        </li>
+        <li role="presentation"
+            ng-class="{active: $state.includes('*.*.formalApplyInfo')}"
+            ng-show="canReadFormalApplyInfo">
+            <a ui-sref="{{entryName}}.formalApplyInfo">试用期转正申请</a>
+        </li>
+        <li role="presentation"
+            ng-class="{active: $state.includes('*.*.monthSalary')}"
+            ng-show="canReadMonthSalary && !isAgent">
+            <a ui-sref="{{entryName}}.monthSalary">工资单</a>
+        </li>
+    </ul>
+    <div ui-view></div>
+
+    <div class="row opt-container" ng-show="showOptArea">
+        <h5 style="text-align: left">
+            <span>工作台</span>
+        </h5>
+        <div class="col-btn"
+             ng-show="showProbationChangeBtn">
+            <button class="btn btn-primary"
+                    ng-click="onChangeProbation()"
+                    ng-disabled="disableProbationChangeBtn"
+                    >试用期变更
+            </button>
+        </div>
+        <div class="col-btn"
+             ng-show="showWorkTargetBtn">
+            <button class="btn btn-primary"
+                    ng-click="onWriteWorkTarget()"
+                    ng-disabled="disableWorkTargetBtn"
+                    >试用期工作目标
+            </button>
+        </div>
+        <div class="col-btn"
+             ng-show="showFormalApplyBtn">
+            <button class="btn btn-primary"
+                    ng-click="onFormalApply()"
+                    ng-disabled="disableFormalApplyBtn"
+                    >试用期转正申请
+            </button>
+        </div>
+        <div class="col-btn"
+             ng-show="showTransFullBtn">
+            <button class="btn btn-primary"
+                    ng-click="onTransFull()"
+                    ng-disabled="disableTransFullBtn"
+                    >实习生/劳务转正式
+            </button>
+        </div>
+        <div class="col-btn"
+             ng-show="showStructureChangeBtn">
+            <button class="btn btn-primary"
+                    ng-click="onChangeStructure()"
+                    ng-disabled="disableStructureChangeBtn"
+                    >内部人事调动
+            </button>
+        </div>
+        <div class="col-btn"
+             ng-show="showSalaryChangeBtn && !isAgent">
+            <button class="btn btn-primary"
+                    ng-click="onChangeSalary()"
+                    ng-disabled="disableSalaryChangeBtn"
+                    >岗位薪酬调整
+            </button>
+        </div>
+        <div class="col-btn"
+             ng-show="showLeaveBtn">
+            <button class="btn btn-primary"
+                    ng-click="onLeave()"
+                    ng-disabled="disbaleLeaveBtn"
+                    >发起离职
+            </button>
+        </div>
+        <div class="col-btn"
+             ng-show="showMultipleBtn && !isAgent">
+            <button class="btn btn-primary"
+                    ng-click="onMultiple()"
+                    ng-disabled="disbaleMultipleBtn"
+                    >综合审批
+                <i popover="跨公司调整、调整部门、岗位、薪酬、签约公司、社保城市等"
+                   popover-trigger="mouseenter" popover-placement="top"
+                   popover-append-to-body="true"
+                   class="glyphicon glyphicon-question-sign"></i>
+            </button>
+        </div>
+
+        <div class="col-btn"
+             ng-show="showForbidBtn">
+            <button class="btn btn-primary"
+                    ng-click="onForbid()"
+                    >{{curForbidBtnName}}
+            </button>
+        </div>
+    </div>
+</div>

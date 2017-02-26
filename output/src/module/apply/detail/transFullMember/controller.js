@@ -1,0 +1,1 @@
+define(["require","../../app","../../config"],function(e){function i(e,t,n,r,i,s){function o(){}o()}var t=e("../../app"),n=e("../../config"),r={};t.controller("applyTransFullMemberCtrl",i),i.$inject=["$scope","$state","applyRequest","applyUtil","$filter","hrRequest"]});

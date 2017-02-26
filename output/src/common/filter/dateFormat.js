@@ -1,0 +1,1 @@
+define(["require","../app","module/nameConfig","moment"],function(e){var t=e("../app"),n=e("module/nameConfig"),r=e("moment");t.filter("dateFormat",function(){return function(e){return e===null||e===""||typeof e=="undefined"?n.EMPTY_VALUE:r(+e).format("YYYY-MM-DD")}})});

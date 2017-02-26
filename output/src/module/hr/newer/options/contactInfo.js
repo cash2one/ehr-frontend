@@ -1,0 +1,1 @@
+define(["require","module/config"],function(e){return function(t){var n=e("module/config");return{mobile:{required:!1,displayName:"手机号",maxLength:15,name:"mobile",formName:t,pattern:"\\d*",placeholder:"少于15个数字",prefixClass:"blue"},personalEmail:{required:!1,displayName:"邮箱",maxLength:50,name:"personalEmail",formName:t,type:"email",placeholder:"50位英文字母+数字+字符"}}}});

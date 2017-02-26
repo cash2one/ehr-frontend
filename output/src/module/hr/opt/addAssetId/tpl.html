@@ -1,0 +1,36 @@
+<div class="hr-opt-addAssetId">
+    <div class="modal-header">
+        <button type="button" class="close"
+                ng-click="closeHandler()"
+                data-dismiss="modal"><span
+                aria-hidden="true">&times;</span><span
+                class="sr-only">Close</span>
+        </button>
+        <h4 class="modal-title">录入资产编码</h4>
+    </div>
+
+    <div class="modal-body ">
+        <form class="form-horizontal" role="form" novalidate
+              name="addAssetIdForm">
+            <div class="form">
+               <input type="text"
+                      ng-model="assetCode"
+                      ng-change="validityConfirm()"
+                      value="{{assetCode}}"
+                      title="资产编码">
+
+                <div ng-show="!isValid">请输入正确格式资产编码</div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit"  class="btn btn-primary"
+                        ng-click="save(addAssetIdForm)">保存
+                </button>
+                <button type="button" class="btn btn-default"
+                        ng-click="closeHandler()"
+                        data-dismiss="modal">关闭
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+

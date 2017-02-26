@@ -1,0 +1,31 @@
+<div class="directives-structureSelector" dropdown
+     is-open="status.isopen">
+    <input class="form-control dropdown-toggle content"
+           value="{{selectedNodeName}}"
+           ng-disabled="disable"
+           ng-required="{{require}}"
+           readonly
+           name="{{name}}"
+           input-validate="errorOption"
+           data-toggle="dropdown" title="{{selectedNodeName}}"
+            />
+
+    <div class="dropdown-menu" role="menu" stop-event="click">
+        <treecontrol class="tree-light" tree-model="structureData"
+                     options="opts"
+                     selected-node="selectedNode"
+                     expanded-nodes="expandedNodes"
+                     filter-expression="nodeFilter"
+                     filter-comparator="comparator"
+                     on-selection="onSelect(node)">
+            <span>
+                <span class="node-name" node-id="{{node.id}}">
+                {{node.label}}
+                </span>
+            </span>
+            <span class="line" ng-show="node.parentId"></span>
+        </treecontrol>
+    </div>
+</div>
+
+

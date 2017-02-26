@@ -1,0 +1,1 @@
+define(["require"],function(e){return{TAB_CODE:{ALL:0,CAN_BORROW:2,HAD_BORROW:3}}});

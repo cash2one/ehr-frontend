@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en" style="height: 100%">
+<head>
+    <meta charset="utf-8">
+    <title>HR管理提示页面</title>
+    <style type="text/css">
+        .full-screen {
+            height: 100%;
+            width: 100%;
+            text-align: center;
+        }
+
+        body {
+            background: #EBE8E3;
+        }
+
+        .help-span {
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
+
+        .img {
+            vertical-align: middle;
+        }
+
+        .main {
+            display: inline-block;
+            vertical-align: middle;
+            height: 470px;
+            position: relative;
+            text-align: center;
+        }
+
+        .down-load {
+            position: absolute;
+            bottom: 142px;
+            right: 198px;
+        }
+
+        .chrom-img {
+            position: absolute;
+            top: 0;
+            z-index: 11;
+            display: inline-block;
+            width: 90px;
+            height: 86px;
+            animation: jump 0.7s infinite;
+            background-image: url(src/resource/img/chrome.png);
+        }
+
+        .img-shadow {
+            left: 38px;
+            position: absolute;
+            z-index: 10;
+            top: 60px;
+            width: 10px;
+            height: 35px;
+            background: rgba(20, 20, 20, .1);
+            box-shadow: 0px 0 20px 35px rgba(20, 20, 20, .1);
+            border-radius: 30px / 40px;
+            transform: scaleY(.3);
+            animation: shrink 0.7s infinite;
+        }
+
+        @-webkit-keyframes jump {
+            0% {
+                top: 0;
+                -webkit-animation-timing-function: ease-in;
+            }
+            40% {
+            }
+            50% {
+                top: -40px;
+                -webkit-animation-timing-function: ease-out;
+            }
+            55% {
+                top: -50px;
+                border-radius: 70px / 60px;
+                -webkit-animation-timing-function: ease-in;
+            }
+            65% {
+                top: -30px;
+                border-radius: 70px;
+                -webkit-animation-timing-function: ease-out;
+            }
+            95% {
+                top: 0;
+                -webkit-animation-timing-function: ease-in;
+            }
+            100% {
+                top: 0;
+                -webkit-animation-timing-function: ease-in;
+            }
+        }
+
+        @-webkit-keyframes shrink {
+            0% {
+                bottom: 0;
+                width: 15px;
+                height: 35px;
+                background: rgba(20, 20, 20, .1);
+                box-shadow: 0px 0 20px 10px rgba(20, 20, 20, .1);
+                border-radius: 30px / 40px;
+                -webkit-animation-timing-function: ease-in;
+            }
+            50% {
+                bottom: 30px;
+                width: 3px;
+                height: 5px;
+                background: rgba(20, 20, 20, .3);
+                box-shadow: 0px 0 15px 10px rgba(20, 20, 20, .3);
+                border-radius: 20px / 20px;
+                -webkit-animation-timing-function: ease-out;
+            }
+            100% {
+                bottom: 0;
+                width: 10px;
+                height: 35px;
+                background: rgba(20, 20, 20, .1);
+                box-shadow: 0px 0 20px 10px rgba(20, 20, 20, .1);
+                border-radius: 30px / 40px;
+                -webkit-animation-timing-function: ease-in;
+            }
+        }
+
+    </style>
+</head>
+<body style="height: 100%">
+<div class="full-screen">
+    <div class="main">
+        <div class="down-load">
+            <a target="_blank"
+               href="http://www.google.cn/chrome/browser/desktop/index.html" class="chrom-img"></a>
+            <div class="img-shadow"></div>
+        </div>
+        <a class="img"></a>
+        <img src="src/resource/img/tip.jpg" class="img"
+                />
+    </div>
+    <span class="help-span"></span>
+</div>
+</body>
+</html>

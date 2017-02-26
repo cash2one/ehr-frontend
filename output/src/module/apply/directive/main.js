@@ -1,0 +1,1 @@
+define(["require","./staffInfo/directive"],function(e){e("./staffInfo/directive")});

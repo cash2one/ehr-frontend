@@ -1,0 +1,19 @@
+<div class="wraper-edit" ng-show="addingLevel">
+    <form class="form-horizontal" name="levelAddForm"
+          novalidate="novalidate">
+        <div class="form-group">
+            <div input-control options="levelOptions.level"
+                 ng-model="levelAdd.level">
+            </div>
+            <div input-control options="levelOptions.levelName"
+                 ng-model="levelAdd.levelName">
+            </div>
+        </div>
+        <div class="center">
+        <span class="btn btn-sm btn-warning"
+              ng-click="levelAdd.onSave(levelAddForm)">添加</span>
+            <span class="btn btn-sm btn-default"
+                  ng-click="levelAdd.onCancel()">取消</span>
+        </div>
+    </form>
+</div>

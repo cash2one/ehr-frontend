@@ -1,0 +1,50 @@
+<div class="hr-directive hr-directive-educationInfo">
+    <div class="wraper-show" ng-show="!editing">
+        <span class="time">
+            {{startShow}}至{{endShow}}
+        </span>
+        <span class="char">
+            {{school}}
+        </span>
+        <span class="char">
+            {{discipline}}
+        </span>
+        <span class="char">
+            {{degree|degree}}
+        </span>
+        <span ng-show='!disable' class="btn btn-sm btn-warning"
+              ng-click="onDel()">删除</span>
+        <span ng-show='!disable' class="btn btn-sm btn-warning"
+              ng-click="onEdit()">编辑</span>
+    </div>
+    <div class="wraper-edit" ng-show="editing">
+        <form class="form-horizontal" name="educationForm"
+              novalidate="novalidate">
+            <div class="form-group">
+                <div input-control options="inputOptions.start"
+                     ng-model="editInfo.start">
+                </div>
+                <div input-control options="inputOptions.end"
+                     ng-model="editInfo.end">
+                </div>
+            </div>
+            <div class="form-group">
+                <div input-control options="inputOptions.school"
+                     ng-model="editInfo.school">
+                </div>
+                <div input-control options="inputOptions.discipline"
+                     ng-model="editInfo.discipline">
+                </div>
+            </div>
+            <div class="form-group">
+                <div input-control options="inputOptions.degree"
+                     ng-model="editInfo.degree">
+                </div>
+            </div>
+        <span class="btn btn-sm btn-warning"
+              ng-click="onEditSave(educationForm)">保存</span>
+            <span class="btn btn-sm btn-default"
+                  ng-click="onCancelEdit()">取消</span>
+        </form>
+    </div>
+</div>

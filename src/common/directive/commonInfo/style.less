@@ -1,0 +1,46 @@
+.directive-commonInfo {
+    background: @yellow5;
+    border: 1px solid @yellow6;
+    margin-bottom: 10px;
+    padding: 10px;
+    .head-img {
+        width: 45px;
+        height: 60px;
+    }
+    .char {
+        margin-top: 15px;
+        display: inline-block;
+        margin-right: 15px;
+    }
+    .content {
+        &:extend(.ellipsis);
+        max-width: 185px;
+        position: relative;
+        top: 4px;
+    }
+    .no-head-img {
+        background: @white;
+        line-height: 75px;
+        text-align: center;
+        width: 55px;
+        font-size: 12px;
+        height: 75px;
+        border: 1px solid @gray1;
+        padding: 0 2px;
+        margin: 0 14px;
+        cursor: pointer;
+        .upload-tip {
+            color: @gray1;
+        }
+    }
+    .head-img-wrap {
+        position: relative;
+        .edit {
+            position: absolute;
+            left:50px ;
+        }
+    }
+    .padding {
+        padding: 10px;
+    }
+}

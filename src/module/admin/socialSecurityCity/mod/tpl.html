@@ -1,0 +1,566 @@
+<div class="admin-socialSecurityCity-mod">
+<div class="modal-header">
+    <button type="button" class="close"
+            ng-click="closeHandler()"
+            data-dismiss="modal"><span
+            aria-hidden="true">&times;</span><span
+            class="sr-only">Close</span>
+    </button>
+    <h4 class="modal-title">{{title}}</h4>
+</div>
+
+<div class="modal-body">
+<form class="form-horizontal" name="modSocialSecurityCityForm"
+      novalidate="novalidate">
+<div class="content-block">
+    <div class="form-group">
+        <div input-control options="inputOptions.name"
+             ng-model="name">
+        </div>
+    </div>
+</div>
+<div class="content-block">
+    <p class="sub-title">社保基数配置</p>
+
+    <div class="form-group">
+        <div input-control
+             options="inputOptions.socialSecurityMin"
+             ng-model="socialSecurityMin">
+        </div>
+        <div input-control options="inputOptions.socialSecurityMax"
+             ng-model="socialSecurityMax">
+        </div>
+    </div>
+    <div class="form-group">
+        <div input-control
+             options="inputOptions.socialSecurityDefault"
+             ng-model="socialSecurityDefault">
+        </div>
+        <div input-control
+             options="inputOptions.socialSecurityBySalary"
+             ng-model="socialSecurityBySalary">
+        </div>
+    </div>
+    <div class="form-group">
+        <div input-control
+             options="inputOptions.needFiveBase"
+             ng-model="needFiveBase">
+        </div>
+    </div>
+</div>
+
+<div class="content-block">
+<p class="sub-title">五险配置</p>
+<table class="table">
+<thead>
+<tr>
+    <th> 类型</th>
+    <th> 养老保险</th>
+    <th> 失业保险</th>
+    <th> 医疗保险</th>
+    <th> 工伤保险</th>
+    <th> 生育保险</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>个人基数下限(元)</td>
+    <td>
+        <div input-control
+             options="inputOptions.endowMin"
+             ng-model="endowMin">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.unemployMin"
+             ng-model="unemployMin">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.medicalMin"
+             ng-model="medicalMin">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.injuryMin"
+             ng-model="injuryMin">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.maternityMin"
+             ng-model="maternityMin">
+        </div>
+    </td>
+</tr>
+<tr>
+    <td>个人基数上限(元)</td>
+    <td>
+        <div input-control
+             options="inputOptions.endowMax"
+             ng-model="endowMax">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.unemployMax"
+             ng-model="unemployMax">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.medicalMax"
+             ng-model="medicalMax">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.injuryMax"
+             ng-model="injuryMax">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.maternityMax"
+             ng-model="maternityMax">
+        </div>
+    </td>
+</tr>
+
+
+
+<tr>
+<td>公司基数下限(元)</td>
+<td>
+    <div input-control
+         options="inputOptions.endowCMin"
+         ng-model="endowCMin">
+    </div>
+</td>
+<td>
+    <div input-control
+         options="inputOptions.unemployCMin"
+         ng-model="unemployCMin">
+    </div>
+</td>
+<td>
+    <div input-control
+         options="inputOptions.medicalCMin"
+         ng-model="medicalCMin">
+    </div>
+</td>
+<td>
+    <div input-control
+         options="inputOptions.injuryCMin"
+         ng-model="injuryCMin">
+    </div>
+</td>
+<td>
+    <div input-control
+         options="inputOptions.maternityCMin"
+         ng-model="maternityCMin">
+    </div>
+</td>
+</tr>
+<tr>
+    <td>公司基数上限(元)</td>
+    <td>
+        <div input-control
+             options="inputOptions.endowCMax"
+             ng-model="endowCMax">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.unemployCMax"
+             ng-model="unemployCMax">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.medicalCMax"
+             ng-model="medicalCMax">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.injuryCMax"
+             ng-model="injuryCMax">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.maternityCMax"
+             ng-model="maternityCMax">
+        </div>
+    </td>
+</tr>
+
+
+<tr>
+    <td>本地城镇-个人缴纳比例(%)</td>
+    <td>
+        <div input-control
+             options="inputOptions.endowLCityPP"
+             ng-model="endowLCityPP">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.unemployLCityPP"
+             ng-model="unemployLCityPP">
+        </div>
+    </td>
+    <td>
+        <div input-control class="inline"
+             options="inputOptions.medicalLCityPP"
+             ng-model="medicalLCityPP">
+        </div>
+        <span class="plus">+</span>
+
+        <div input-control class="inline plus-input"
+             options="inputOptions.medicalLCityPlus"
+             ng-model="medicalLCityPlus">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.injuryLCityPP"
+             ng-model="injuryLCityPP">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.maternityLCityPP"
+             ng-model="maternityLCityPP">
+        </div>
+    </td>
+</tr>
+
+<tr>
+    <td>本地城镇-公司缴纳比例(%)</td>
+    <td>
+        <div input-control
+             options="inputOptions.endowLCityCP"
+             ng-model="endowLCityCP">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.unemployLCityCP"
+             ng-model="unemployLCityCP">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.medicalLCityCP"
+             ng-model="medicalLCityCP">
+        </div>
+        <span class="plus">+</span>
+        <div input-control class="inline plus-input"
+             options="inputOptions.medicalLCityCPlus"
+             ng-model="medicalLCityCPlus">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.injuryLCityCP"
+             ng-model="injuryLCityCP">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.maternityLCityCP"
+             ng-model="maternityLCityCP">
+        </div>
+    </td>
+</tr>
+
+
+<tr>
+    <td>本地农村-个人缴纳比例(%)</td>
+    <td>
+        <div input-control
+             options="inputOptions.endowLCtryPP"
+             ng-model="endowLCtryPP">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.unemployLCtryPP"
+             ng-model="unemployLCtryPP">
+        </div>
+    </td>
+    <td>
+        <div input-control class="inline"
+             options="inputOptions.medicalLCtryPP"
+             ng-model="medicalLCtryPP">
+        </div>
+        <span class="plus">+</span>
+
+        <div input-control class="inline plus-input"
+             options="inputOptions.medicalLCtryPlus"
+             ng-model="medicalLCtryPlus">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.injuryLCtryPP"
+             ng-model="injuryLCtryPP">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.maternityLCtryPP"
+             ng-model="maternityLCtryPP">
+        </div>
+    </td>
+</tr>
+<tr>
+    <td>本地农村-公司缴纳比例(%)</td>
+    <td>
+        <div input-control
+             options="inputOptions.endowLCtryCP"
+             ng-model="endowLCtryCP">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.unemployLCtryCP"
+             ng-model="unemployLCtryCP">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.medicalLCtryCP"
+             ng-model="medicalLCtryCP">
+        </div>
+        <span class="plus">+</span>
+
+        <div input-control class="inline plus-input"
+             options="inputOptions.medicalLCtryCPlus"
+             ng-model="medicalLCtryCPlus">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.injuryLCtryCP"
+             ng-model="injuryLCtryCP">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.maternityLCtryCP"
+             ng-model="maternityLCtryCP">
+        </div>
+    </td>
+</tr>
+
+
+<tr>
+    <td>外地城镇-个人缴纳比例(%)</td>
+    <td>
+        <div input-control
+             options="inputOptions.endowFCityPP"
+             ng-model="endowFCityPP">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.unemployFCityPP"
+             ng-model="unemployFCityPP">
+        </div>
+    </td>
+    <td>
+        <div input-control class="inline"
+             options="inputOptions.medicalFCityPP"
+             ng-model="medicalFCityPP">
+        </div>
+        <span class="plus">+</span>
+
+        <div input-control class="inline plus-input"
+             options="inputOptions.medicalFCityPlus"
+             ng-model="medicalFCityPlus">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.injuryFCityPP"
+             ng-model="injuryFCityPP">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.maternityFCityPP"
+             ng-model="maternityFCityPP">
+        </div>
+    </td>
+</tr>
+
+<tr>
+    <td>外地城镇-公司缴纳比例(%)</td>
+    <td>
+        <div input-control
+             options="inputOptions.endowFCityCP"
+             ng-model="endowFCityCP">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.unemployFCityCP"
+             ng-model="unemployFCityCP">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.medicalFCityCP"
+             ng-model="medicalFCityCP">
+        </div>
+        <span class="plus">+</span>
+
+        <div input-control class="inline plus-input"
+             options="inputOptions.medicalFCityCPlus"
+             ng-model="medicalFCityCPlus">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.injuryFCityCP"
+             ng-model="injuryFCityCP">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.maternityFCityCP"
+             ng-model="maternityFCityCP">
+        </div>
+    </td>
+</tr>
+
+
+<tr>
+    <td>外地农村-个人缴纳比例(%)</td>
+    <td>
+        <div input-control
+             options="inputOptions.endowFCtryPP"
+             ng-model="endowFCtryPP">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.unemployFCtryPP"
+             ng-model="unemployFCtryPP">
+        </div>
+    </td>
+    <td>
+        <div input-control class="inline"
+             options="inputOptions.medicalFCtryPP"
+             ng-model="medicalFCtryPP">
+        </div>
+        <span class="plus">+</span>
+
+        <div input-control class="inline plus-input"
+             options="inputOptions.medicalFCtryPlus"
+             ng-model="medicalFCtryPlus">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.injuryFCtryPP"
+             ng-model="injuryFCtryPP">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.maternityFCtryPP"
+             ng-model="maternityFCtryPP">
+        </div>
+    </td>
+</tr>
+<tr>
+    <td>外地农村-公司缴纳比例(%)</td>
+    <td>
+        <div input-control
+             options="inputOptions.endowFCtryCP"
+             ng-model="endowFCtryCP">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.unemployFCtryCP"
+             ng-model="unemployFCtryCP">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.medicalFCtryCP"
+             ng-model="medicalFCtryCP">
+        </div>
+        <span class="plus">+</span>
+
+        <div input-control class="inline plus-input"
+             options="inputOptions.medicalFCtryCPlus"
+             ng-model="medicalFCtryCPlus">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.injuryFCtryCP"
+             ng-model="injuryFCtryCP">
+        </div>
+    </td>
+    <td>
+        <div input-control
+             options="inputOptions.maternityFCtryCP"
+             ng-model="maternityFCtryCP">
+        </div>
+    </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="content-block">
+    <p class="sub-title">公积金配置</p>
+
+    <div class="form-group">
+        <div input-control options="inputOptions.houseFundMin"
+             ng-model="houseFundMin">
+        </div>
+        <div input-control options="inputOptions.houseFundMax"
+             ng-model="houseFundMax">
+        </div>
+    </div>
+    <div class="form-group">
+        <div input-control options="inputOptions.houseFundDefault"
+             ng-model="houseFundDefault">
+        </div>
+        <div input-control options="inputOptions.houseFundBySalary"
+             ng-model="houseFundBySalary">
+        </div>
+    </div>
+    <div class="form-group">
+        <div input-control
+             options="inputOptions.houseFundPersonalPer"
+             ng-model="houseFundPersonalPer">
+        </div>
+        <div input-control
+             options="inputOptions.houseFundCompanyPer"
+             ng-model="houseFundCompanyPer">
+        </div>
+    </div>
+</div>
+</form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary"
+            ng-click="saveHandler(modSocialSecurityCityForm)">保存
+    </button>
+    <button type="button" class="btn btn-default"
+            ng-click="closeHandler()"
+            data-dismiss="modal">关闭
+    </button>
+</div>
+</div>

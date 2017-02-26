@@ -1,0 +1,1 @@
+define(["require","../app","module/nameConfig"],function(e){var t=e("../app"),n=e("module/nameConfig");t.filter("emptyFormat",["util",function(e){return function(t){return e.isEmpty(t)?n.EMPTY_VALUE:t}}])});

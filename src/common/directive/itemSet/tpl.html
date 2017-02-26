@@ -1,0 +1,14 @@
+<div class="directive-item-set">
+    <div ng-repeat="item in listData" class="data-item"
+         class="item">
+        <div ng-if="!options.tpl" class="btn btn-default name">
+            {{item.name}}
+        </div>
+        <div ng-if="options.tpl" class="inline-block name-content"
+             compile="options.tpl">
+        </div>
+            <span class="glyphicon delete"
+                  ng-click="delClickHandler(item, $index)">
+            </span>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+<div class="admin-permission">
+    <h5>
+        <span>权限配置</span>
+    </h5>
+
+    <div common-info number="{{number}}"></div>
+    <div class="content-container form-horizontal">
+        <div class="form-group">
+            <div class="col-sm-2">
+                <label>权限角色分配:</label>
+            </div>
+            <div class="col-sm-8">
+                <div class="col-sm-2">
+                    <input type="checkbox" ng-model="HRBP">HRBP
+                </div>
+                <div class="col-sm-2">
+                    <input type="checkbox" ng-model="ZPHR">招聘HR
+                </div>
+                <div class="col-sm-2">
+                    <input type="checkbox" ng-model="XCHR">薪酬HR
+                </div>
+                <div class="col-sm-2">
+                    <input type="checkbox" ng-model="GXHR">员工关系角色
+                </div>
+                <div class="col-sm-2">
+                    <input type="checkbox" ng-model="PXHR">培训HR
+                </div>
+            </div>
+        </div>
+        <div class="work-title">
+            <label class="control-label">公司分配:</label>
+        <span class="add pointer" ng-click="companyAddClick()"><i
+                class="glyphicon glyphicon-plus"></i>添加</span>
+        </div>
+        <div class="add-block" ng-show='isAdding'>
+            <form class="form-horizontal" name="companyAddForm"
+                  novalidate="novalidate">
+                <div class="form-group row">
+                    <label class="col-sm-1 control-label">
+                        公司:
+                    </label>
+
+                    <div class="col-sm-3">
+                        <select ng-model="add.company"
+                                class="form-control"
+                                name="company"
+                                ng-change="companyChangeHandler(add.company)"
+                                required="true"
+                                ng-options="m.id as m.name for m in add.companys">
+                        </select>
+                    </div>
+                    <label class="col-sm-1 control-label">
+                        部门:
+                    </label>
+
+                    <div class="col-sm-3">
+                        <div multi-select ng-model="add.departments"
+                             options="departmentsSelectOptions"></div>
+                    </div>
+                    <div class="col-sm-3">
+                         <span class="btn btn-sm btn-warning"
+                               ng-click="add.onSave(companyAddForm)">添加</span>
+                        <span class="btn btn-sm btn-default"
+                              ng-click="add.onCancel()">取消</span>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div ng-repeat="item in manageRange">
+            <div company-info options="item"></div>
+        </div>
+        <div class="save">
+            <button class="btn btn-sm btn-primary" ng-click="saveAuth()">保存
+            </button>
+        </div>
+    </div>
+</div>

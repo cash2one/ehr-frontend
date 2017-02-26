@@ -1,0 +1,37 @@
+.directive-item-set {
+    width: 400px;
+    max-height: 180px;
+    overflow-y: auto;
+    .item {
+        margin-top: 10px;
+    }
+    .name {
+        &:extend(.ellipsis);
+        padding: 2px 12px;
+        cursor: auto;
+        width: 166px;
+        height: 25px;
+        background: #eee;
+    }
+    .delete{
+        color: #ff0000;
+        display: inline-block;
+        margin-left: 10px;
+        cursor: pointer;
+        vertical-align: middle;
+    }
+    .delete:before {
+        cursor: pointer;
+        content: '\e014';
+    }
+    .data-item {
+        display: inline-block;
+        margin-right: 10px;
+        margin-top: 10px;
+        padding: 2px 5px;
+        background: @gray2;
+    }
+    .name-content {
+        display: inline-block;
+    }
+}

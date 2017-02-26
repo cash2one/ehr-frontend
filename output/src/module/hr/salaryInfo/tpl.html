@@ -1,0 +1,96 @@
+<form class="form-horizontal hr-salaryInfo" name="salaryInfoForm"
+      novalidate="novalidate">
+    <div class="content-container">
+        <div ng-show="canEditSalaryInfo
+        ||(isFromSelf && mealSubsidyToMealCard)">
+            <span class="edit" ng-click="onEdit()">
+            <i class="glyphicon glyphicon-pencil"></i>
+            编辑
+            </span>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-2">基本工资：</div>
+            <div class="col-sm-4">
+                {{baseSalary|salary}}
+                <span ng-show="welfareSalary>0  && (!isProbationary)"
+                      class="gray">(包含{{welfareOri}}元职位福利费)
+                </span>
+            </div>
+            <div class="col-sm-2">试用期基本工资：</div>
+            <div class="col-sm-4">
+                {{probationarySalary|salary}}
+                <span ng-show="welfareSalary>0  && isProbationary"
+                      class="gray">(包含{{welfareOri}}元职位福利费)
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-2">社保缴纳基数：</div>
+            <div class="col-sm-4">{{socialSecurityBase|unit:'元'}}</div>
+            <div class="col-sm-2">公积金缴纳基数：</div>
+            <div class="col-sm-4">{{houseFundBase|unit:'元'}}</div>
+        </div>
+        <div class="form-group" ng-show="needFiveBase && !isSelfView">
+            <table width="100%" class="table1">
+                <tr class="thead">
+                    <td class="td1">&nbsp;</td>
+                    <td>养老</td>
+                    <td>失业</td>
+                    <td>医疗</td>
+                    <td>工伤</td>
+                    <td>生育</td>
+                </tr>
+                <tr>
+                    <td class="col1 td1">
+                        五险基数：
+                    </td>
+                    <td>
+                        {{endowBase|unit:'元'}}
+                    </td>
+                    <td>
+                        {{unemployBase|unit:'元'}}
+                    </td>
+                    <td>
+                        {{medicalBase|unit:'元'}}
+                    </td>
+                    <td>
+                        {{injuryBase|unit:'元'}}
+                    </td>
+                    <td>
+                        {{maternityBase|unit:'元'}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-2">通讯补贴：</div>
+            <div class="col-sm-4">{{mobileSubsidy|salary}}</div>
+            <div class="col-sm-2">交通补贴：</div>
+            <div class="col-sm-4">{{trafficSubsidy|salary}}</div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-2">工资类型：</div>
+            <div class="col-sm-4">{{salaryType|salaryType}}</div>
+
+            <div ng-show="maxWelfareSalary>0" input-control
+                 options="options.welfareSalary"
+                 ng-model="welfareSalary">
+            </div>
+        </div>
+        <div class="form-group">
+            <div ng-show="mealSubsidyToMealCard" input-control
+                 options="options.mealSalaryMethod"
+                 ng-model="mealSalaryMethod">
+            </div>
+        </div>
+        <div class="form-group"
+             ng-show="(canEditSalaryInfo||(isFromSelf && mealSubsidyToMealCard))
+             && !isReadOnly">
+            <div class="col-sm-12 center">
+                <button class="btn btn-sm btn-primary"
+                        ng-click="saveSalaryInfo(salaryInfoForm)">保存
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

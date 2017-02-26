@@ -1,0 +1,76 @@
+<div class="directive-inputValidate">
+    <span
+            ng-show="form.$submitted && form[name].$error.required &&(!form[name].$error.requiredSubmitted)">
+        请{{optTip}}{{options.displayName}}
+            </span>
+    <span
+            ng-show="form.$submitted && form[name].$error.fileRequired &&(!form[name].$error.requiredSubmitted)">
+        请上传{{options.displayName}}
+            </span>
+    <span
+            ng-show="form.$submitted && form[name].$error.requiredSubmitted">
+        请{{optTip}}{{options.displayName}}
+            </span>
+    <span
+            ng-show="form[name].$error.maxlength">
+        请输入少于{{maxlength}}个字符的{{options.displayName}}
+            </span>
+    <span
+            ng-show="form[name].$error.minlength">
+        请输入不少于{{minlength}}个字符的{{options.displayName}}
+            </span>
+    <span
+            ng-show="form[name].$error.number">
+        请输入数字
+            </span>
+    <span
+            ng-show="form[name].$error.date">
+        请输入正确的日期
+            </span>
+    <span
+            ng-show="form[name].$error.pattern">
+        请输入正确的{{options.displayName}}
+            </span>
+    <span
+            ng-show="form[name].$error.common">
+        请输入正确的{{options.displayName}}
+            </span>
+    <span
+            ng-show="form[name].$error.min">
+        请输入大于{{min|dateFormat}}的日期
+            </span>
+    <span
+            ng-show="form[name].$error.max">
+        请输入小于{{max|dateFormat}}的日期
+            </span>
+    <span
+            ng-show="form[name].$error.sugguestionRequired">
+        请选择{{options.displayName}}
+     </span>
+    <span
+            ng-show="form[name].$error.email">
+        请输入正确的邮箱
+            </span>
+    <span
+            ng-show="form[name].$error.url">
+        请输入正确的url地址
+            </span>
+    <span
+            ng-show="form[name].$error.file">
+        文件格式不正确
+            </span>
+    <span
+            ng-show="form[name].$error.dateRequired">
+        请输入日期
+            </span>
+    <span
+            ng-show="form[name].$error.month">
+        请输入正确日期
+            </span>
+
+    <!--for nameSugguestion。。。-->
+    <span
+            ng-show="form[name].$error.parse">
+        请从下拉列表中选择
+            </span>
+</div>

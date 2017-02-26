@@ -1,0 +1,25 @@
+<div class="common-service">
+    <div class="modal-header">
+        <button type="button" class="close"
+                ng-click="closeHandler()"
+                data-dismiss="modal"><span
+                aria-hidden="true">&times;</span><span
+                class="sr-only">Close</span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        <label>
+            {{tip}}
+        </label>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-info"
+                ng-click="saveHandler()">确定
+        </button>
+        <button type="button" class="btn btn-default"
+                ng-click="closeHandler()"
+                data-dismiss="modal">取消
+        </button>
+    </div>
+</div>

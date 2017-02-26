@@ -1,0 +1,8 @@
+<div class="popover {{placement}} perform" ng-class="{ in: isOpen(), fade: animation() }">
+    <div class="arrow"></div>
+    <div class="popover-inner">
+        <h3 class="popover-title" ng-bind="title" ng-show="title"></h3>
+        <button ng-show="title" style="position: absolute;top: 3px;right: 10px;"  ng-click="closePopover()" class="close"><span>x</span></button>
+        <div class="popover-content" bind-html-unsafe="content"></div>
+    </div>
+</div>

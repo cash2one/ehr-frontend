@@ -1,0 +1,1 @@
+define(["require","module/config"],function(e){return function(t,n){var r=e("module/config"),i={detail:{required:!0,displayName:"转正申请",maxLength:1e3,minLength:200,name:"detail",formName:t,placeholder:"该转正申请主要是总结试用期工作目标的完成情况及对接下来工作的规划。（不少于200字，不超过1000字）",mode:"textarea"}};return i}});

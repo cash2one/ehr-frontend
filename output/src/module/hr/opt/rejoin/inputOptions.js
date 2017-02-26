@@ -1,0 +1,1 @@
+define(["require","module/config","module/codeConfig","module/nameConfig"],function(e){return function(t,n,r){var i=e("module/config"),s=e("module/codeConfig"),o=e("module/nameConfig"),u={idCardNumber:{required:!0,displayName:"身份证号",maxLength:18,name:"idCardNumber",formName:t,placeholder:"少于18个字"}};return u}});

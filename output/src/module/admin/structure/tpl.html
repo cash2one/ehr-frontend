@@ -1,0 +1,208 @@
+<h5>
+    <span>组织架构变更</span>
+</h5>
+<div class="admin admin-structure clearFloat">
+    <div class="tree-container">
+        <treecontrol class="tree-light" tree-model="treeData"
+                     options="treeOptions"
+                     selected-node="selectedNode"
+                     expanded-nodes="expandedNodes"
+                     on-selection="onNodeSelect(node)">
+        <span class="tree-node">
+            <span class="node-name" ng-click="viewNode(node)"
+                  ng-class="{'disabled': node.disable}"
+                  node-id="{{node.id}}" level="{{node.level}}">
+                {{node.label}}
+            </span>
+            <i
+                    ng-show="!node.disable"
+                    class="glyphicon glyphicon-plus-sign blue opt" title="添加"
+                    ng-click="addNode(node)"></i>
+            <i ng-show="!node.disable" class="glyphicon glyphicon-cog blue opt"
+               title="编辑"
+               ng-click="editNode(node)"></i>
+            <i ng-show="!node.disable"
+               class="glyphicon glyphicon-ban-circle blue opt" title="隐藏"
+               ng-click="delNode(node)"></i>
+            <i ng-show="node.disable"
+               class="glyphicon glyphicon-play-circle blue opt" title="恢复"
+               ng-click="enableNode(node)"></i>
+        </span>
+            <span class="line" ng-show="node.parentId"></span>
+        </treecontrol>
+    </div>
+    <div class="structure-info" id="structure-info">
+        <div class="container-fluid">
+            <div class="row">
+                <label class="col-sm-3 name">组织名称:</label>
+
+                <div class="col-sm-8 content" title="{{info.name}}">
+                    {{info.name}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-3 name">简称:</label>
+
+                <div class="col-sm-8 content" title="{{info.shortName}}">
+                    {{info.shortName}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-3 name">员工编号序列:</label>
+
+                <div class="col-sm-8 content" title="{{info.numberPrefix}}">
+                    {{info.numberPrefix}}
+                </div>
+            </div>
+            <div class="row" ng-show="hasParentNode">
+                <label class="col-sm-3 name">上级组织:</label>
+
+                <div class="col-sm-8 content"
+                     title="{{info.parentStructureName}}">
+                    {{info.parentStructureName}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-3 name">负责人:</label>
+
+                <div class="col-sm-8 content" title="{{info.leaderName}}">
+                    {{info.ownerName.join(',')}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-3 name">招聘HR:</label>
+
+                <div class="col-sm-8 content"
+                     title="{{info.ZPHRName.join(',')}}">
+                    {{info.recruitHRName.join(',')}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-3 name">薪酬HR:</label>
+
+                <div class="col-sm-8 content"
+                     title="{{info.XCHRName.join(',')}}">
+                    {{info.salaryHRName.join(',')}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-3 name">员工关系HR:</label>
+
+                <div class="col-sm-8 content"
+                     title="{{info.GXHRName.join(',')}}">
+                    {{info.relationshipHRName.join(',')}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-3 name">HRBP:</label>
+
+                <div class="col-sm-8 content"
+                     title="{{info.businessPartnerHRName.join(',')}}">
+                    {{info.businessPartnerHRName.join(',')}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-3 name">培训HR:</label>
+
+                <div class="col-sm-8 content"
+                     title="{{info.trainingHRName.join(',')}}">
+                    {{info.trainingHRName.join(',')}}
+
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-3 name">资产管理员:</label>
+
+                <div class="col-sm-8 content"
+                     title="{{info.assetManagerName.join(',')}}">
+                    {{info.assetManagerName.join(',')}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-3 name">IT负责人:</label>
+
+                <div class="col-sm-8 content"
+                     title="{{info.itOwnerName.join(',')}}">
+                    {{info.itOwnerName.join(',')}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-3 name">工资结算结点:</label>
+
+                <div class="col-sm-8 content"> {{ info.isKeyNode|boolean}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-3 name">社保缴纳城市:</label>
+
+                <div class="col-sm-8 content"> {{ info.socialSecurityCityName}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-3 name">本地缴纳所得税:</label>
+
+                <div class="col-sm-8 content"> {{ info.taxLocal|boolean}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-3 name">默认有职位福利费:</label>
+
+                <div class="col-sm-8 content"> {{info.isWelfareDefault|boolean}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-3 name">职级体系模板:</label>
+
+                <div class="col-sm-8 content"> {{ info.levelTemplateName}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-3 name">餐补:</label>
+
+                <div class="col-sm-8 content"> {{
+                    info.mealSubsidy|emptyFormat}}元/天
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-3 name">是否打卡:</label>
+
+                <div class="col-sm-8 content"> {{ info.isPunchCard|punchCard}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-3 name">前台:</label>
+
+                <div class="col-sm-8 content"
+                     title="{{info.receptionName.join(',')}}">
+                    {{info.receptionName.join(',')}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-3 name">打卡机前缀:</label>
+
+                <div class="col-sm-8 content"
+                     title="{{info.punchDevice}}">
+                    {{info.punchDevice}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-3 name">日历模板:</label>
+
+                <div class="col-sm-8 content"
+                     title="{{info.calendarName}}">
+                    {{info.calendarName}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-3 name">邮箱后缀:</label>
+
+                <div class="col-sm-8 content"
+                     title="{{info.mailSuffix}}">
+                    {{info.mailSuffix}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

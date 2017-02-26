@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+
+    <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+
+    <meta HTTP-EQUIV="expires" CONTENT="0">
+
+    <title>eHR系统</title>
+    <link href="../../js-library/dep/bootstrap/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+          href="src/resource/css/style.css?@@version">
+</head>
+<script>
+    function isPC() {
+        var platForm = window.navigator.platform;
+        if (platForm.indexOf('Win') == 0
+                || platForm.indexOf('Mac') == 0) {
+            return true;
+        }
+        return false;
+    }
+
+    if (isPC() && window.navigator.userAgent.indexOf('Chrome') == -1) {
+        window.location.href = 'tip.html';
+    }
+</script>
+<body ng-controller="mainCtrl">
+<nav class="navbar navbar-default navbar-inverse hide"
+     id="header" role="navigation">
+    <div class="container-fluid header-nav">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand"
+               href="#" style="position: relative;top: -5px;">
+                <img alt="brand" src="src/resource/img/logo.png"
+                     style="display: inline-block">
+            </a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li ng-repeat="item in navigator">
+                    <a ui-sref="{{item.state}}" ng-if="!item.items"
+                       ng-click="navClick(item)">
+                        <i class="icon {{item.icon}}"></i>
+                        <span class="num" ng-show="item.num"
+                              ng-bind="item.num"></span>
+                        <span ng-bind="item.title"></span>
+                    </a>
+
+                    <span class="dropdown menu-dropdown menu-wrap"
+                          ui-sref-active="" ng-if="item.items">
+                         <a class="dropdown-toggle char"
+                            data-toggle="dropdown">
+                             {{item.title}}
+                             <span class="glyphicon glyphicon-menu-down"></span>
+                         </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li ng-repeat="menu in item.items">
+                                <a ui-sref="{{menu.state}}">{{menu.title}}</a>
+                            </li>
+                        </ul>
+                    </span>
+
+                </li>
+                <li>
+                    <a>
+                        <span ng-bind="userInfo.displayName"></span>
+                    </a>
+                </li>
+            </ul>
+            <div class="user-info" ng-class="{'top20': !userInfo.headImgUrl}">
+                <span class="dropdown menu-dropdown">
+                         <span class="dropdown-toggle char"
+                            data-toggle="dropdown">
+                             <span>
+                                 你好，{{userInfo.name}}</span>
+                             <img ng-show="userInfo.headImgUrl" class="header-img"
+                                     ng-src="{{userInfo.headImgUrl}}"/>
+                             <span class="glyphicon glyphicon-menu-down"></span>
+                         </span>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a ng-click="logout()"
+                                   class="pointer">退出</a>
+                            </li>
+                        </ul>
+                </span>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="app-container" id="app-container">
+    <div ui-view></div>
+</div>
+
+<div class="footer hide" id="footer">
+    Copyright © 2014 - 2016 跟谁学版权所有
+</div>
+<script>
+    var require = {
+        urlArgs: 'v=@@version' // 用时间戳的话，缓存没法利用
+        //+new Date().getTime() // 修改这里的版本号
+    };
+</script>
+<script src="../../js-library/dep/requirejs/require.js"
+        data-main="src/main"></script>
+<div id="loading-contrainer-back" class="hide"></div>
+<div id="loading-contrainer"
+     class="hide"><span class="loading"><img
+        src="src/resource/img/loading.gif">数据加载中... </span></div>
+</body>
+</html>

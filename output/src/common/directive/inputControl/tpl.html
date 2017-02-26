@@ -1,0 +1,240 @@
+<div ng-if="options.mode!='textarea'" class="directive-inputControl">
+<label class="col-sm-2 control-label">
+        <span class="{{options.prefixClass|| 'red'}}"
+              ng-show="((options.prefixClass || options.required) && !options.disable) && options.displayName!=''">
+            *</span>
+    {{options.displayName}}
+        <span ng-show="options.tip"
+              popover="{{options.tip}}"
+              popover-trigger="mouseenter" popover-placement="top"
+              popover-append-to-body="true"
+              class="glyphicon glyphicon-question-sign"
+                >
+                </span>
+    <span ng-show="options.displayName!=''" class="dot">:</span>
+</label>
+
+<div class="col-sm-4" ng-switch="options.mode">
+        <span ng-switch-when="select">
+            <select ng-model="result.value"
+                    ng-hide="options.disable"
+                    class="form-control"
+                    ng-disabled="options.forbid"
+                    name="{{options.name}}"
+                    ng-change="options.changeHandler(result.value)"
+                    ng-required="options.required"
+                    input-validate="errorOption"
+                    ng-options="m.id as m.name for m in options.items">
+            </select>
+            <span ng-show="options.disable" class="display-name">
+                {{displayValue|emptyFormat}}
+            </span>
+        </span>
+
+
+
+        <span ng-switch-when="nameSuggestion">
+             <span
+                     name-suggestion ng-model="result.value"
+                     ng-hide="options.disable"
+                     name="{{options.name}}"
+                     disable="options.disable"
+                     require="{{require}}"
+                     error-option="errorOption"
+                     >
+
+                     </span>
+            <span ng-show="options.disable" class="display-name">
+                {{displayValue|emptyFormat}}
+            </span>
+        </span>
+
+        <span ng-switch-when="multiName">
+             <span
+                     multi-name ng-model="result.value"
+                     ng-hide="options.disable"
+                     name="{{options.name}}"
+                     disable="options.disable"
+                     error-option="errorOption"
+                     ></span>
+            <span ng-show="options.disable" class="display-name">
+                {{displayValue|emptyFormat}}
+            </span>
+        </span>
+
+        <span ng-switch-when="structure">
+            <span structure-selector ng-model="result.value"
+                  ng-hide="options.disable"
+                  name="{{options.name}}"
+                  disable="options.disable"
+                  require="{{require}}"
+                  error-option="errorOption"
+                  options='treeSelectorOptions'>
+
+             </span>
+            <span ng-show="options.disable" class="display-name">
+                {{displayValue|emptyFormat}}
+            </span>
+        </span>
+
+        <span ng-switch-when="checkbox">
+            <input type="checkbox" ng-model="result.value"
+                   ng-hide="options.disable"
+                   ng-change="options.changeHandler(result.value)"
+                   name="{{options.name}}"
+                    >
+            <span ng-show="options.disable" class="display-name">
+                {{displayValue}}
+            </span>
+        </span>
+
+
+    <div ng-switch-when="file">
+        <div input-validate="errorOption">
+            <span class="file-load" ng-show="!options.disable">
+                <label class="upload-file-btn" ng-show="!options.fileUrl">
+                    <i class="glyphicon glyphicon-upload"></i>上传文件
+                </label>
+                <label class="upload-file-btn" ng-show="options.fileUrl">
+                    <i class="glyphicon glyphicon-upload"></i>重新上传
+                </label>
+                <input type="file" ng-model="result.value"
+                       class="upload-file"
+                       onchange="angular.element(this).scope().fileChange(this)"
+                       name="{{options.name}}"/>
+            </span>
+            <span class="file-download" ng-show="options.fileUrl">
+                <a href="{{options.fileUrl}}" target="_blank">
+                    <i class="glyphicon glyphicon-download"></i>下载
+                </a>
+            </span>
+
+            <p ng-show="!options.disable" class="gray">
+
+                <span>只允许pdf、png、jpg、jpeg、doc、docx后缀文件</span>
+            </p>
+        </div>
+    </div>
+
+        <span ng-switch-when="selectWithInput">
+            <div class="col-sm-8 combine-first">
+                <input
+                        ng-disabled="options.forbid"
+                        ng-hide="options.disable"
+                        class="form-control"
+                        ng-model="result.input"
+                        name="{{options.name}}Input"
+                        ng-maxlength="{{options.maxLength}}"
+                        ng-minlength="{{options.minLength}}"
+                        input-validate="errorOption"
+                        placeholder="{{options.placeholder}}"
+                        ng-required="{{options.required}}"
+                        ng-pattern="options.pattern"
+                        ng-change="options.changeHandler(result.value)"
+                        type="{{options.type}}">
+            </div>
+            <div class="col-sm-4 combine-scd">
+                <span ng-repeat="item in options.items">
+                    <input type="radio" name="options.name"
+                           value="{{item.id}}" ng-model="result.select">
+                    {{item.name}}
+                </span>
+            </div>
+            <span ng-show="options.disable" class="display-name">
+                {{displayValue}}
+            </span>
+        </span>
+
+        <span ng-switch-when="combine">
+            <div class="col-sm-8 combine-first">
+                <input
+                        ng-disabled="options.forbid"
+                        ng-hide="options.disable"
+                        class="form-control"
+                        ng-model="result.input"
+                        name="{{options.name}}"
+                        ng-maxlength="{{options.maxLength}}"
+                        ng-minlength="{{options.minLength}}"
+                        input-validate="errorOption"
+                        placeholder="{{options.placeholder}}"
+                        ng-required="{{options.required}}"
+                        ng-pattern="options.pattern"
+                        ng-change="options.changeHandler(result.input)"
+                        type="{{options.type}}">
+            </div>
+            <div class="col-sm-4 combine-scd">
+                <select ng-model="result.select"
+                        ng-hide="options.disable"
+                        ng-disabled="options.forbid"
+                        class="form-control"
+                        ng-required="{{options.required}}"
+                        ng-options="m.id as m.name for m in options.items">
+                </select>
+            </div>
+            <span ng-show="options.disable" class="display-name">
+                {{displayValue|emptyFormat}}
+            </span>
+        </span>
+        <span ng-switch-default>
+            <span ng-class="{'input-group':options.postfix}"
+                  input-validate="errorOption"
+                    >
+            <input
+                    ng-hide="options.disable"
+                    ng-disabled="options.forbid"
+                    class="form-control"
+                    ng-model="result.value"
+                    name="{{options.name}}"
+                    ng-maxlength="{{options.maxLength}}"
+                    ng-minlength="{{options.minLength}}"
+                    ng-max="options.max"
+                    ng-min="options.min"
+                    placeholder="{{options.placeholder}}"
+                    ng-required="{{options.required}}"
+                    ng-change="options.changeHandler(result.value,this)"
+                    ng-blur="options.blurHandler(result.value,this)"
+                    ng-pattern="options.pattern"
+                    type="{{options.type}}">
+            <span ng-show="options.disable" class="display-name">
+                {{displayValue|emptyFormat}}
+                <span ng-show="options.postfix">
+                    {{options.postfix}}
+                </span>
+            </span>
+            <span ng-show="options.postfix && (!options.disable)"
+                  class="input-group-addon">
+                {{options.postfix}}
+            </span>
+            </span>
+        </span>
+</div>
+</div>
+<div ng-if="options.mode=='textarea'" class="directive-inputControl">
+    <span class="col-sm-2 control-label">
+        <span class="red" ng-show="options.required">*</span>
+        {{options.displayName}}:
+    </span>
+
+    <div class="col-sm-9">
+        <textarea
+                ng-hide="options.disable"
+                class="form-control"
+                ng-disabled="options.forbid"
+                ng-model="result.value"
+                name="{{options.name}}"
+                ng-maxlength="{{options.maxLength}}"
+                ng-minlength="{{options.minLength}}"
+                input-validate="errorOption"
+                placeholder="{{options.placeholder}}"
+                ng-change="options.changeHandler(result.value,this)"
+                ng-blur="options.blurHandler(result.value,this)"
+                ng-required="{{options.required}}"
+                >
+
+        </textarea>
+            <span ng-show="options.disable" class="display-name textarea-value">
+                {{displayValue|emptyFormat}}
+            </span>
+    </div>
+</div>
+

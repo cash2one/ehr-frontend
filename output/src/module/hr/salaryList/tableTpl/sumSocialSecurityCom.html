@@ -1,0 +1,9 @@
+<div  ng-class="{'red':item.sumSocialSecurityCom<0}">
+    <a
+            ng-if="!item.noInsurance && item.isEdit && !mainScope.onlyViewMode" ng-click="mainScope.onSumSocialSecurityComClick($parent.$parent.$parent.$index)">
+        {{item.sumSocialSecurityCom}}
+    </a>
+    <span ng-if="item.noInsurance || (!item.isEdit) || mainScope.onlyViewMode">
+        {{item.sumSocialSecurityCom}}
+    </span>
+</div>

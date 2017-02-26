@@ -1,0 +1,1 @@
+define(["require","../app","module/nameConfig"],function(e){var t=e("../app"),n=e("module/nameConfig");t.filter("accountType",function(){return function(e){return e===null||e===""||typeof e=="undefined"?n.EMPTY_VALUE:n.ACCOUNT_TYPE[e]}})});

@@ -1,0 +1,46 @@
+.admin {
+    .admin-holiday {
+        overflow: hidden;
+        .form-inline {
+            text-align: center;
+        }
+        .holiday {
+            background: @yellow2;
+            color: @white;
+        }
+        .date-pick-wrap {
+            width: 280px;
+            margin: 20px auto;
+            .header {
+                border: 1px solid @gray2;
+                text-align: center;
+                height: 40px;
+                line-height: 40px;
+            }
+            .content {
+                padding-left: 0;
+                li {
+                    text-align: center;
+                    border: 1px solid @gray2;
+                    display: inline-block;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                    vertical-align: top;
+                    cursor: pointer;
+                    position: relative;
+                }
+            }
+            .holiday-icon {
+                font-size: 9pt;
+                position: absolute;
+                top: -13px;
+            }
+        }
+        .border-right {
+            border-right:  1px solid @gray2;
+            padding-bottom: 3000px;
+            margin-bottom: -3000px;
+        }
+    }
+}

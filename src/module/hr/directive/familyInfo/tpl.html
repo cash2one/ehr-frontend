@@ -1,0 +1,61 @@
+<div class="hr-directive hr-directive-familyInfo">
+    <div class="wraper-show" ng-show="!editing">
+        <span class="time">
+            {{options.name}}
+        </span>
+        <span class="char">
+            {{options.title}}
+        </span>
+        <span class="char">
+            生日：{{options.birthday |dateFormat}}
+        </span>
+        <span class="char">
+            {{options.company || emptyValue}}
+        </span>
+        <span class="char">
+            {{options.position || emptyValue}}
+        </span>
+        <span class="char">
+            {{options.mobile || emptyValue}}
+        </span>
+        <span ng-show='!options.disable' class="btn btn-sm btn-warning"
+              ng-click="onDel()">删除</span>
+        <span ng-show='!options.disable' class="btn btn-sm btn-warning"
+              ng-click="onEdit()">编辑</span>
+    </div>
+    <div class="wraper-edit" ng-show="editing">
+        <form class="form-horizontal" name="familyForm"
+              novalidate="novalidate">
+            <div class="form-group">
+                <div input-control options="inputOptions.name"
+                     ng-model="editInfo.name">
+                </div>
+                <div input-control options="inputOptions.title"
+                     ng-model="editInfo.title">
+                </div>
+            </div>
+            <div class="form-group">
+                <div input-control options="inputOptions.birthday"
+                     ng-model="editInfo.birthday">
+                </div>
+                <div input-control options="inputOptions.company"
+                     ng-model="editInfo.company">
+                </div>
+            </div>
+            <div class="form-group">
+                <div input-control options="inputOptions.position"
+                     ng-model="editInfo.position">
+                </div>
+                <div input-control options="inputOptions.mobile"
+                     ng-model="editInfo.mobile">
+                </div>
+            </div>
+            <div class="center">
+               <span class="btn btn-sm btn-warning"
+                     ng-click="onEditSave(familyForm)">保存</span>
+                <span class="btn btn-sm btn-default"
+                      ng-click="onCancelEdit()">取消</span>
+            </div>
+        </form>
+    </div>
+</div>

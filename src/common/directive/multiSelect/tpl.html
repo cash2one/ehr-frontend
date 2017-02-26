@@ -1,0 +1,20 @@
+<div class="form-control directives-multiSelect" dropdown
+     is-open="status.isopen">
+    <div class="dropdown-toggle content"
+         data-toggle="dropdown" title="{{selectedNames}}">
+        {{selectedNames}}
+        <span class="caret"></span>
+    </div>
+    <div class="dropdown-menu" role="menu">
+        <ul class="list-group" stop-event="click">
+            <li class="list-group-item" id="{{item.id}}"
+                ng-repeat="item in options.items">
+                <input type="checkbox" ng-model="item.checked"
+                       ng-change="itemChange(item.checked)">
+                {{item.name}}
+            </li>
+        </ul>
+    </div>
+</div>
+
+

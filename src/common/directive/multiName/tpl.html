@@ -1,0 +1,17 @@
+<div class="directive-multiName">
+    <input type="text" ng-model="value"
+           name="{{name}}"
+           ng-keydown="onkeydown"
+           ng-disabled="disable"
+           ng-required="{{require}}"
+           input-validate="errorOption"
+           typeahead-append-to-body=false
+           placeholder="请输入邮箱前缀,并从下拉列表中选择" typeahead-editable="false"
+           typeahead-on-select="typeaheadOnSelect(item)"
+           typeahead="account for account in getAccounts($viewValue) | filter:{username:$viewValue}"
+           class="form-control"
+            >
+    <div item-set ng-model="listValue" options="itemSetOption"
+         class="names-container"></div>
+</div>
+

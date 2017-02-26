@@ -1,0 +1,75 @@
+<div class="apply-detail">
+    <h4>
+        审批详情-{{title}}
+    </h4>
+
+    <div class="opt-area" ng-show="showOptArea">
+        <form class="form-inline">
+            <label class="radio-inline">
+                <input type="radio" name="approveResult"
+                       ng-model="approveResult"
+                       value="2">通过
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="approveResult"
+                       ng-model="approveResult" value="3">拒绝&nbsp;
+            </label>
+
+            <div class="form-group">
+                <textarea class="form-control handle-detail" ng-model="detail"
+                          maxlength="500"
+                          placeholder="请输入审批意见(不超过500字)"></textarea>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-sm" ng-click="onSubmit()">提
+                    交
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="apply-content">
+        <div class="left">
+            <div ui-view></div>
+        </div>
+        <div class="right">
+            <div>审批记录</div>
+            <div>
+                <div ng-repeat="item in applyInfo.handleList">
+                    <p class="apply-name-line">
+                        <span class="name">
+                            <i class="glyphicon status-icon"
+                               ng-class="{'glyphicon-ok-sign blue':item.status==statusCode.TO_EXCUTE,
+                               'glyphicon-remove-sign red':item.status==statusCode.REJECT,
+                               'glyphicon-question-sign gray':(item.status==statusCode.TO_HANDLE||item.status==statusCode.IN_PROCESS)
+                               }"></i>
+                            &nbsp;{{item.name}}
+                        </span>
+                        <span class="date" ng-show="item.status==statusCode.TO_EXCUTE||item.status==statusCode.REJECT">
+                            {{item.handleTime | timeFormat}}</span>
+                    </p>
+
+                    <P>
+
+                    <div ng-show="!$last">
+
+                        <i class="up-arrow"
+                           ng-class="{'up-arrow-blue':(item.status==statusCode.TO_EXCUTE || item.status==statusCode.REJECT)}"></i>
+
+                        <div ng-class="{'arrow-line':!$last,
+                        'arrow-line-blue': (item.status==statusCode.TO_EXCUTE || item.status==statusCode.REJECT)}">
+
+                        <span class="status">
+                            {{item.status | applyHandleStatus}}
+                        </span>
+                            <span class="detail">
+                                {{item.detail}}
+                            </span>
+                        </div>
+                    </div>
+                    <span class="detail" ng-show="$last">发起审批</span>
+                    </P>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="admin-directive admin-directive-companyInfo">
+    <div class="wraper-show" ng-show="!editing">
+        <span class="time">
+            {{options.companyName}}
+        </span>
+        <span class="char">
+            {{options.departmentNames}}
+        </span>
+        <span class="btn btn-sm btn-warning" ng-click="onEdit()">编辑</span>
+        <span class="btn btn-sm btn-warning" ng-click="onDel()">删除</span>
+    </div>
+    <div class="wraper-edit" ng-show="editing">
+        <form class="form-horizontal" name="companyForm"
+              novalidate="novalidate">
+            <div class="form-group">
+                <label class="col-sm-1 control-label">
+                    公司:
+                </label>
+
+                <div class="col-sm-3">
+                    <select ng-model="options.companyId"
+                            class="form-control"
+                            name="company"
+                            required="true"
+                            ng-options="m.id as m.name for m in companys">
+                    </select>
+                </div>
+                <label class="col-sm-1 control-label">
+                    部门:
+                </label>
+
+                <div class="col-sm-3">
+                    <div multi-select ng-model="options.departmentIds"
+                         options="departmentsSelectOptions"></div>
+                </div>
+                <div class="col-sm-3">
+             <span class="btn btn-sm btn-warning"
+                   ng-click="onEditSave(companyForm)">确定</span>
+            <span class="btn btn-sm btn-default"
+                  ng-click="onCancelEdit()">取消</span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

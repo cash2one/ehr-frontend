@@ -1,0 +1,24 @@
+.directives-multiSelect {
+    position: relative;
+    .caret {
+        top: 14px;
+        right: 10px;
+        position: absolute;
+    }
+    .content {
+        &:extend(.ellipsis);
+        width: 240px;
+        height: 23px;
+        cursor: pointer;
+    }
+    .dropdown-menu {
+        width: 258px;
+    }
+    .list-group-item {
+        border: 0px;
+        border-top: 1px solid @gray2;
+    }
+    .list-group-item:first-child {
+        border-top: 0px solid @gray2;
+    }
+}

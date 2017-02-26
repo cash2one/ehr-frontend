@@ -1,0 +1,75 @@
+<div class="hr-opt-modFiveInsurance">
+    <div class="modal-header">
+        <button type="button" class="close"
+                ng-click="closeHandler()"
+                data-dismiss="modal"><span
+                aria-hidden="true">&times;</span><span
+                class="sr-only">Close</span>
+        </button>
+        <h4 class="modal-title">五险个人缴纳金额详细</h4>
+    </div>
+
+    <div class="modal-body ">
+        <form class="form-horizontal" role="form" novalidate
+              name="modFiveInsuranceForm">
+            <table class="table table-bordered table-salary">
+            <tr class="thead">
+                    <td>养老保险</td>
+                    <td>失业保险</td>
+                    <td>医疗保险</td>
+                    <td>工伤保险</td>
+                    <td>生育保险</td>
+                    <td>总计</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div
+                                input-control
+                                options="inputOptions.endowPer"
+                                ng-model="endowPer">
+                        </div>
+                    </td>
+                    <td>
+                        <div
+                                input-control
+                                options="inputOptions.unemployPer"
+                                ng-model="unemployPer">
+                        </div>
+                    </td>
+                    <td>
+                        <div
+                                input-control
+                                options="inputOptions.medicalPer"
+                                ng-model="medicalPer">
+                        </div>
+                    </td>
+                    <td>
+                        <div
+                                input-control
+                                options="inputOptions.injuryPer"
+                                ng-model="injuryPer">
+                        </div>
+                    </td>
+                    <td>
+                        <div
+                                input-control
+                                options="inputOptions.maternityPer"
+                                ng-model="maternityPer">
+                        </div>
+                    </td>
+                    <td class="sum">{{sumSocialSecurityPer}}</td>
+                </tr>
+            </table>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary"
+                        ng-click="save(modFiveInsuranceForm)">确认
+                </button>
+                <button type="button" class="btn btn-default"
+                        ng-click="closeHandler()"
+                        data-dismiss="modal">取消
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+

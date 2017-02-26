@@ -1,0 +1,1 @@
+define(["require","./app","./controller"],function(e){var t=e("./app");e("./controller"),t.config(["$stateProvider","$urlRouterProvider",function(e,t){e.state("home",{url:"/home",templateUrl:"src/module/home/tpl.html",controller:"homeCtrl"})}])});

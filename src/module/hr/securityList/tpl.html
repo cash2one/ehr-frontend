@@ -1,0 +1,34 @@
+<div class="hr-taxList">
+    <h5>
+        <span>社保缴纳名单查询</span>
+    </h5>
+
+    <form class="form-horizontal query-container" novalidate="novalidate">
+        <div class="row">
+            <div class="col-sm-3 control">
+                <label>社保缴纳城市:</label>
+                <select class="form-control" ng-model="query.city"
+                        ng-options="m.id as m.name for m in cityList">
+                </select>
+            </div>
+            <div class="col-sm-3 control">
+                <label>月份:</label>
+                <input class="form-control month" placeholder="yy-MM"
+                       type='month'
+                       max="{{monthMax}}"
+                       ng-model="query.month">
+            </div>
+            <div class="col-sm-1 control">
+                <button class="btn btn-primary" ng-click="onSearch()">查询
+                </button>
+            </div>
+        </div>
+    </form>
+    <div class="table-opt-area">
+        <a class="export" target="_blank" href="{{exportUrl}}">
+            导出
+        </a>
+    </div>
+    <div table-control options="tableOptions">
+    </div>
+</div>

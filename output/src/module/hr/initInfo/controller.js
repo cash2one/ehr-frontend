@@ -1,0 +1,1 @@
+define(["require","../app","module/config"],function(e){var t=e("../app"),n=e("module/config");t.controller("hrInitInfoCtrl",["$scope","$stateParams","adminRequest","hrRequest","number","$modalInstance",function(e,t,n,r,i,s){e.closeHandler=function(){s.dismiss()},e.getInitInfo=function(){r.getInitInfo({number:i}).then(function(t){e.info=t.data})},e.getInitInfo()}])});

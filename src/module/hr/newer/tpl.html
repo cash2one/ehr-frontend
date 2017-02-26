@@ -1,0 +1,219 @@
+<div class="hr-newer hr">
+<h5>
+    <span>{{title}}</span>
+        <span class="edit" ng-click="onEditClick()" ng-show="canEdit">
+            <i class="glyphicon glyphicon-pencil"></i>
+            编辑
+        </span>
+</h5>
+
+<form class="form-horizontal" name="newerEnterForm"
+      onkeydown="if(event.keyCode==13)return false;"
+      novalidate="novalidate">
+    <div class="content-container">
+        <div class="content-block">
+            <p class="sub-title">自然信息</p>
+
+            <div class="form-group">
+                <div input-control options="baseOptions.lawName"
+                     ng-model="lawName">
+                </div>
+                <div input-control options="baseOptions.name"
+                     ng-model="name">
+                </div>
+            </div>
+            <div class="form-group">
+                <div input-control options="baseOptions.namePinyin"
+                     ng-model="namePinyin">
+                </div>
+                <div input-control options="baseOptions.sex" ng-model="sex">
+                </div>
+            </div>
+            <div class="form-group">
+                <div input-control options="baseOptions.degree"
+                     ng-model="degree">
+                </div>
+                <div input-control options="baseOptions.idCardNumber"
+                     ng-model="idCardNumber">
+                </div>
+            </div>
+        </div>
+
+        <!---联系方式-->
+        <div class="content-block">
+            <p class="sub-title">联系方式</p>
+
+            <div class="form-group">
+                <div input-control options="contactOptions.mobile"
+                     ng-model="mobile">
+                </div>
+                <div input-control options="contactOptions.personalEmail"
+                     ng-model="personalEmail">
+                </div>
+            </div>
+        </div>
+
+
+        <!---基本信息-->
+        <div class="content-block">
+            <p class="sub-title">基本信息</p>
+
+            <div class="form-group">
+                <div input-control options="infoOptions.type"
+                     ng-model="type">
+                </div>
+                <div input-control options="infoOptions.leader"
+                     ng-model="leader">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div input-control options="infoOptions.structure"
+                     class=""
+                     ng-model="structure">
+                </div>
+                <div input-control options="infoOptions.level"
+                     ng-model="levelIndex">
+                </div>
+            </div>
+            <div class="form-group">
+                <div input-control options="infoOptions.position"
+                     ng-model="position">
+                </div>
+                <div input-control options="infoOptions.promiseEnterDate"
+                     ng-model="promiseEnterDate">
+                </div>
+            </div>
+            <div class="form-group">
+                <div input-control options="infoOptions.formalDate"
+                    ng-model="formalDate">
+                </div>
+                <div input-control options="infoOptions.contractCompany"
+                     ng-model="contractCompany">
+                </div>
+            </div>
+            <div class="form-group">
+                <div input-control options="infoOptions.socialSecurityCity"
+                     ng-model="socialSecurityCity">
+                </div>
+            </div>
+        </div>
+        <!---薪酬信息-->
+        <div class="content-block">
+            <p class="sub-title">薪酬信息</p>
+
+            <div class="form-group">
+                <div input-control options="salaryOptions.baseSalary"
+                     ng-model="baseSalary">
+                </div>
+                <div input-control
+                     options="salaryOptions.probationarySalary"
+                     ng-model="probationarySalary">
+                </div>
+            </div>
+            <div class="form-group">
+                <div input-control options="salaryOptions.socialSecurityBase"
+                     ng-model="socialSecurityBase">
+                </div>
+                <div input-control
+                     options="salaryOptions.houseFundBase"
+                     ng-model="houseFundBase">
+                </div>
+            </div>
+            <div five-base class="form-group" ng-show="needFiveBase">
+            </div>
+            <div class="form-group">
+                <div input-control
+                     options="salaryOptions.mobileSubsidy"
+                     ng-model="mobileSubsidy">
+                </div>
+                <div input-control options="salaryOptions.trafficSubsidy"
+                     ng-model="trafficSubsidy">
+                </div>
+            </div>
+            <div class="form-group">
+                <div input-control options="salaryOptions.salaryType"
+                     ng-model="salaryType">
+                </div>
+                <div input-control options="
+                salaryOptions.reportAddress"
+                     ng-model="reportAddress">
+                </div>
+            </div>
+
+        </div>
+        <!---其他信息-->
+        <div class="content-block">
+            <p class="sub-title">其他信息</p>
+
+            <div class="form-group">
+                <div input-control options="otherOptions.resumeStorageId"
+                     ng-model="resumeStorageId">
+                </div>
+                <div input-control options="otherOptions.pcType"
+                     ng-model="pcType">
+                </div>
+            </div>
+            <div class="form-group">
+                <div input-control options="otherOptions.recommendType"
+                     ng-model="recommendType">
+                </div>
+                <div input-control options="otherOptions.recommendDetail"
+                     ng-model="recommendDetail">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div input-control options="otherOptions.detail"
+                     ng-model="detail">
+                </div>
+            </div>
+        </div>
+        <div class="content-block" ng-show="isEditing && commited">
+            <div class="form-group">
+                <div input-control options="editOptions.reason"
+                     ng-model="reason">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="btn-area">
+        <div class="text-muted" ng-hide="isReadOnly">提示：
+            <span class="red">*</span>为保存,预览和提交的必填项，
+            <span class="blue">*</span>为提交的必填项，
+        </div>
+        <button class="btn btn-default btn-sm" type="submit"
+                ng-show="(!isReadOnly)"
+                ng-click="showOfferDetail(newerEnterForm)">预览
+        </button>
+        &nbsp;&nbsp;
+
+        <button class="btn btn-default btn-sm" type="submit"
+                ng-show="canSave && (!isReadOnly)"
+                ng-click="save(newerEnterForm)">保存
+        </button>
+        &nbsp;&nbsp;
+
+
+        <button class="btn btn-primary btn-sm" type="submit"
+                ng-hide="hideSubmit || isReadOnly"
+                ng-click="submit(newerEnterForm)">提交
+        </button>
+        &nbsp;&nbsp;
+
+
+        <button class="btn btn-warning btn-sm pointer"
+                ng-click="desertClick()"
+                ng-show="showAbandonBtn">
+            放弃
+        </button>
+    </div>
+</form>
+<div class="bg-danger" ng-show="showAbandonInfo">
+    <span class="red">该候选人已放弃!</span>
+
+    <p class="reason">原因：{{abandonReason | abandonReason}}
+        &nbsp;&nbsp;{{abandonDetail}}
+    </p>
+</div>
+</div>

@@ -1,0 +1,38 @@
+@import "yearAward/style";
+@import "salaryChange/style";
+.home {
+    .glyphicon {
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 24px;
+        color: @blue1;
+    }
+    .block {
+        cursor: pointer;
+        height: 115px;
+        padding: 10px;
+        font-size: 10px;
+        line-height: 1.4;
+        text-align: center;
+        background-color: @gray5;
+        border: 1px solid @white;
+        span {
+            color: @black;
+            font-size: 14px;
+        }
+    }
+    .block:hover {
+        background: @blue1;
+        text-decoration: inherit;
+        .glyphicon {
+            color: @white;
+        }
+        span {
+            color: @white;
+        }
+    }
+    .container {
+        padding-left: 0px;
+    }
+}

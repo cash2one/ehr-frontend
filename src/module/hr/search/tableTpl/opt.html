@@ -1,0 +1,69 @@
+<div class="inline-opt-area">
+    <span class="opt"
+          ng-if="$parent.$parent.$parent.$parent.isRecruitHRSearch">
+        <a ng-click="$parent.$parent.$parent.$parent.$parent.viewInfo(item.number,'newerSearch')"
+           class="pointer"
+                >查看/修改</a>
+    </span>
+    <span
+            class="opt"
+            ng-if="$parent.$parent.$parent.$parent.isHRSearch || $parent.$parent.$parent.$parent.isToJoinSearch">
+        <a ng-click="$parent.$parent.$parent.$parent.$parent.viewInfo(item.number,'search')"
+           class="pointer"
+                >查看/修改</a>
+    </span>
+    <span class="opt"
+          ng-if="$parent.$parent.$parent.$parent.entryName == 'subordinate.search'">
+        <a
+                class="pointer"
+                ng-click="$parent.$parent.$parent.$parent.$parent.viewInfo(item.number,'subordinateSearch')"
+                >查看/修改</a>
+    </span>
+    <span class="opt"
+          ng-if="$parent.$parent.$parent.$parent.entryName == 'subordinate.ownerSearch'">
+        <a
+                class="pointer"
+                ng-click="$parent.$parent.$parent.$parent.$parent.viewInfo(item.number,'subordinateSearch')"
+                >查看/修改</a>
+    </span>
+    <span class="opt"
+          ng-if="false">
+        <a ng-click="$parent.$parent.$parent.$parent.$parent.setPermission(item.number)"
+           class="pointer"
+                >权限配置</a>
+    </span>
+    <span class="opt"
+          ng-if="$parent.$parent.$parent.$parent.entryName == 'admin.search'">
+        <a ng-click="$parent.$parent.$parent.$parent.$parent.modKeyInfo(item)"
+           class="pointer"
+                >修改</a>
+    </span>
+    <span class="opt" ng-show="item.canSeeInitInfo">
+    <a ng-click="$parent.$parent.$parent.$parent.viewInitInfo(item.number)"
+       class="pointer"
+            >查看初始信息</a
+    </span>
+    <span class="opt" ng-show="item.canAddAssetCode">
+    <a ng-click="$parent.$parent.$parent.$parent.addAssetCodeClick(item)"
+       class="pointer"
+            >录入资产编码</a>
+    </span>
+    <span class="opt" ng-show="item.canSeeJoinWork">
+
+       <a ng-click="$parent.$parent.$parent.$parent.joinWorkClick(item.number)"
+          class="pointer"
+               >入职</a>
+    </span>
+
+    <span class="opt" ng-show="item.canSeeAbandon">
+       <a ng-click="$parent.$parent.$parent.$parent.abandonClick(item.number)"
+          class="pointer"
+               >放弃</a>
+    </span>
+
+    <span class="opt" ng-show="item.canSeeSubAccount">
+       <a ng-click="$parent.$parent.$parent.$parent.viewSubAccountClick(item)"
+          class="pointer"
+               >下属</a>
+    </span>
+</div>

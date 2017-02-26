@@ -1,0 +1,35 @@
+<form class="form-horizontal" name="leaveJobForm"
+      novalidate="novalidate">
+    <div class="content-container hr-dimission">
+        <div class="form-group">
+            <div class="col-sm-2">离职原因：</div>
+            <div class="col-sm-4">{{reason}}</div>
+            <div input-control options="inputOptions.leaveDate"
+                 ng-model="leaveDate">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div input-control options="inputOptions.reasonFromHr"
+                 ng-model="reasonFromHr">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-2">备注：</div>
+            <div class="col-sm-10">{{leaveDetail}}</div>
+        </div>
+        <div class="form-group">
+            <div input-control options="inputOptions.leaveSignBill"
+                 ng-model="leaveSignBill">
+            </div>
+        </div>
+        <div class="form-group" ng-if="canEditLeaveInfo">
+            <div class="col-sm-12 center">
+                <button class="btn btn-primary btn-sm" type="submit"
+                        ng-click="ok(leaveJobForm)">提交
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+</div>

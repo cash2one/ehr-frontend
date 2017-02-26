@@ -1,0 +1,18 @@
+<div class="apply-list">
+    <ul class="nav nav-tabs">
+        <li role="presentation"
+            ng-class="{active: $state.includes('apply.list.toHandle')}">
+            <a
+                    ui-sref="apply.list.toHandle.all">待审批</a>
+        </li>
+        <li role="presentation"
+            ng-class="{active: $state.includes('apply.list.hasHandled')}">
+            <a ui-sref="apply.list.hasHandled.all">已审批</a>
+        </li>
+        <li role="presentation"
+            ng-class="{active: $state.includes('apply.list.promoteMyself')}">
+            <a ui-sref="apply.list.promoteMyself.all">我发起的审批</a>
+        </li>
+    </ul>
+    <div ui-view></div>
+</div>

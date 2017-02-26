@@ -1,0 +1,68 @@
+<div class="admin-directive admin-directive-structureInfo">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 name">组织名称:</div>
+            <div class="col-sm-9 content" title="{{info.name}}">{{info.name}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 name">上级组织:</div>
+            <div class="col-sm-9 content" title="{{info.parentStructureName}}">
+                {{info.parentStructureName}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 name">负责人:</div>
+            <div class="col-sm-9 content" title="{{info.leaderName}}">
+                {{info.ownerName}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 name">招聘HR:</div>
+            <div class="col-sm-9 content" title="{{info.ZPHRName.join(',')}}">
+                {{info.recruitHRName.join(',')}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 name">薪酬HR:</div>
+            <div class="col-sm-9 content" title="{{info.XCHRName.join(',')}}">
+                {{info.salaryHRName.join(',')}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 name">员工关系HR:</div>
+            <div class="col-sm-9 content" title="{{info.GXHRName.join(',')}}">
+                {{info.relationshipHRName.join(',')}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 name">HRBP:</div>
+            <div class="col-sm-9 content"
+                 title="{{info.businessPartnerHRName.join(',')}}">
+                {{info.businessPartnerHRName.join(',')}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 name">培训HR:</div>
+            <div class="col-sm-9 content"
+                 title="{{info.trainingHRName.join(',')}}">
+                {{info.trainingHRName.join(',')}}
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 name">资产管理员:</div>
+            <div class="col-sm-9 content"
+                 title="{{info.assetManagerName.join(',')}}">
+                {{info.assetManagerName.join(',')}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 name">IT负责人:</div>
+            <div class="col-sm-9 content"
+                 title="{{info.itOwnerName.join(',')}}">
+                {{info.itOwnerName.join(',')}}
+            </div>
+        </div>
+    </div>
+</div>

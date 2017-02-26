@@ -1,0 +1,67 @@
+<form class="form-horizontal hr-workInfo" name="workInfoForm"
+      novalidate="novalidate">
+    <div class="content-container">
+        <div ng-show="canEditWorkInfo && !isAgent">
+            <span class="edit" ng-click="onEdit()">
+            <i class="glyphicon glyphicon-pencil"></i>
+            编辑
+            </span>
+        </div>
+        <div class="form-group" ng-show="!isAgent">
+            <div class="col-sm-2">员工类型：</div>
+            <div class="col-sm-4">{{type|type}}</div>
+            <div input-control options="workOptions.contractCompany"
+                 ng-model="contractCompany">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-2">直属领导：</div>
+            <div class="col-sm-4">{{leader}}</div>
+            <div class="col-sm-2">组织架构：</div>
+            <div class="col-sm-4">{{structureName}}</div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-2">等级：</div>
+            <div class="col-sm-4">{{level}}</div>
+            <div class="col-sm-2">职位名称：</div>
+            <div class="col-sm-4">{{positionName}}</div>
+        </div>
+        <div class="form-group" ng-show="!isAgent">
+            <div input-control options="workOptions.office"
+                 ng-model="office">
+            </div>
+            <div input-control options="workOptions.sit"
+                 ng-model="sit">
+            </div>
+        </div>
+        <div class="form-group" ng-show="!isAgent">
+            <div input-control options="workOptions.socialSecurityCity"
+                 ng-model="socialSecurityCity">
+            </div>
+            <div input-control options="workOptions.icCardNumber"
+                 ng-model="icCardNumber">
+            </div>
+        </div>
+        <div class="form-group" ng-show="!isAgent">
+            <div input-control options="workOptions.remotePunchCard"
+                 ng-model="remotePunchCard">
+            </div>
+            <div input-control options="workOptions.requireCheckTime"
+                 ng-model="requireCheckTime" ng-show="isPunchCardNode">
+            </div>
+        </div>
+        <div class="form-group">
+            <div input-control options="workOptions.workEmail"
+                ng-model="workEmail">
+            </div>
+        </div>
+
+        <div class="form-group" ng-show="canEditWorkInfo && !isReadOnly">
+            <div class="col-sm-12 center">
+                <button class="btn btn-sm btn-primary"
+                        ng-click="saveWorkInfo(workInfoForm)">保存
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

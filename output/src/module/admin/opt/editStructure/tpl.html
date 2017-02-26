@@ -1,0 +1,142 @@
+<div class="hr-opt-editStructure">
+    <div class="modal-header">
+        <button type="button" class="close"
+                ng-click="closeHandler()"
+                data-dismiss="modal"><span
+                aria-hidden="true">&times;</span><span
+                class="sr-only">Close</span>
+        </button>
+        <h4 class="modal-title">{{title}}</h4>
+    </div>
+
+    <div class="modal-body ">
+        <form class="form-horizontal" role="form" novalidate
+              name="editStructureForm">
+            <div class="form-group" ng-show="showName">
+                <div input-control options="inputOptions.name"
+                     ng-model="name">
+                </div>
+                <div input-control options="inputOptions.parentStructure"
+                     ng-model="parentStructure" ng-show="showParentStructure">
+                </div>
+            </div>
+            <div class="form-group" ng-show="showName">
+                <div input-control options="inputOptions.shortName"
+                     ng-model="shortName">
+                </div>
+                <div input-control options="
+                inputOptions.numberPrefix"
+                     ng-model="numberPrefix">
+                </div>
+            </div>
+            <hr>
+            <p class="sub-title">基本信息</p>
+
+            <div class="form-group">
+                <div input-control options="inputOptions.isKeyNode"
+                     ng-model="isKeyNode">
+                </div>
+                <div input-control options="inputOptions.calendar"
+                     ng-model="calendar">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div input-control options="inputOptions.mailSuffix"
+                     ng-model="mailSuffix">
+                </div>
+                <div input-control options="
+                inputOptions.lowestSalary"
+                     ng-model="lowestSalary">
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="isKeyNode">
+                <div input-control
+                     ng-show="isKeyNode" options="inputOptions.isPunchCard"
+                     ng-model="isPunchCard">
+                </div>
+            </div>
+            <div class="form-group" ng-show="isPunchCard && isKeyNode">
+                <div input-control options="inputOptions.reception"
+                     ng-model="reception">
+                </div>
+                <div input-control options="inputOptions.punchDevice"
+                     ng-model="punchDevice">
+                </div>
+            </div>
+            <div class="form-group" ng-show="isKeyNode">
+                <div input-control options="inputOptions.socialSecurityCity"
+                     ng-model="socialSecurityCity">
+                </div>
+                <div input-control options="inputOptions.mealSubsidy"
+                     ng-model="mealSubsidy">
+                </div>
+            </div>
+            <div class="form-group" ng-show="isKeyNode">
+                <div input-control options="inputOptions.taxLocal"
+                     ng-model="taxLocal">
+                </div>
+                <div input-control options="inputOptions.isWelfareDefault"
+                     ng-model="isWelfareDefault">
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="isKeyNode">
+                <div input-control options="inputOptions.levelTemplate"
+                     ng-model="levelTemplate">
+                </div>
+                <div input-control options="inputOptions.isGroupNode"
+                     ng-model="isGroupNode">
+                </div>
+            </div>
+
+            <hr>
+            <p class="sub-title">人员配置</p>
+
+            <div class="form-group">
+                <div input-control options="inputOptions.owner"
+                     ng-model="owner">
+                </div>
+                <div input-control options="inputOptions.businessPartnerHR"
+                     ng-model="businessPartnerHR">
+                </div>
+            </div>
+            <div class="form-group">
+                <div input-control options="inputOptions.recruitHR"
+                     ng-model="recruitHR">
+                </div>
+                <div input-control options="inputOptions.salaryHR"
+                     ng-model="salaryHR">
+                </div>
+            </div>
+            <div class="form-group">
+                <div input-control options="inputOptions.relationshipHR"
+                     ng-model="relationshipHR">
+                </div>
+                <div input-control options="inputOptions.trainingHR"
+                     ng-model="trainingHR">
+                </div>
+            </div>
+            <div class="form-group">
+                <div input-control options="inputOptions.assetManager"
+                     ng-model="assetManager">
+                </div>
+                <div input-control options="inputOptions.itOwner"
+                     ng-model="itOwner">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary"
+                        ng-click="save(editStructureForm)">保存
+                </button>
+                <button type="button" class="btn btn-default"
+                        ng-click="closeHandler()"
+                        data-dismiss="modal">关闭
+                </button>
+            </div>
+        </form>
+    </div>
+
+</div>
+

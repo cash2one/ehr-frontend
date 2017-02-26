@@ -1,0 +1,1 @@
+define(["require"],function(e){return{HR_TYPE:{HRBP:"HRBP",RECRUIT_HR:"ZPHR",SALARY_HR:"XCHR",RELATION_HR:"GXHR",TRAIN_HR:"PXHR"}}});

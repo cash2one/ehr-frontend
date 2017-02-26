@@ -1,0 +1,1 @@
+define(["require","module/config"],function(e){return function(t){var n=e("module/config");return{reason:{required:!1,displayName:"变动原因",maxLength:200,name:"reason",formName:t,placeholder:"少于200个字",mode:"textarea"}}}});

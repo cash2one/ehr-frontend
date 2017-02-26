@@ -1,0 +1,21 @@
+<div class="inline-opt-area">
+        <span class="opt" ng-show="$parent.$parent.$parent.$parent.showPassBtn">
+        <a ng-click="$parent.$parent.$parent.$parent.onSinglePassClick(item)"
+           class="pointer"
+                >通过
+        </a>
+        </span>
+    &nbsp;&nbsp;
+        <span class="opt"
+              ng-show="$parent.$parent.$parent.$parent.showRejectBtn">
+        <a ng-click="$parent.$parent.$parent.$parent.onSingleRejectClick(item)"
+           class="pointer"
+                >拒绝</a>
+        </span>
+    <span class="opt"
+          ng-show="item.canBeCanceled && $parent.$parent.$parent.$parent.showCancelBtn">
+        <a ng-click="$parent.$parent.$parent.$parent.onSingleCancelClick(item)"
+           class="pointer"
+                >撤回</a>
+    </span>
+</div>

@@ -1,0 +1,10 @@
+<div
+    class="real-sum" popover-html-unsafe="{{item.realSumHtml}}"
+    popover-trigger="mouseenter"
+    popover-title="绩效工资详情"
+    popover-placement="left"
+    popover-append-to-body="true"
+    ng-class="{'red':item.realSumAll<0}">
+        {{item.realSumAll}}
+</div>
+

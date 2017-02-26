@@ -1,0 +1,6 @@
+<div ng-class="{'red':item.houseFundPer<0}">
+    <div input-control
+         options="mainScope['houseFundPerOptions'+$parent.$parent.$index]"
+         ng-model="item.houseFundPer">
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="directive-commonInfo container-fluid" style="padding: 10px">
+    <div class="row">
+        <div class="col-sm-1 head-img-wrap" ng-if="commonInfo.headImgUrl">
+            <img ng-src="{{commonInfo.headImgUrl}}" class="head-img"
+                 ng-class="{'pointer': canEditHeadImg}"
+                    />
+            <i ng-show="canEditHeadImg"
+               ng-click="editClick()"
+               class="glyphicon glyphicon-edit edit"></i>
+        </div>
+        <div class="col-sm-1 no-head-img" ng-if="!commonInfo.headImgUrl"
+             ng-click="uploadClick()">
+            <span class="upload-tip">上传照片</span>
+        </div>
+        <div class="char">
+             姓名：
+            {{commonInfo.name}}
+        </div>
+        <div class="char">
+             性别：
+            {{commonInfo.sex|sex}}
+        </div>
+        <div class="char">
+             员工编号：
+            {{commonInfo.displayNumber}}
+        </div>
+        <div class="char">
+             员工状态：
+            {{commonInfo.status|staffStatus}}
+        </div>
+        <div class="char" ng-show="commonInfo.type != 21">
+             员工类型：
+            {{commonInfo.type|type}}
+        </div>
+        <div class="char">
+             法律名：
+            {{commonInfo.lawName}}
+        </div>
+    </div>
+</div>

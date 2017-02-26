@@ -1,0 +1,77 @@
+<div class="apply-opt">
+    <div class="apply-opt-changeStructure">
+        <div class="modal-header">
+            <button type="button" class="close"
+                    ng-click="closeHandler()"
+                    data-dismiss="modal"><span
+                    aria-hidden="true">&times;</span><span
+                    class="sr-only">Close</span>
+            </button>
+            <h4 class="modal-title">人事调动申请</h4>
+        </div>
+
+        <div class="modal-body ">
+            <h5>
+                员工信息
+            </h5>
+
+            <div class="container" apply-staff-info number="{{number}}">
+            </div>
+            <h5>
+                人事调动
+            </h5>
+
+            <form class="form-horizontal" role="form" novalidate
+                  name="changeStructureForm">
+                <div class="form-group">
+                    <div class="col-sm-2">组织架构:</div>
+                    <div class="col-sm-3" title="{{workInfo.structureName}}">{{workInfo.structureName}}</div>
+                    <div input-control options="inputOptions.structure"
+                         ng-model="structure">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-2">直属领导:</div>
+                    <div class="col-sm-3">{{workInfo.leaderName}}</div>
+                    <div input-control options="inputOptions.leader"
+                         ng-model="leader">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-2">等级:</div>
+                    <div class="col-sm-3">{{workInfo.level|emptyFormat}}</div>
+                    <div input-control options="inputOptions.level"
+                         ng-model="level">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-2">职位名称:</div>
+                    <div class="col-sm-3">{{workInfo.positionName|emptyFormat}}</div>
+                    <div input-control options="inputOptions.position"
+                         ng-model="position">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div input-control options="inputOptions.executeDate"
+                         ng-model="executeDate">
+                    </div>
+                </div>
+                <div class="form-group detail">
+                    <div input-control options="inputOptions.reason"
+                         ng-model="reason">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary"
+                            ng-click="save(changeStructureForm)">提交
+                    </button>
+                    <button type="button" class="btn btn-default"
+                            ng-click="closeHandler()"
+                            data-dismiss="modal">关闭
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

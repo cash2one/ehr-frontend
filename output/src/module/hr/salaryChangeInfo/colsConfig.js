@@ -1,0 +1,1 @@
+define(["require"],function(e){return function(e){return[{field:"date",displayName:"时间",filter:"dateFormat"},{field:"content",displayName:"变动内容",cellTpl:"src/module/hr/salaryChangeInfo/tableTpl/content.html"}]}});

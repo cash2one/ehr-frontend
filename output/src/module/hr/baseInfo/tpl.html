@@ -1,0 +1,237 @@
+<div class="content-container hr-baseInfo">
+<div class="content-block">
+    <p class="sub-title info-title">个人信息-1
+    <span ng-if="canEditBaseInfo" class="clearFloat">
+            <span class="edit" ng-click="$parent.onEdit()">
+            <i class="glyphicon glyphicon-pencil"></i>
+            编辑
+            </span>
+    </span>
+    </p>
+
+    <form class="form-horizontal" name="baseInfoForm"
+          novalidate="novalidate">
+        <div class="form-group" ng-show="!isAgent">
+            <div input-control options="baseOptions.hometown"
+                 ng-model="hometown">
+            </div>
+            <div input-control options="baseOptions.ethnic"
+                 ng-model="ethnic">
+            </div>
+        </div>
+        <div class="form-group" ng-show="!isAgent">
+            <div input-control options="baseOptions.politicalStatus"
+                 ng-model="politicalStatus">
+            </div>
+            <div input-control options="baseOptions.birthplace"
+                 ng-model="birthplace">
+            </div>
+        </div>
+        <div class="form-group">
+            <div input-control options="baseOptions.accountLocation"
+                 ng-model="accountLocation">
+            </div>
+            <div input-control options="baseOptions.degree"
+                 ng-model="degree">
+            </div>
+        </div>
+        <div class="form-group" ng-show="!isAgent">
+            <div input-control options="baseOptions.religion"
+                 ng-model="religion">
+            </div>
+            <div input-control options="baseOptions.maritalStatus"
+                 ng-model="maritalStatus">
+            </div>
+        </div>
+        <div class="form-group" ng-show="!isAgent">
+            <div input-control options="baseOptions.citizenship"
+                 ng-model="citizenship">
+            </div>
+            <div input-control options="baseOptions.accountType"
+                 ng-model="accountType">
+            </div>
+        </div>
+        <div class="form-group">
+            <div input-control options="baseOptions.isForeign"
+                 ng-model="isForeign">
+            </div>
+            <div input-control options="baseOptions.idCardNumber"
+                 ng-model="idCardNumber">
+            </div>
+        </div>
+        <div class="form-group" ng-show="!isAgent">
+            <div input-control options="baseOptions.beginWorkTime"
+                 ng-model="beginWorkTime">
+            </div>
+            <div input-control options="baseOptions.isGraduate"
+                 ng-model="isGraduate">
+            </div>
+        </div>
+        <div class="form-group" style="position: relative">
+            <div input-control options="baseOptions.mobile"
+                 ng-model="mobile">
+            </div>
+            <span class="btn btn-warning btn-sm mod-mobile"
+                  ng-click="modMobileClick()" ng-show="showModMobile">修改</span>
+            <div input-control options="baseOptions.birthday"
+                 ng-model="birthday">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div input-control options="baseOptions.enterTime"
+                 ng-model="enterTime">
+            </div>
+            <div input-control options="baseOptions.beginWorkTime"
+                 ng-model="beginWorkTime" ng-show="isAgent">
+            </div>
+            <div input-control options="baseOptions.contractEndDate"
+                 ng-model="contractEndDate" ng-show="!isAgent">
+            </div>
+        </div>
+        <div class="form-group" ng-show="!isAgent && staffType == 1">
+            <div input-control options="baseOptions.formalDate"
+                 ng-model="formalDate">
+            </div>
+        </div>
+
+        <div class="form-group id-card upload-file" ng-show="canDownLoadFile">
+            <div input-control options="baseOptions.idCardAndContract"
+                 ng-model="idCardAndContract">
+            </div>
+                <span class="red" ng-show="canEditBaseInfo">
+                </span>
+        </div>
+        <div class="form-group id-card upload-file" ng-show="canDownLoadFile">
+            <div input-control options="baseOptions.idCardUpload"
+                 ng-model="idCardUpload">
+            </div>
+                <span class="red" ng-show="canEditBaseInfo">
+                </span>
+        </div>
+        <div class="form-group limit-agreement upload-file"
+             ng-show="canDownLoadFile">
+            <div input-control options="baseOptions.limitAgreement"
+                 ng-model="limitAgreement">
+            </div>
+            <span class="red" ng-show="canEditBaseInfo"></span>
+        </div>
+        <div class="form-group upload-file"
+             ng-show="canDownLoadFile">
+            <div input-control options="baseOptions.resume"
+                 ng-model="resume">
+            </div>
+            <span class="red" ng-show="canEditBaseInfo"></span>
+        </div>
+        <div class="form-group" ng-show="!isReadOnly">
+            <div class="col-sm-12 center">
+                <button class="btn btn-sm btn-primary"
+                        ng-click="saveBaseInfo(baseInfoForm)">保存
+                </button>
+                <span class="btn btn-sm btn-default"
+                        ng-click="cancelPart1(baseInfoForm)">取消
+                </span>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="">
+    <p class="sub-title">个人信息-2
+    <span ng-if="canEditWorkEduInfo" class="clearFloat">
+            <span class="edit" ng-click="$parent.onEditPart2()">
+            <i class="glyphicon glyphicon-pencil"></i>
+            编辑
+            </span>
+    </span>
+    </p>
+
+    <div>
+        教育经历
+        <span class="add" ng-click="educationAdd.addClick()"
+              ng-show="!isReadOnly2">
+            <i class="glyphicon glyphicon-plus"></i>
+            添加</span>
+    </div>
+    <div class="wraper-edit" ng-show="addingEducation">
+        <form class="form-horizontal" name="educationAddForm"
+              novalidate="novalidate">
+            <div class="form-group">
+                <div input-control options="educationAddOptions.start"
+                     ng-model="educationAdd.start">
+                </div>
+                <div input-control options="educationAddOptions.end"
+                     ng-model="educationAdd.end">
+                </div>
+            </div>
+            <div class="form-group">
+                <div input-control options="educationAddOptions.school"
+                     ng-model="educationAdd.school">
+                </div>
+                <div input-control options="educationAddOptions.discipline"
+                     ng-model="educationAdd.discipline">
+                </div>
+            </div>
+            <div class="form-group">
+                <div input-control options="educationAddOptions.degree"
+                     ng-model="educationAdd.degree">
+                </div>
+            </div>
+        <span class="btn btn-sm btn-warning"
+              ng-click="educationAdd.onSave(educationAddForm)">添加</span>
+            <span class="btn btn-sm btn-default"
+                  ng-click="educationAdd.onCancel()">取消</span>
+        </form>
+    </div>
+
+    <div education-info
+         ng-repeat="item in educationList" ng-model="item"></div>
+
+    <div>
+        <div class="work-title">
+            工作经历
+        <span class="add" ng-click="workExpAdd.addClick()"
+              ng-show="!isReadOnly2">
+            <i
+                    class="glyphicon glyphicon-plus"></i>添加</span>
+        </div>
+    </div>
+    <div class="wraper-edit" ng-show="addingWorkExp">
+        <form class="form-horizontal" name="workExpAddForm"
+              novalidate="novalidate">
+            <div class="form-group">
+                <div input-control options="workExpAddOptions.start"
+                     ng-model="workExpAdd.start">
+                </div>
+                <div input-control options="workExpAddOptions.end"
+                     ng-model="workExpAdd.end">
+                </div>
+            </div>
+            <div class="form-group">
+                <div input-control options="workExpAddOptions.company"
+                     ng-model="workExpAdd.company">
+                </div>
+                <div input-control options="workExpAddOptions.position"
+                     ng-model="workExpAdd.position">
+                </div>
+            </div>
+        <span class="btn btn-sm btn-warning"
+              ng-click="workExpAdd.onSave(workExpAddForm)">添加</span>
+            <span class="btn btn-sm btn-default"
+                  ng-click="workExpAdd.onCancel()">取消</span>
+        </form>
+    </div>
+    <div work-info
+         ng-repeat="item in workExpList" ng-model="item">
+    </div>
+
+    <form class="form-horizontal">
+        <div class="form-group" ng-show="!isReadOnly2" style="margin: 10px 0 0">
+            <div class="col-sm-12 center">
+                <button class="btn btn-sm btn-default"
+                        ng-click="cancelPart2()">取消
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+</div>

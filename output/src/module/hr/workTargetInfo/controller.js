@@ -1,0 +1,1 @@
+define(["require","../app","module/config","module/codeConfig","../config"],function(e){function s(){}var t=e("../app"),n=e("module/config"),r=e("module/codeConfig"),i=e("../config");t.controller("hrWorkTargetInfoCtrl",s)});

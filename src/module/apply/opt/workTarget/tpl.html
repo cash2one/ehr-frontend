@@ -1,0 +1,53 @@
+<div class="apply-opt">
+    <div class="apply-opt-transFullTime">
+        <div class="modal-header">
+            <button type="button" class="close"
+                    ng-click="closeHandler()"
+                    data-dismiss="modal"><span
+                    aria-hidden="true">&times;</span><span
+                    class="sr-only">Close</span>
+            </button>
+            <h4 class="modal-title">
+                试用期工作目标设定
+            </h4>
+        </div>
+
+        <div class="modal-body ">
+            <h5>
+                员工信息
+            </h5>
+
+            <div class="container" apply-staff-info number="{{number}}">
+            </div>
+            <h5>
+                试用期工作目标
+            </h5>
+
+            <form class="form-horizontal" role="form" novalidate
+                  name="workTargetForm">
+                <div class="form-group detail">
+                    <div input-control options="inputOptions.detail"
+                         ng-model="detail">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span class="red" style="margin-left:82px">*</span>
+                    <input type="checkbox" ng-model="isReadStaffManual">
+                    <span >本人已详细阅读</span>
+                    <a href="http://www.baijiahulian.com/policy/Pages/%E8%B7%9F%E8%B0%81%E5%AD%A6%E5%91%98%E5%B7%A5%E6%89%8B%E5%86%8C.pdf" target="_blank">《员工手册2016年2月1日版》</a>
+                    <span>，并熟知和充分理解《员工手册》的全部内容，对其条款无异议，并承诺遵照执行。</span>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary"
+                            ng-click="save(workTargetForm)">提交
+                    </button>
+                    <button type="button" class="btn btn-default"
+                            ng-click="closeHandler()"
+                            data-dismiss="modal">关闭
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,1 @@
+define(["require"],function(e){return angular.module("app.subordinate",["ui.router"])});

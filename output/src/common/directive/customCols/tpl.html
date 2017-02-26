@@ -1,0 +1,11 @@
+<div dropdown is-open="status.isopen" class="directives-custom-cols">
+    <div dropdown-toggle class="btn btn-default">
+       {{options.name}}
+    </div>
+    <div class="dropdown-menu" stop-event="click"  role="menu">
+        <div checkbox-group options="options"
+             confirm-handler='confirmBtnClickHandler(error)'
+             cancel-handler='cancelBtnClickHandler()'
+                ></div>
+    </div>
+</div>

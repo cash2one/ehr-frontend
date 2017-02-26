@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en" ng-app="ehrLogin">
+<head>
+    <meta charset="utf-8">
+    <title>eHR管理系统登录</title>
+    <link href="src/dep/bootstrap/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+    <script>
+        function isPC() {
+            var platForm = window.navigator.platform;
+            if (platForm.indexOf('Win') == 0
+                    || platForm.indexOf('Mac') == 0) {
+                return true;
+            }
+            return false;
+        }
+
+        if (isPC() && window.navigator.userAgent.indexOf('Chrome') == -1) {
+            window.location.href = 'tip.html';
+        }
+    </script>
+    <style type="text/css">
+        body {
+        }
+
+        .login-title {
+            padding-bottom: 6px;
+            width: 100px;
+            border-bottom: 3px solid #0399d0;
+            font-size: 17px;
+
+        }
+
+        .login-content {
+
+        }
+
+        .login-main {
+            background: #ffffff;
+            border-radius: 3px;
+            box-shadow: 0px 0px 5px #d8d8d8;
+            padding: 30px;
+            padding-bottom: 15px;
+        }
+
+        .bg-ground {
+            width: 100%;
+            height: 100%;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            top: 0;
+            z-index: -1;
+        }
+
+        .char {
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .forget-password {
+            color: #777;
+            float: right;
+            cursor: pointer;
+        }
+
+        .password-btn button {
+            width: 100px;
+        }
+
+        .login-hr {
+            margin: 10px 0px;
+            margin-top: 0px;
+        }
+
+        .top-container {
+            top: 0;
+            position: absolute;
+            width: 100%;
+            height: 90px;
+            z-index: 10;
+        }
+
+        .top-container-content {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .bottom-container {
+            position: absolute;
+            bottom: 0px;
+            margin: 0 auto;
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            z-index: 10;
+        }
+
+        @-webkit-keyframes bgSpread {
+        0 {
+            background-size: 100%;
+        }
+        50% {
+            background-size: 150%;
+        }
+        100% {
+            background-size: 100%;
+        }
+        }
+        .login-container {
+            position: absolute;
+            top: 89px;
+            bottom: 50px;
+            text-align: center;
+            width: 100%;
+            background-image: url(src/resource/img/bg.jpg);
+            background-size: 100%;
+            z-index: 20;
+        }
+
+        #login {
+            height: 320px;
+            width: 100%;
+            position: absolute;
+            top: 27%;
+            text-align: center;
+            color: #555;
+        }
+
+        .login-main {
+            width: 430px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-container">
+    <div class="top-container-content">
+        <img src="src/resource/img/indexLogo.png"/>
+    </div>
+</div>
+<div class="login-container">
+    <div>
+        <div id="login" ng-controller="login"
+             style="">
+            <form class="form-horizontal login-main"
+                  ng-show="!isForgetPasswordPage">
+                <div class="login-title">eHR系统</div>
+                <hr class="login-hr">
+                <div class="form-group login-content">
+                    <label class="col-sm-3 control-label"
+                           for="input-username">用户名:</label>
+
+                    <div class="col-sm-8">
+                        <input type="text" id="input-username"
+                               placeholder="请输入邮箱前缀" class="form-control"
+                               ng-model="username">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"
+                           for="input-password">密码:</label>
+
+                    <div class="col-sm-8">
+                        <input type="password" id="input-password"
+                               class="form-control"
+                               placeholder="密码" ng-model="passwordValue">
+                        <span class="forget-password"
+                              ng-click="forgetPasswordClick()">忘记密码?</span>
+                    </div>
+                </div>
+                <div class="form-group" ng-show="error != ''">
+                    <div class="col-sm-3">
+                    </div>
+                    <div class="col-sm-8">
+                        <p class="bg-danger" ng-show="error != ''"
+                           ng-bind="error"></p>
+                    </div>
+                </div>
+                <div class="form-group" style="text-align: center">
+                    <div class="col-sm-3">
+                    </div>
+                    <div class="col-sm-8">
+                        <button type="button" class="btn btn-primary"
+                                shizi-keydown
+                                keydown="keydownHandler" style="width:100%;"
+                                ng-click="submit()">登录
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+
+            <form class="form-horizontal login-main hide" id="password-form"
+                  ng-show="isForgetPasswordPage">
+                <div ng-show="password.step ==1">
+                    <div class="form-group login-content">
+                        <label class="col-sm-3 control-label">用户名</label>
+
+                        <div class="col-sm-8">
+                            <input type="text"
+                                   placeholder="请输入邮箱名前缀" class="form-control"
+                                   ng-model="password.userName">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">手机号</label>
+
+                        <div class="col-sm-8">
+                            <input class="form-control"
+                                   placeholder="手机号" ng-model="password.mobile">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">身份证号</label>
+
+                        <div class="col-sm-8">
+                            <input class="form-control"
+                                   placeholder="身份证号"
+                                   ng-model="password.idCardNumber">
+                        </div>
+                    </div>
+                </div>
+                <div ng-show="password.step ==2">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">手机验证码</label>
+
+                        <div class="col-sm-8">
+                            <input class="form-control"
+                                   placeholder="手机验证码"
+                                   ng-model="password.code">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">邮箱验证码</label>
+
+                        <div class="col-sm-8">
+                            <input class="form-control"
+                                   placeholder="直属领导邮箱验证码"
+                                   ng-model="password.emailCode">
+                        </div>
+                    </div>
+                </div>
+                <div ng-show="password.step ==3">
+                    <div class="form-group">
+                        <label class="col-sm-12">
+                            重置密码成功，新密码将会以短信形式发送至手机，请注意查收</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-3">
+                    </div>
+                    <div class="col-sm-8">
+                        <p class="bg-danger" ng-show="password.error != ''"
+                           ng-bind="password.error"></p>
+                    </div>
+                </div>
+                <div class="form-group" style="text-align: center">
+                    <div class="col-sm-12 password-btn">
+                        <div ng-show="password.step ==1">
+                            <button type="button" class="btn btn-primary"
+                                    ng-click="password.validateInfo()">验证身份
+                            </button>
+                        </div>
+                        <div ng-show="password.step ==2">
+                            <button type="button" class="btn btn-primary"
+                                    ng-click="password.resetPassword()">确认
+                            </button>
+                        </div>
+                        <div ng-show="password.step ==3">
+                            <button type="button" class="btn btn-primary"
+                                    ng-click="password.returnBack()">返回
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="char">
+                <img src="src/resource/img/char.png"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bottom-container">
+    Copyright © 2014 - 2016 跟谁学版权所有
+</div>
+<script src="src/dep/angular-1.3.16/angular.min.js"></script>
+<script src="src/dep/jquery/dist/jquery.min.js"></script>
+<script>
+var ehrLogin = angular.module('ehrLogin', []);
+ehrLogin.config(['$httpProvider',
+    function ($httpProvider) {
+        $httpProvider.defaults.headers.post = {
+            'Content-Type': 'application/json'
+        }
+    }
+]);
+ehrLogin.directive('shiziKeydown', function () {
+    return {
+        restrict: 'EA',
+        scope: true,
+        link: function (scope, element, attrs, ctrl) {
+            $('body').keydown(scope[attrs.keydown]);
+        }
+    };
+});
+ehrLogin.factory('ajaxService', ['$http', function ($http) {
+            function processRequrestFailed(info) {
+                alert(info.message);
+            }
+
+            var doRequest = function (path, param) {
+                var defer = $.Deferred();
+                var config = {
+                    method: param.method || 'POST',
+                    url: path
+                };
+                param.method == 'GET' ? (config.params = param.data)
+                        : (config.data = param.data);
+                $http(config).success(function (data) {
+                    if (data.status == 200) {
+                        defer.resolve(data);
+                    } else if (data.status == 500) {
+                        defer.reject(data);
+                        processRequrestFailed({
+                            message: '系统异常'
+                        });
+                    } else if (data.status == 700) {
+                        window.location.href = '/main.do';
+                    } else if (data.status == 400) {
+                        defer.reject(data);
+                        processRequrestFailed(data.error);
+                    } else if (data.status == 800) {
+                        processRequrestFailed({
+                            message: '无权限操作'
+                        });
+                    } else {
+                        defer.reject(data);
+                    }
+                }).error(function (error, status) {
+                    defer.reject({
+                        error: error,
+                        status: status
+                    });
+                    processRequrestFailed({
+                        message: '系统异常'
+                    });
+                });
+                return defer;
+            };
+
+            return {
+                /**
+                 * 发送请求
+                 * @param {string} path 请求的path
+                 * @param {Object} param 请求的参数
+                 */
+                send: function (path, param) {
+                    return doRequest(path, param);
+                }
+            };
+        }]
+);
+ehrLogin.controller('login', function ($scope, $http, ajaxService) {
+    $('#password-form').removeClass('hide');
+    var main = 'main.html';
+    $scope.error = '';
+
+    /**
+     * 忘记密码点击
+     */
+    $scope.forgetPasswordClick = function () {
+        $scope.isForgetPasswordPage = true;
+        $scope.password.step = 1;
+    };
+
+
+    /**
+     * 键盘按下
+     * @param event
+     */
+    $scope.keydownHandler = function (event) {
+        var keyCode = event.keyCode;
+        if (keyCode == 13) {
+            $scope.submit();
+        }
+    };
+
+    /**
+     * 提交
+     */
+    $scope.submit = function () {
+        $http({
+            method: 'POST',
+            url: '/GET/user/login.json',
+            data: {
+                username: $scope.username,
+                password: $scope.passwordValue
+            }
+        })
+                .success(function (data, status, headers, config) {
+                    if (data.status == 200) {
+                        // 成功以后跳转到系统主页
+                        window.location = main;
+                    } else {
+                        $scope.error = '用户名或密码错误';
+                    }
+
+                })
+                .error(function () {
+                    $scope.error = '网络异常';
+                })
+    }
+
+    $scope.password = {
+        /**
+         * 验证信息
+         */
+        validateInfo: function () {
+            if (!$scope.password.userName) {
+                $scope.password.error = '请输入用户名';
+                return;
+            }
+            if (!$scope.password.mobile) {
+                $scope.password.error = '请输入手机号';
+                return;
+            }
+            if (!$scope.password.idCardNumber) {
+                $scope.password.error = '请输入身份证号';
+                return;
+            }
+            ajaxService.send('/GET/staff/verifyInfo.json', {
+                data: {
+                    userName: $scope.password.userName,
+                    idCardNumber: $scope.password.idCardNumber,
+                    mobile: $scope.password.mobile
+                }
+            }).then(function (res) {
+                if (res.data == 1) {
+                    alert(
+                                    '基本信息验证通过，' +
+                                    '请注意查收手机短信验证码，' +
+                                    '并向直属领导索要邮箱验证码。' +
+                                    '如不能获取验证码，' +
+                                    '请发送邮件至ehr@baijiahulian.com'
+                    );
+                    $scope.password.step = 2; // 第二步
+                    $scope.password.error = '';
+                } else {
+                    $scope.password.error =
+                            '信息输入错误,请重新输入,' +
+                            '如有疑问，' +
+                            '请联系HR人员核对信息或者联系运维人员';
+                }
+            });
+
+        },
+
+        /**
+         * 确认修改密码
+         */
+        resetPassword: function () {
+            if (!$scope.password.code) {
+                $scope.password.error = '请输入手机校验码';
+                return;
+            }
+            if (!$scope.password.emailCode) {
+                $scope.password.error = '请输入邮箱校验码';
+                return;
+            }
+            ajaxService.send('/MOD/staff/password.json', {
+                data: {
+                    userName: $scope.password.userName,
+                    code: $scope.password.code,
+                    emailCode: $scope.password.emailCode
+                }
+            }).then(function (res) {
+                $scope.password.step = 3;
+            });
+        },
+
+        /**
+         * 返回
+         */
+        returnBack: function () {
+            $scope.isForgetPasswordPage = false;
+        }
+    };
+})
+</script>
+</body>
+</html>

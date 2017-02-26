@@ -1,0 +1,39 @@
+<div class="hr-opt-editStructure">
+    <div class="modal-header">
+        <button type="button" class="close"
+                ng-click="closeHandler()"
+                data-dismiss="modal"><span
+                aria-hidden="true">&times;</span><span
+                class="sr-only">Close</span>
+        </button>
+        <h4 class="modal-title">{{title}}</h4>
+    </div>
+
+    <div class="modal-body ">
+        <form class="form-horizontal" role="form" novalidate
+              name="editKeyInfoForm">
+            <div class="form-group">
+                <div input-control options="inputOptions.lawName"
+                     ng-model="lawName">
+                </div>
+            </div>
+            <div class="form-group">
+                <div input-control options="inputOptions.sex"
+                     ng-model="sex">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary"
+                        ng-click="save(editKeyInfoForm)">保存
+                </button>
+                <button type="button" class="btn btn-default"
+                        ng-click="closeHandler()"
+                        data-dismiss="modal">关闭
+                </button>
+            </div>
+        </form>
+    </div>
+
+</div>
+

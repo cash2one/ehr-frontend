@@ -1,0 +1,174 @@
+<div class="home">
+    <h5>
+        <span>快捷入口</span>
+    </h5>
+
+    <div class="container">
+        <div class="row">
+            <a class="col-xs-3 block" ng-click="selfInfoClick()"
+                    >
+                <i class="glyphicon glyphicon-user"></i>
+                <span>我的信息</span>
+            </a>
+            <a class="col-xs-3 block"
+               ui-sref="subordinate.search" ng-show="isManager">
+                <i class="glyphicon glyphicon-search"></i>
+                <span>下属信息</span>
+            </a>
+            <a class="col-xs-3 block"
+               ui-sref="subordinate.ownerSearch" ng-show="isStructureOwner">
+                <i class="glyphicon glyphicon-search"></i>
+                <span>部门员工信息</span>
+            </a>
+            <a class="col-xs-3 block"
+               ui-sref="apply.list.toHandle.all">
+                <i class="glyphicon glyphicon-pencil"></i>
+                <span>我的审批</span>
+            </a>
+            <a class="col-xs-3 block" ui-sref="hr.newer" ng-show="isRecruitHR">
+                <i class="glyphicon glyphicon-circle-arrow-right"></i>
+                <span>发送offer</span>
+            </a>
+            <a class="col-xs-3 block"
+               ui-sref="hr.newerSearch" ng-show="isRecruitHR">
+                <i class="glyphicon glyphicon-search"></i>
+                <span>offer信息查询</span>
+            </a>
+            <a class="col-xs-3 block"
+               ui-sref="hr.abandonSearch" ng-show="isRecruitHR">
+                <i class="glyphicon glyphicon-search"></i>
+                <span>取消offer</span>
+            </a>
+            <a class="col-xs-3 block"
+               ui-sref="hr.rejoin" ng-show="isRecruitHR">
+                <i class="glyphicon glyphicon-refresh"></i>
+                <span>员工再入职</span>
+            </a>
+            <a class="col-xs-3 block"
+               ui-sref="hr.toJoinSearch" ng-show="isRelationshipHR && !isAgent">
+                <i class="glyphicon glyphicon-search"></i>
+                <span>办理入职手续</span>
+            </a>
+            <a class="col-xs-3 block"
+               ui-sref="hr.toJoinSearchAgent" ng-show="isRelationshipHR && isAgent">
+                <i class="glyphicon glyphicon-search"></i>
+                <span>办理入职手续</span>
+            </a>
+            <a class="col-xs-3 block" ui-sref="hr.salaryHRSearch"
+               ng-show="isSalaryHR">
+                <i class="glyphicon glyphicon-search"></i>
+                <span>员工信息查询-薪酬</span>
+            </a>
+
+            <a class="col-xs-3 block" ui-sref="hr.relationshipHRSearch"
+               ng-show="isRelationshipHR">
+                <i class="glyphicon glyphicon-search"></i>
+                <span>员工信息查询-员工关系</span>
+            </a>
+
+            <a class="col-xs-3 block"
+               ui-sref="hr.rejoinAgent" ng-show="isRelationshipHR && isAgent">
+                <i class="glyphicon glyphicon-refresh"></i>
+                <span>员工再入职</span>
+            </a>
+
+            <a class="col-xs-3 block" ui-sref="hr.trainingHRSearch"
+               ng-show="isTrainingHR">
+                <i class="glyphicon glyphicon-search"></i>
+                <span>员工信息查询-培训</span>
+            </a>
+
+            <a class="col-xs-3 block" ui-sref="hr.businessPartnerHRSearch"
+               ng-show="isHRBP">
+                <i class="glyphicon glyphicon-search"></i>
+                <span>员工信息查询-HRBP</span>
+            </a>
+
+
+            <a class="col-xs-3 block" ui-sref="hr.salaryBillSearch"
+               ng-show="isSalaryHR">
+                <i class="glyphicon glyphicon-search"></i>
+                <span>应发工资名单</span>
+            </a>
+
+            <a class="col-xs-3 block" ui-sref="hr.securityList"
+               ng-show="isSalaryHR">
+                <i class="glyphicon glyphicon-search"></i>
+                <span>社保缴纳名单</span>
+            </a>
+            <a class="col-xs-3 block" ui-sref="hr.taxList"
+               ng-show="isSalaryHR">
+                <i class="glyphicon glyphicon-search"></i>
+                <span>个税名单</span>
+            </a>
+            <a class="col-xs-3 block" ui-sref="hr.tempCard.all"
+               ng-show="isReception">
+                <i class="glyphicon glyphicon-search"></i>
+                <span>前台工作</span>
+            </a>
+            <a class="col-xs-3 block" ui-sref="hr.assetManagerSearch"
+               ng-show="isAssetManager">
+                <i class="glyphicon glyphicon-search"></i>
+                <span>资产管理</span>
+            </a>
+            <a class="col-xs-3 block" ui-sref="hr.itManagerSearch"
+               ng-show="isItManager">
+                <i class="glyphicon glyphicon-search"></i>
+                <span>IT管理</span>
+            </a>
+            <a class="col-xs-3 block" ui-sref="admin.structure"
+               ng-show="isAdmin">
+                <i class="glyphicon glyphicon-list"></i>
+                <span>组织架构</span>
+            </a>
+            <a class="col-xs-3 block" ui-sref="admin.contractCompany"
+               ng-show="isAdmin">
+                <i class="glyphicon glyphicon-align-justify"></i>
+                <span>签约公司配置</span>
+            </a>
+            <a class="col-xs-3 block" ui-sref="admin.socialSecurityCity"
+               ng-show="isAdmin">
+                <i class="glyphicon glyphicon-align-justify"></i>
+                <span>社保缴纳城市配置</span>
+            </a>
+            <a class="col-xs-3 block" ui-sref="admin.office"
+               ng-show="isAdmin">
+                <i class="glyphicon glyphicon-align-justify"></i>
+                <span>办公地点配置</span>
+            </a>
+            <a class="col-xs-3 block" ui-sref="admin.holiday"
+               ng-show="isAdmin">
+                <i class="glyphicon glyphicon-calendar"></i>
+                <span>工作日配置</span>
+            </a>
+            <a class="col-xs-3 block"
+               ng-click="yearAwardClick()"
+               ng-show="isAdmin">
+                <i class="glyphicon glyphicon-usd"></i>
+                <span>年终奖导入</span>
+            </a>
+            <a class="col-xs-3 block"
+               ng-click="salaryChangeClick()"
+               ng-show="isAdmin">
+                <i class="glyphicon glyphicon-import"></i>
+                <span>薪酬变更导入</span>
+            </a>
+            <a class="col-xs-3 block"
+               ng-click="baseChangeClick()"
+               ng-show="isAdmin">
+                <i class="glyphicon glyphicon-import"></i>
+                <span>五险一金基数变更导入</span>
+            </a>
+            <a class="col-xs-3 block" ui-sref="admin.disability"
+               ng-show="isAdmin">
+                <i class="glyphicon glyphicon-align-justify"></i>
+                <span>残疾员工名单</span>
+            </a>
+            <a class="col-xs-3 block" ui-sref="admin.level"
+               ng-show="isAdmin">
+                <i class="glyphicon glyphicon-menu-hamburger"></i>
+                <span>职级体系配置</span>
+            </a>
+        </div>
+    </div>
+</div>

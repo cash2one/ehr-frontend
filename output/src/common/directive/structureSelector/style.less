@@ -1,0 +1,19 @@
+.directives-structureSelector {
+    position: relative;
+    display: inline-block;
+    .caret {
+        top: 14px;
+        right: 10px;
+        position: absolute;
+    }
+    .content {
+        &:extend(.ellipsis);
+        width: 100%;
+        cursor: pointer;
+    }
+    .dropdown-menu {
+        width: 400px;
+        overflow-x: scroll;
+        min-height: 60px;
+    }
+}

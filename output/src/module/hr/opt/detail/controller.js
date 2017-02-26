@@ -1,0 +1,1 @@
+define(["require","../../app","module/config","module/codeConfig"],function(e){function s(e,t,n){function r(){}function s(){n.dismiss(i)}e.closeHandler=s,e.url=t,r()}var t=e("../../app"),n=e("module/config"),r=e("module/codeConfig"),i={};t.controller("hrOptDetailController",s),s.$inject=["$scope","url","$modalInstance"]});

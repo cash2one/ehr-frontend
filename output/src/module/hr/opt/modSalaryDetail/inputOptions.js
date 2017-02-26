@@ -1,0 +1,1 @@
+define(["require","module/config","module/codeConfig","module/nameConfig"],function(e){return function(t,n,r){var i=e("module/config"),s=e("module/codeConfig"),o=e("module/nameConfig"),u={detail:{required:!1,displayName:"",maxLength:200,name:"detail",formName:t,placeholder:"少于200个字",errorDisplayName:"备注",mode:"textarea"}};return u}});

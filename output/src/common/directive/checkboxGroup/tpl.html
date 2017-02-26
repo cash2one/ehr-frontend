@@ -1,0 +1,38 @@
+<div class="directives-checkbox-group">
+    <div class="form-inline group">
+        <div class="form-group">
+            <input name="checkboxGroupType" type="radio" value="default"
+                   ng-model="checkboxGroupType" ng-click="defaultClick()">
+            <label class="form-label">
+                默认指标
+            </label>
+        </div>
+        <div class="form-group">
+            <input name="checkboxGroupType"  type="radio" value="selfDefine"
+                   ng-click="selfDefineClick()"
+                   ng-model="checkboxGroupType">
+            <label class="form-label">
+                自定义指标
+            </label>
+        </div>
+    </div>
+    <div class="form-inline content">
+        <div ng-repeat="item in options.data" class="group">
+            <div class="inline group-name">{{item.name}}:</div>
+            <ul class="inline list-inline item-area">
+                <li ng-repeat="data in item.items" class="item">
+                    <input type="checkbox" value="{{data.key}}" class="input"
+                           ng-change="itemClick(data.key,data.value)"
+                           ng-model="data.checked"/>
+                    {{data.value}}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="btn-wrap">
+        <p ng-click="confirmHandler({error: error})" class="btn btn-warning btn-sm">确定</p>
+        <p ng-click="cancelHandler()"
+           class="btn btn-default btn-sm">取消</p>
+        <span class="red">{{error}}</span>
+    </div>
+</div>

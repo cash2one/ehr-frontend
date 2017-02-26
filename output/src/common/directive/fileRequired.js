@@ -1,0 +1,1 @@
+define(["require","../app"],function(e){var t=e("../app");t.directive("fileRequired",["util",function(e){return{restrict:"A",require:"ngModel",link:function(e,t,n,r){r.$validators.fileRequired=function(e,t){return!n.required||!r.$isEmpty(t)},n.$observe("required",function(){r.$validate()})}}}])});

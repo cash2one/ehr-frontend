@@ -1,0 +1,54 @@
+.admin-structure {
+    position: relative;
+    border: 1px solid @gray2;
+    .tree-node:hover {
+        .opt {
+            display: inline-block;
+        }
+    }
+    .opt {
+        display: none;
+    }
+    .node-name {
+        position: relative;
+    }
+    .tree-light {
+        min-height: 700px;
+    }
+    .tree-node {
+        i {
+            font-size: 16px;
+        }
+    }
+    .node-header {
+    }
+    .structure-info {
+        width: 400px;
+        float: right;
+        right: 10px;
+        top: 15px;
+        background: @yellow5;
+        border: 1px solid @yellow6;
+        padding: 10px;
+        .content {
+            &:extend(.ellipsis);
+        }
+        .name {
+            padding: 0px;
+            width: 120px;
+            text-align: right;
+        }
+        .row {
+            line-height: 30px;
+        }
+    }
+    .tree-container {
+        border-right: 1px solid @gray2;
+        float: left;
+        width: 788px;
+        overflow: auto;
+    }
+    .disabled {
+        color: #d8d8d8;
+    }
+}

@@ -1,0 +1,85 @@
+<div class="apply-directive-staffInfo container">
+    <div class="row">
+        <div class="col-sm-2">
+            姓名:
+        </div>
+        <div class="col-sm-4">
+            {{userCommonInfo.name}}
+        </div>
+        <div class="col-sm-2">
+            员工编号:
+        </div>
+        <div class="col-sm-4">
+            {{userCommonInfo.displayNumber}}
+        </div>
+    </div>
+    <div class="row" ng-show="!isChangeProbation">
+        <div class="col-sm-2">
+            性别:
+        </div>
+        <div class="col-sm-4">
+            {{userCommonInfo.sex|sex}}
+        </div>
+        <div class="col-sm-2">
+            邮箱地址:
+        </div>
+        <div class="col-sm-4">
+            {{userCommonInfo.email}}
+        </div>
+    </div>
+    <div class="row" ng-show="!isChangeProbation">
+        <div class="col-sm-2" ng-hide="isAgent">
+            员工类型:
+        </div>
+        <div class="col-sm-4" ng-hide="isAgent">
+            {{userCommonInfo.type | type}}
+        </div>
+        <div class="col-sm-2" ng-show="isAgent">
+            入职时间:
+        </div>
+        <div class="col-sm-4" ng-show="isAgent">
+            {{userCommonInfo.enterTime|dateFormat}}
+            <strong ng-if="userCommonInfo.formalTime" >
+            (转正日期：{{userCommonInfo.formalTime|dateFormat}})
+            </strong>
+        </div>
+
+        <div class="col-sm-2">
+            组织架构:
+        </div>
+        <div class="col-sm-4" title="{{userCommonInfo.structureName}}">
+            {{userCommonInfo.structureName}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            等级:
+        </div>
+        <div class="col-sm-4">
+            {{userCommonInfo.level}}
+        </div>
+        <div class="col-sm-2">
+            职位名称:
+        </div>
+        <div class="col-sm-4">
+            {{userCommonInfo.positionName}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            直属领导:
+        </div>
+        <div class="col-sm-4">
+            {{userCommonInfo.leaderName}}
+        </div>
+        <div class="col-sm-2" ng-hide="isAgent">
+            入职时间:
+        </div>
+        <div class="col-sm-4" ng-hide="isAgent">
+            {{userCommonInfo.enterTime|dateFormat}}
+            <strong ng-if="userCommonInfo.formalTime && showFormalDate" >
+            (转正日期：{{userCommonInfo.formalTime|dateFormat}})
+            </strong>
+        </div>
+    </div>
+</div>

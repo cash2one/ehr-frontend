@@ -1,0 +1,40 @@
+<h5>
+    <span>等级模板配置</span>
+</h5>
+<div class="admin">
+    <div class="admin-level row">
+        <div class="col-sm-6 border-right">
+            <div class="table-opt-area">
+                <button class="btn btn-sm btn-primary"
+                        ng-click="add({})">新增模板
+                </button>
+            </div>
+            <div options="tableOptions" table-control></div>
+        </div>
+        <div class="col-sm-6">
+            <div class="cur-name" >{{curName}}</div>
+            <div class="form-inline ">
+                <div>
+                    <span single-select
+                          ng-model="type"
+                          click-handler='typeChangeHandler(val,index)'
+                          values="types">
+                    </span>
+                </div>
+            </div>
+
+            <div level-info
+                 ng-repeat="item in levelList"
+                 options="item">
+            </div>
+            <div
+                    ng-include="'src/module/admin/level/levelAdd.html'"></div>
+            <div class="add-wrap">
+                <span class="add" ng-click="levelAdd.addClick()">
+                    <i class="glyphicon glyphicon-plus"></i>
+                    添加等级
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

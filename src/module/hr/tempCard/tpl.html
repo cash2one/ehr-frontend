@@ -1,0 +1,21 @@
+<div class="tempCard-list">
+    <h5>
+        <span>临时卡管理</span>
+    </h5>
+    <ul class="nav nav-tabs">
+        <li role="presentation"
+            ng-class="{active: $state.includes('hr.tempCard.all')}">
+            <a
+                    ui-sref="hr.tempCard.all">全部 ( {{count.all}} )</a>
+        </li>
+        <li role="presentation"
+            ng-class="{active: $state.includes('hr.tempCard.canBorrow')}">
+            <a ui-sref="hr.tempCard.canBorrow">可借出 ( {{count.canBorrow}} )</a>
+        </li>
+        <li role="presentation"
+            ng-class="{active: $state.includes('hr.tempCard.hadBorrow')}">
+            <a ui-sref="hr.tempCard.hadBorrow">已借出( {{count.hadBorrow}} )</a>
+        </li>
+    </ul>
+    <div ui-view></div>
+</div>

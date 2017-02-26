@@ -1,0 +1,21 @@
+<div class="detail">
+    <div ng-if="item.isEdit && (!mainScope.onlyViewMode)">
+        <i class="glyphicon glyphicon-pencil detail-edit"
+           ng-click="mainScope.onDetailClick($parent.$parent.$parent.$index)">
+        </i>
+        <a ng-click="mainScope.onDetailClick($parent.$parent.$parent.$parent.$index)"
+           popover="{{item.detail}}"
+           popover-trigger="mouseenter" popover-placement="top"
+           popover-append-to-body="true"
+           class="detail-content">
+            {{item.detail}}
+        </a>
+    </div>
+    <span ng-if="!item.isEdit || mainScope.onlyViewMode"
+          popover="{{item.detail}}"
+          popover-trigger="mouseenter" popover-placement="top"
+          popover-append-to-body="true"
+          class="detail-content">
+        {{item.detail}}
+    </span>
+</div>

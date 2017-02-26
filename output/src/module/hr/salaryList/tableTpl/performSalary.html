@@ -1,0 +1,13 @@
+<div  class="perform-salary"
+      ng-class="{'red':item.performLeaveSalary<0}"
+      popover-html-unsafe="{{item.performSalaryHtml}}"
+      popover-trigger="click"
+      popover-title="绩效详情"
+      popover-append-to-body="true"
+      popover-placement="right"
+      >
+    <div input-control
+         options="mainScope['performSalaryOptions'+$parent.$parent.$parent.$index]"
+         ng-model="item.performSalary" >
+    </div>
+</div>

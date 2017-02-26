@@ -1,0 +1,254 @@
+<div class="apply-detail-offerInfos form-horizontal">
+    <h5>
+        部门人员信息
+    </h5>
+
+    <div class="content-container" style="padding-bottom: 0" ng-hide="userInfo.isAgent">
+        <table class="table table-bordered table-condensed">
+            <tr>
+                <th>&nbsp;</th>
+                <th>正式员工</th>
+                <th>实习生</th>
+                <th>劳务</th>
+            </tr>
+            <tr ng-repeat="item in headCount">
+                <td>{{item.structureName}}</td>
+                <td>{{item.regularCount}}</td>
+                <td>{{item.traineeCount}}</td>
+                <td>{{item.labourserviceCount}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="content-container" style="padding-bottom: 0" ng-show="userInfo.isAgent">
+        <table class="table table-bordered table-condensed table-agent">
+            <tr>
+                <td>{{structureName}}</td>
+                <td>{{agentCount}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <h5>
+        候选人详细信息
+    </h5>
+
+    <div class="content-container">
+        <!--非合作和半自然信息 -->
+        <div class="content-block" ng-hide="userInfo.isAgent">
+            <p class="sub-title">自然信息</p>
+
+            <div class="form-group">
+                <div class="col-sm-2">法律名:</div>
+                <div class="col-sm-4">{{offerInfos.lawName}}</div>
+                <div class="col-sm-2">常用名:</div>
+                <div class="col-sm-4">{{offerInfos.name}}</div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2">姓名拼音:</div>
+                <div class="col-sm-4">{{offerInfos.namePinyin}}</div>
+                <div class="col-sm-2">性别:</div>
+                <div class="col-sm-4">{{offerInfos.sex|sex}}</div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2">学历:</div>
+                <div class="col-sm-4">{{offerInfos.degree|degree}}</div>
+                <div class="col-sm-2">身份证号:</div>
+                <div class="col-sm-4">{{offerInfos.idCardNumber}}</div>
+            </div>
+        </div>
+        <!-- 合作伙伴自然信息-->
+        <div class="content-block" ng-show="userInfo.isAgent">
+            <p class="sub-title">自然信息</p>
+
+            <div class="form-group">
+                <div class="col-sm-2">法律名:</div>
+                <div class="col-sm-4">{{offerInfos.lawName}}</div>
+                <div class="col-sm-2">性别:</div>
+                <div class="col-sm-4">{{offerInfos.sex|sex}}</div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2">学历:</div>
+                <div class="col-sm-4">{{offerInfos.degree|degree}}</div>
+                <div class="col-sm-2">身份证号:</div>
+                <div class="col-sm-4">{{offerInfos.idCardNumber}}</div>
+            </div>
+        </div>
+
+        <!---联系方式-->
+        <div class="content-block">
+            <p class="sub-title">联系方式</p>
+
+            <div class="form-group">
+                <div class="col-sm-2">手机号:</div>
+                <div class="col-sm-4">{{offerInfos.mobile}}</div>
+                <div class="col-sm-2">邮箱:</div>
+                <div class="col-sm-4">{{offerInfos.personalEmail}}</div>
+            </div>
+        </div>
+
+
+        <!---非合作伙伴基本信息-->
+        <div class="content-block" ng-hide="userInfo.isAgent">
+            <p class="sub-title">基本信息</p>
+
+            <div class="form-group">
+                <div class="col-sm-2">员工类型:</div>
+                <div class="col-sm-4">{{offerInfos.type | type}}</div>
+                <div class="col-sm-2">直属领导:</div>
+                <div class="col-sm-4">{{offerInfos.leaderName}}</div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-2">组织架构:</div>
+                <div class="col-sm-4">{{offerInfos.structureName}}</div>
+                <div class="col-sm-2">等级:</div>
+                <div class="col-sm-4">{{offerInfos.level}}</div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2">职位:</div>
+                <div class="col-sm-4">{{offerInfos.positionName}}</div>
+                <div class="col-sm-2">入职时间:</div>
+                <div class="col-sm-4">{{offerInfos.promiseEnterDate|dateFormat}}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2">转正日期:</div>
+                <div class="col-sm-4">
+                    {{offerInfos.formalDate|dateFormat}}
+                </div>
+                <div class="col-sm-2">合同签约公司:</div>
+                <div class="col-sm-4">{{offerInfos.contractCompanyName}}</div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-2">社保缴纳城市:</div>
+                <div class="col-sm-4">{{offerInfos.socialSecurityCityName}}
+                </div>
+            </div>
+
+        </div>
+
+        <!---合作伙伴基本信息-->
+        <div class="content-block" ng-show="userInfo.isAgent">
+            <p class="sub-title">基本信息</p>
+
+            <div class="form-group">
+                <div class="col-sm-2">入职时间:</div>
+                <div class="col-sm-4">{{offerInfos.promiseEnterDate|dateFormat}}
+                </div>
+                <div class="col-sm-2">直属领导:</div>
+                <div class="col-sm-4">{{offerInfos.leaderName}}</div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-2">组织架构:</div>
+                <div class="col-sm-4">{{offerInfos.structureName}}</div>
+                <div class="col-sm-2">等级:</div>
+                <div class="col-sm-4">{{offerInfos.level}}</div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2">职位:</div>
+                <div class="col-sm-4">{{offerInfos.positionName}}</div>
+            </div>
+        </div>
+
+
+
+        <!---薪酬信息-->
+        <div class="content-block" ng-hide="userInfo.isAgent" >
+            <p class="sub-title">薪酬信息</p>
+
+            <div class="form-group">
+                <div class="col-sm-2">基本工资:</div>
+                <div class="col-sm-4">{{offerInfos.baseSalary|salary}}</div>
+                <div class="col-sm-2">试用期基本工资:</div>
+                <div class="col-sm-4">
+                    {{offerInfos.probationarySalary|salary}}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2">社保缴纳基数：</div>
+                <div class="col-sm-4">
+                    {{offerInfos.socialSecurityBase|unit:'元'}}
+                </div>
+                <div class="col-sm-2">公积金缴纳基数：</div>
+                <div class="col-sm-4">{{offerInfos.houseFundBase|unit:'元'}}
+                </div>
+            </div>
+            <div class="form-group" ng-show="needFiveBase">
+                <table width="100%" class="table1">
+                    <tr class="thead">
+                        <td class="td1">&nbsp;</td>
+                        <td>养老</td>
+                        <td>失业</td>
+                        <td>医疗</td>
+                        <td>工伤</td>
+                        <td>生育</td>
+                    </tr>
+                    <tr>
+                        <td class="col1 td1">
+                            五险基数：
+                        </td>
+                        <td>
+                            {{offerInfos.endowBase|unit:'元'}}
+                        </td>
+                        <td>
+                            {{offerInfos.unemployBase|unit:'元'}}
+                        </td>
+                        <td>
+                            {{offerInfos.medicalBase|unit:'元'}}
+                        </td>
+                        <td>
+                            {{offerInfos.injuryBase|unit:'元'}}
+                        </td>
+                        <td>
+                            {{offerInfos.maternityBase|unit:'元'}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2">通讯补贴：</div>
+                <div class="col-sm-4">{{offerInfos.mobileSubsidy|salary}}</div>
+                <div class="col-sm-2">交通补贴：</div>
+                <div class="col-sm-4">{{offerInfos.trafficSubsidy|salary}}</div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2">工资类型:</div>
+                <div class="col-sm-4">{{offerInfos.salaryType|salaryType}}
+                </div>
+            </div>
+        </div>
+        <!---其他信息-->
+        <div class="content-block">
+            <p class="sub-title">其他信息</p>
+
+            <div class="form-group">
+                <div class="col-sm-2">电子简历:</div>
+                <div class="col-sm-4">
+                    <a href="{{offerInfos.resumeUrl}}"
+                       ng-show="offerInfos.resumeUrl"
+                       target="_blank">
+                        下载
+                    </a>
+                </div>
+                <div class="col-sm-2" ng-hide="userInfo.isAgent">配备电脑:</div>
+                <div class="col-sm-4" ng-hide="userInfo.isAgent">{{offerInfos.pcType | pcType}}</div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2">入职推荐途径:</div>
+                <div class="col-sm-4">{{offerInfos.recommendType|
+                    recommendType}}
+                </div>
+                <div class="col-sm-2">推荐详情:</div>
+                <div class="col-sm-4">{{offerInfos.recommendDetail}}</div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-2">备注:</div>
+                <div class="col-sm-8">{{offerInfos.detail}}</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="home-salaryChange">
+    <div class="modal-header">
+        <button type="button" class="close"
+                ng-click="closeHandler()"
+                data-dismiss="modal"><span
+                aria-hidden="true">&times;</span><span
+                class="sr-only">Close</span>
+        </button>
+        <h4 class="modal-title">薪酬变更信息导入</h4>
+    </div>
+
+    <div class="modal-body ">
+        <form>
+            <label for="salary-change-upload" class="pointer">
+                <i class="glyphicon glyphicon-upload blue"></i>
+                上传文件
+            </label>
+            <input id="salary-change-upload" type="file"  class="hide"
+                   onchange="angular.element(this).scope().fileChange(this)"
+                    >
+            </label>
+        </form>
+    </div>
+</div>
+

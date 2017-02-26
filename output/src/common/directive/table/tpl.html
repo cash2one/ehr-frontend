@@ -1,0 +1,81 @@
+<div class="directive-table">
+    <div ng-class="{'body-scroll': options.bodyScroll}">
+        <div class="header" ng-show="options.totalCount">
+            共 <span class="count">{{options.totalCount}}</span> 条
+        </div>
+        <div class="table-area">
+            <table class="table table-striped table-bordered">
+                <!--两行表头-->
+                <tbody ng-if="options.hasTwoHead" class="tbody-head">
+                    <tr>
+                        <td ng-show="options.canSelect" rowspan="2"
+                            class="checkbox-col td-head" style="width: 20px">
+                            <input type="checkbox" ng-model="$parent.selectCurAll"
+                            ng-change="onSelectCurAllChange()">
+                        </td>
+                        <td ng-repeat="col in options.cols"
+                            rowspan="{{col.rowspan}}" class="td-head"
+                            ng-style="col.style"
+                            colspan="{{col.colspan||1}}"
+                            ng-show="col.rowspan || col.headOneDisplayName">
+                            {{col.headOneDisplayName||col.displayName}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td ng-repeat="col in options.cols" ng-if="!col.rowspan"
+                            ng-style="col.style">
+                            {{col.displayName}}
+                        </td>
+                    </tr>
+                </tbody>
+                <!--一行表头-->
+                <thead ng-if="!options.hasTwoHead">
+                    <th ng-show="options.canSelect" class="checkbox-col"
+                        style="width: 20px">
+                        <input type="checkbox" ng-model="$parent.selectCurAll"
+                        ng-change="onSelectCurAllChange()">
+                    </th>
+                    <th ng-repeat="col in options.cols"
+                        class="td-head" ng-style="col.style">
+                        {{col.displayName}}
+                    </th>
+                </thead>
+                <tbody class="tbody">
+                    <tr ng-repeat="item in dataSource track by $index"
+                        ng-style="item.style"
+                        ng-class="{success: options.curItemId &&(item.id==options.curItemId)}">
+                        <td ng-show="options.canSelect" class="checkbox-col"
+                            style="width: 20px">
+                            <input type="checkbox" ng-model="item.selected"
+                            ng-change="onItemSelectChange($index,item.selected)">
+                        </td>
+                        <td ng-repeat="col in options.cols track by $index"
+                            ng-style="col.style">
+                            <div ng-if="col.cellTpl" compile="col.cellTpl"></div>
+                            <div ng-if="!col.cellTpl">
+                                {{item[col.field]}}
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="no-data" ng-show="!dataSource.length">
+                <div class="no-data-tip">暂无结果</div>
+            </div>
+            <div class="no-data" ng-show="options.isLoading">
+                <img src="">
+            </div>
+        </div>
+        <div class="page-container" ng-show="options.totalCount">
+            <pagination total-items="options.totalCount" ng-model="curPage"
+                ng-change="onPageChanged()"
+                items-per-page="{{options.pageSize}}"
+                previous-text="上一页"
+                next-text="下一页"
+                first-text="首页"
+                last-text="末页"
+                max-size="6" class="" boundary-links="true"
+            rotate="false" num-pages="numPages"></pagination>
+        </div>
+    </div>
+</div>

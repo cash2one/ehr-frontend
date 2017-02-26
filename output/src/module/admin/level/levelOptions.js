@@ -1,0 +1,1 @@
+define(["require","module/config"],function(e){return function(t){var n=e("module/config");return{level:{required:!0,displayName:"等级",name:"level",formName:t,maxLength:10,placeholder:"少于10个字"},levelName:{required:!0,displayName:"等级名称",name:"levelName",formName:t,maxLength:30,placeholder:"少于30个字"}}}});

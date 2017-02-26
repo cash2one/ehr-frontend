@@ -1,0 +1,1 @@
+define(["require","../app"],function(e){var t=e("../app");t.directive("stopEvent",function(){return{restrict:"A",link:function(e,t,n){t.bind(n.stopEvent,function(e){e.stopPropagation()})}}})});

@@ -1,0 +1,25 @@
+<div class="wraper-edit" ng-show="addingWorkExp">
+    <form class="form-horizontal" name="workExpAddForm"
+          novalidate="novalidate">
+        <div class="form-group">
+            <div input-control options="workExpAddOptions.start"
+                 ng-model="workExpAdd.start">
+            </div>
+            <div input-control options="workExpAddOptions.end"
+                 ng-model="workExpAdd.end">
+            </div>
+        </div>
+        <div class="form-group">
+            <div input-control options="workExpAddOptions.company"
+                 ng-model="workExpAdd.company">
+            </div>
+            <div input-control options="workExpAddOptions.position"
+                 ng-model="workExpAdd.position">
+            </div>
+        </div>
+        <span class="btn btn-sm btn-warning"
+              ng-click="workExpAdd.onSave(workExpAddForm)">添加</span>
+            <span class="btn btn-sm btn-default"
+                  ng-click="workExpAdd.onCancel()">取消</span>
+    </form>
+</div>

@@ -1,0 +1,103 @@
+<div class="hr-monthSalary container">
+    <div class="row row1">
+        <div class="col-sm-1">
+            <span class="month-char">月份选择:</span>
+        </div>
+        <div class="col-sm-2">
+            <form name='monthSalaryForm'
+            novalidate="novalidate">
+                <input class="form-control month" placeholder="yy-MM"
+                type='month'
+                name='month'
+                required=true
+                max="{{monthMax}}"
+                min="{{monthMin}}"
+                ng-change="onMonthChange()"
+                ng-model="query.month"
+                >
+            </form>
+        </div>
+        <div class="col-sm-9">
+            <div class="row row2">
+                <div class="col-sm-3">
+                    &nbsp;
+                </div>
+                <div class="col-sm-3">
+                    税前总收入：{{sumSalary|rmb}}
+                </div>
+                <div class="col-sm-3">
+                    代扣金额：{{sumMinusPer|rmb}}
+                </div>
+                <div class="col-sm-3">
+                    <strong>
+                    实发工资：{{realSum|rmb}}
+                    </strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row row3">
+        <div class="col-sm-6">
+            <p><strong>税前收入明细</strong></p>
+            <table class="table table-bordered">
+                <tr>
+                    <td class='td1'>描述</td>
+                    <td>收入额</td>
+                </tr>
+                <tr ng-repeat="item in abtainSalary">
+                    <td>{{item.name}}</td>
+                    <td>{{item.value|rmb}}</td>
+                </tr>
+                <tr>
+                    <td class='sum-tip'>
+                        小计:
+                    </td>
+                    <td>
+                        <strong>
+                        {{sumSalary|rmb}}
+                        </strong>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-sm-6">
+            <p><strong>代扣明细</strong></p>
+            <table class="table table-bordered">
+                <tr>
+                    <td class='td1'>描述</td>
+                    <td>扣减额</td>
+                </tr>
+                <tr ng-repeat="item in minusSalary">
+                    <td>{{item.name}}</td>
+                    <td>{{item.value|rmb}}</td>
+                </tr>
+                <tr ng-show="yearAwardTax">
+                    <td>代扣年终奖所得税</td>
+                    <td>{{yearAwardTax|rmb}}</td>
+                </tr>
+                <tr>
+                    <td class='sum-tip'>
+                        小计:
+                    </td>
+                    <td>
+                        <strong>
+                        {{sumMinusPer|rmb}}
+                        </strong>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class='yinzhang'>
+    </div>
+    <div class="row row3" ng-if="performDetail">
+        <p><strong>绩效详情：</strong></p>
+        <div class="col-sm-6 perform-table" id="perform" ng-bind-html="performDetail">
+        </div>
+    </div>
+    <div class="row row3" ng-show="detail">
+        <p><strong>备注信息：</strong></p>
+        <p>{{detail}}</p>
+    </div>
+
+</div>

@@ -1,0 +1,14 @@
+<div class="">
+    <div class="table-opt-area">
+        <button class="btn btn-primary btn-sm" ng-click="onPassClick()"
+                ng-show="showPassBtn"
+                ng-disabled="!tableOptions.selectedItems.length">批量通过
+        </button>
+        <button class="btn btn-warning btn-sm" ng-click="onRejectClick()"
+                ng-show="showRejectBtn"
+                ng-disabled="!tableOptions.selectedItems.length">批量拒绝
+        </button>
+    </div>
+    <div table-control options="tableOptions">
+    </div>
+</div>

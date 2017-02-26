@@ -1,0 +1,33 @@
+<div>
+    <span
+            ng-if="$parent.$parent.$parent.$parent.isRecruitHRSearch">
+        <a ng-click="$parent.$parent.$parent.$parent.$parent.viewInfo(item.number,'newerSearch')"
+           class="pointer"
+                >{{item.name}}</a>
+    </span>
+    <span
+            ng-if="$parent.$parent.$parent.$parent.isHRSearch
+            || $parent.$parent.$parent.$parent.isToJoinSearch
+            || $parent.$parent.$parent.$parent.isAdminSearch
+            || $parent.$parent.$parent.$parent.isBillSearch">
+        <a ng-click="$parent.$parent.$parent.$parent.$parent.viewInfo(item.number,'search')"
+           class="pointer"
+                >{{item.name}}</a>
+    </span>
+    <span
+            ng-if="$parent.$parent.$parent.$parent.entryName == 'subordinate.search'
+            || $parent.$parent.$parent.$parent.entryName == 'subordinate.ownerSearch' ">
+        <a
+                class="pointer"
+                ng-click="$parent.$parent.$parent.$parent.$parent.viewInfo(item.number,'subordinateSearch')"
+                >{{item.name}}</a>
+    </span>
+    <span
+            ng-if="$parent.$parent.$parent.$parent.entryName == 'hr.assetManagerSearch'">
+        {{item.name}}
+    </span>
+    <span
+            ng-if="$parent.$parent.$parent.$parent.entryName == 'hr.itManagerSearch'">
+        {{item.name}}
+    </span>
+</div>

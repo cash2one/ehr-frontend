@@ -1,0 +1,194 @@
+<div class="apply-opt">
+    <div class="apply-opt-changeSalary">
+        <div class="modal-header">
+            <button type="button" class="close"
+                    ng-click="closeHandler()"
+                    data-dismiss="modal"><span
+                    aria-hidden="true">&times;</span><span
+                    class="sr-only">Close</span>
+            </button>
+            <h4 class="modal-title">综合审批</h4>
+        </div>
+
+        <div class="modal-body ">
+            <h5>
+                员工信息
+            </h5>
+
+            <div class="container" apply-staff-info number="{{number}}">
+            </div>
+            <h5>
+                综合审批
+            </h5>
+
+            <form class="form-horizontal" role="form" novalidate
+                  name="changeMultipleForm">
+                <div class="form-group">
+                    <div class="col-sm-2">组织架构:</div>
+                    <div class="col-sm-3">{{workInfo.structureName}}</div>
+                    <div input-control options="inputOptions.structure"
+                         ng-model="structure">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-2">直属领导:</div>
+                    <div class="col-sm-3">{{workInfo.leaderName}}</div>
+                    <div input-control options="inputOptions.leader"
+                         ng-model="leader">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-2">等级:</div>
+                    <div class="col-sm-3">{{workInfo.level}}</div>
+                    <div input-control options="inputOptions.level"
+                         ng-model="level">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-2">职位名称:</div>
+                    <div class="col-sm-3">{{workInfo.positionName}}</div>
+                    <div input-control options="inputOptions.position"
+                         ng-model="position">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-2">工作地点:</div>
+                    <div class="col-sm-3">{{workInfo.officeName|emptyFormat}}</div>
+                    <div input-control options="inputOptions.office"
+                         ng-model="office">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-2">签约公司:</div>
+                    <div class="col-sm-3">{{workInfo.contractCompanyName|emptyFormat}}</div>
+                    <div input-control options="inputOptions.contractCompany"
+                         ng-model="contractCompany">
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <div class="col-sm-2">社保缴纳城市:</div>
+                    <div class="col-sm-3">{{workInfo.socialSecurityCityName|emptyFormat}}
+                    </div>
+                    <div input-control options="inputOptions.socialSecurityCity"
+                         ng-model="socialSecurityCity">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-2">基本工资:</div>
+                    <div class="col-sm-3">{{salaryInfo.baseSalary | salary}}
+                    </div>
+                    <div input-control options="inputOptions.baseSalary"
+                         ng-model="baseSalary">
+                    </div>
+                </div>
+                <div class="form-group" ng-show="canModProbationarySalary">
+                    <div class="col-sm-2">试用期基本工资:</div>
+                    <div class="col-sm-3">{{salaryInfo.probationarySalary|salary}}
+                    </div>
+                    <div input-control options="inputOptions.probationarySalary"
+                         ng-model="probationarySalary">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-2">社保缴纳基数:</div>
+                    <div class="col-sm-3">{{salaryInfo.socialSecurityBase|unit:'元'}}
+                    </div>
+                    <div input-control options="inputOptions.socialSecurityBase"
+                         ng-model="socialSecurityBase">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-2">公积金缴纳基数:</div>
+                    <div class="col-sm-3">{{salaryInfo.houseFundBase|unit:'元'}}
+                    </div>
+                    <div input-control options="inputOptions.houseFundBase"
+                         ng-model="houseFundBase">
+                    </div>
+                </div>
+                <div class="form-group" ng-show="needFiveBase">
+                    <div class="col-sm-5">
+                        <table width="100%" class="table1">
+                            <tr class="thead">
+                                <td class="td1">&nbsp;</td>
+                                <td>养老</td>
+                                <td>失业</td>
+                                <td>医疗</td>
+                                <td>工伤</td>
+                                <td>生育</td>
+                            </tr>
+                            <tr>
+                                <td class="col1 td1">
+                                    五险基数：
+                                </td>
+                                <td>
+                                    {{salaryInfo.endowBase|unit:'元'}}
+                                </td>
+                                <td>
+                                    {{salaryInfo.unemployBase|unit:'元'}}
+                                </td>
+                                <td>
+                                    {{salaryInfo.medicalBase|unit:'元'}}
+                                </td>
+                                <td>
+                                    {{salaryInfo.injuryBase|unit:'元'}}
+                                </td>
+                                <td>
+                                    {{salaryInfo.maternityBase|unit:'元'}}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-sm-7 ">
+                        <div five-base></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-2">交通补贴:</div>
+                    <div class="col-sm-3">{{salaryInfo.trafficSubsidy| salary}}
+                    </div>
+                    <div input-control options="inputOptions.trafficSubsidy"
+                         ng-model="trafficSubsidy">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-2">通讯补贴:</div>
+                    <div class="col-sm-3">{{salaryInfo.mobileSubsidy| salary}}
+                    </div>
+                    <div input-control options="inputOptions.mobileSubsidy"
+                         ng-model="mobileSubsidy">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-2">工资类型:</div>
+                    <div class="col-sm-3">{{salaryInfo.salaryType | salaryType}}
+                    </div>
+                    <div input-control options="inputOptions.salaryType"
+                         ng-model="salaryType">
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <div input-control options="inputOptions.executeDate"
+                         ng-model="executeDate">
+                    </div>
+                </div>
+                <div class="form-group detail">
+                    <div input-control options="inputOptions.reason"
+                         ng-model="reason">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary"
+                            ng-click="save(changeMultipleForm)">提交
+                    </button>
+                    <button type="button" class="btn btn-default"
+                            ng-click="closeHandler()"
+                            data-dismiss="modal">关闭
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

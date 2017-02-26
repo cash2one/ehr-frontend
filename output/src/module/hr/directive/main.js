@@ -1,0 +1,1 @@
+define(["require","./educationInfo/directive","./workInfo/directive","./familyInfo/directive"],function(e){e("./educationInfo/directive"),e("./workInfo/directive"),e("./familyInfo/directive")});

@@ -1,0 +1,36 @@
+<div class="admin-directive admin-directive-levelInfo">
+    <div class="wraper-show" ng-show="!editing">
+        <span class="col1">
+            {{options.level}}
+        </span>
+        <span class="col2">
+            {{options.levelName}}
+        </span>
+
+        <div class="col3">
+            <span ng-show='!options.disable' class="btn btn-sm btn-warning"
+                  ng-click="onDel()">删除</span>
+            <span ng-show='!options.disable' class="btn btn-sm btn-warning"
+                  ng-click="onEdit()">编辑</span>
+        </div>
+    </div>
+    <div class="wraper-edit" ng-show="editing">
+        <form class="form-horizontal" name="levelForm"
+              novalidate="novalidate">
+            <div class="form-group">
+                <div input-control options="inputOptions.level"
+                     ng-model="editInfo.level">
+                </div>
+                <div input-control options="inputOptions.levelName"
+                     ng-model="editInfo.levelName">
+                </div>
+            </div>
+            <div class="center">
+               <span class="btn btn-sm btn-warning"
+                     ng-click="onEditSave(levelForm)">保存</span>
+                <span class="btn btn-sm btn-default"
+                      ng-click="onCancelEdit()">取消</span>
+            </div>
+        </form>
+    </div>
+</div>

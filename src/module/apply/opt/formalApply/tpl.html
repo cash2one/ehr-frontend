@@ -1,0 +1,55 @@
+<div class="apply-opt">
+    <div class="apply-opt-transFullTime">
+        <div class="modal-header">
+            <button type="button" class="close"
+                    ng-click="closeHandler()"
+                    data-dismiss="modal"><span
+                    aria-hidden="true">&times;</span><span
+                    class="sr-only">Close</span>
+            </button>
+            <h4 class="modal-title">
+                试用期员工转正申请
+            </h4>
+        </div>
+
+        <div class="modal-body ">
+            <h5>
+                员工信息
+            </h5>
+
+            <div class="container" apply-staff-info number="{{number}}">
+            </div>
+            <h5>
+                试用期员工转正申请
+            </h5>
+
+            <div class="row">
+                <div style="width: 166px;" class="col-sm-2">
+                    目标设定:
+                </div>
+                <div class="col-sm-9" ng-bind-html="workTarget">
+
+                </div>
+            </div>
+            <br>
+            <form class="form-horizontal" role="form" novalidate
+                  name="formalApplyForm">
+                <div class="form-group detail">
+                    <div input-control options="inputOptions.detail"
+                         ng-model="detail">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary"
+                            ng-click="save(formalApplyForm)">提交
+                    </button>
+                    <button type="button" class="btn btn-default"
+                            ng-click="closeHandler()"
+                            data-dismiss="modal">关闭
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

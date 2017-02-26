@@ -1,0 +1,1 @@
+define(["require","../app"],function(e){var t=e("../app");t.directive("compile",["$compile","$templateCache",function(e,t){return{restrict:"A",link:function(n,r,i){n.$watch(i.compile,function(i){var s=t.get(i);if(!s){var o=$.ajax({type:"GET",url:i,async:!1}).responseText;t.put(i,o),s=o}var u=e(s),a=u(n);r.append(a)})}}}])});

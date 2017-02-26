@@ -1,0 +1,6 @@
+<div ng-class="{'red':item.taxFreeSubsidy<0}">
+    <div input-control
+         options="mainScope['taxFreeSubsidyOptions'+$parent.$parent.$index]"
+         ng-model="item.taxFreeSubsidy">
+    </div>
+</div>

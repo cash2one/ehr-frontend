@@ -1,0 +1,19 @@
+<div class="inline-opt-area">
+    <span class="opt"
+          ng-show="item.status == mainScope.tabCode.HAD_BORROW">
+        <a ng-click="mainScope.onSingleReturnClick(item)"
+           class="pointer"
+                >归还</a>
+    </span>
+    <span class="opt"
+          ng-show="item.status == mainScope.tabCode.CAN_BORROW">
+        <a ng-click="mainScope.onSingleBorrowClick(item)"
+           class="pointer"
+                >借出</a>
+    </span>
+    <span class="opt">
+        <a ng-click="mainScope.onSingleDelClick(item)"
+           class="pointer"
+                >删除</a>
+    </span>
+</div>

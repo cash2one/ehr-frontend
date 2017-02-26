@@ -1,0 +1,1 @@
+define(["require","./controller","./subTab/controller","./table/controller","./table/colsConfig"],function(e){e("./controller"),e("./subTab/controller"),e("./table/controller"),e("./table/colsConfig")});

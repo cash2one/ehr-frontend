@@ -1,0 +1,10 @@
+<ul class="list-inline directives-single-select">
+    <li
+            ng-repeat="item in values track by $index"
+            ng-click="valueChange(item.key,$index)"
+            ng-class="{active: item.key == value,pointer:item.key != value}">
+        {{item.value}}
+        <span class="split" values= 'months' ng-if="$index!=(values.length-1)">
+            |</span>
+    </li>
+</ul>

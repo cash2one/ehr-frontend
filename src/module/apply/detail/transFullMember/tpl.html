@@ -1,0 +1,127 @@
+<div class="apply-detail-structureAndSalary">
+    <h5>
+        员工信息
+    </h5>
+    <div class="container" apply-staff-info number="{{number}}">
+    </div>
+    <h5>
+        转正后信息
+    </h5>
+
+    <div class="trans-full-time">
+        <div class="row">
+            <div class="col-sm-2">
+                实习/劳务截止时间:
+            </div>
+            <div class="col-sm-4">
+                {{ contentAfter.internsEndDate | dateFormat}}
+            </div>
+            <div class="col-sm-2">
+                实习生转正日期:
+            </div>
+            <div class="col-sm-4">
+                {{ contentAfter.positiveDate| dateFormat}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                社保缴纳城市:
+            </div>
+            <div class="col-sm-4">
+                {{contentAfter.socialSecurityCityName}}
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-sm-2">
+                组织架构:
+            </div>
+            <div class="col-sm-9">
+                {{contentAfter.structureName}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                等级:
+            </div>
+            <div class="col-sm-4">
+                {{contentAfter.level}}
+            </div>
+            <div class="col-sm-2">
+                职位名称:
+            </div>
+            <div class="col-sm-4">
+                {{contentAfter.positionName}}
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-2">
+                基本工资:
+            </div>
+            <div class="col-sm-4">
+                {{contentAfter.baseSalary|salary}}
+            </div>
+            <div class="col-sm-2">
+                试用期基本工资:
+            </div>
+            <div class="col-sm-4">
+                {{contentAfter.probationarySalary|salary}}
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                工资类型:
+            </div>
+            <div class="col-sm-4">
+                {{contentAfter.salaryType|salaryType}}
+            </div>
+            <div class="col-sm-2">
+                直属领导:
+            </div>
+            <div class="col-sm-4">
+                {{contentAfter.leaderName}}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-2">
+                社保缴纳基数:
+            </div>
+            <div class="col-sm-4">
+                {{contentAfter.socialSecurityBase|unit:'元'}}
+            </div>
+            <div class="col-sm-2">
+                公积金缴纳基数:
+            </div>
+            <div class="col-sm-4">
+                {{contentAfter.houseFundBase|unit:'元'}}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-2">
+                通讯补贴:
+            </div>
+            <div class="col-sm-4">
+                {{contentAfter.mobileSubsidy|salary}}
+            </div>
+            <div class="col-sm-2">
+                交通补贴:
+            </div>
+            <div class="col-sm-4">
+                {{contentAfter.trafficSubsidy|salary}}
+            </div>
+        </div>
+        <div class="row detail">
+            <div class="col-sm-2">
+                变动原因:
+            </div>
+            <div class="col-sm-8">
+                {{applyInfo.reason}}
+            </div>
+        </div>
+    </div>
+</div>

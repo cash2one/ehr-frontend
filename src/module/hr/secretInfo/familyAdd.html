@@ -1,0 +1,35 @@
+<div class="wraper-edit" ng-show="addingFamilyMember">
+    <form class="form-horizontal" name="familyMemberAddForm"
+          novalidate="novalidate">
+        <div class="form-group">
+            <div input-control options="familyMemberOptions.name"
+                 ng-model="familyMemberAdd.name">
+            </div>
+            <div input-control options="familyMemberOptions.title"
+                 ng-model="familyMemberAdd.title">
+            </div>
+        </div>
+        <div class="form-group">
+            <div input-control options="familyMemberOptions.birthday"
+                 ng-model="familyMemberAdd.birthday">
+            </div>
+            <div input-control options="familyMemberOptions.company"
+                 ng-model="familyMemberAdd.company">
+            </div>
+        </div>
+        <div class="form-group">
+            <div input-control options="familyMemberOptions.position"
+                 ng-model="familyMemberAdd.position">
+            </div>
+            <div input-control options="familyMemberOptions.mobile"
+                 ng-model="familyMemberAdd.mobile">
+            </div>
+        </div>
+        <div class="center">
+        <span class="btn btn-sm btn-warning"
+              ng-click="familyMemberAdd.onSave(familyMemberAddForm)">添加</span>
+            <span class="btn btn-sm btn-default"
+                  ng-click="familyMemberAdd.onCancel()">取消</span>
+        </div>
+    </form>
+</div>

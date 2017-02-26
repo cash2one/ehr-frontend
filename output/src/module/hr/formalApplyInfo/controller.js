@@ -1,0 +1,1 @@
+define(["require","../app"],function(e){function n(){}var t=e("../app");t.controller("hrFormalApplyInfoCtrl",n)});

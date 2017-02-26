@@ -1,0 +1,74 @@
+<div class="hr-opt-modOfferDetail">
+    <div class="modalHeader">
+        <button type="button" class="close"
+                ng-click="closeHandler()"
+                data-dismiss="modal"><span
+                aria-hidden="true">&times;</span><span
+                class="sr-only">Close</span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        <h2 style="text-align: center">入职通知书</h2>
+        <p>{{lawName}} 您好</p>
+        <p>&nbsp;&nbsp;&nbsp;
+        <span>我们非常荣幸的通知您，欢迎您成为跟谁学的一员.
+        </span></p>
+        <strong>请您于
+            <span ng-class = "{'offer-line': enterDate.dateExist}">{{enterDate.dateStr}}</span>10点，到
+            <span ng-class = "{'offer-line': office.isExist}">{{office.str}}</span>报到。
+        </strong>
+        <br>
+        <strong>聘用期限、职位情况及薪酬：</strong>
+        <p>入职部门：
+            <span ng-class="{'offer-line': structure.isExist}">{{structure.str}}</span>
+        </p>
+        <p>担任职位：
+            <span ng-class="{'offer-line': position.isExist}">{{position.str}}</span>
+        </p>
+        <div ng-show="type == 1 && formalDate == 2">
+            <p>聘用期限<span>3</span>年，试用期<span>6</span>个月</p>
+        </div>
+        <div ng-show="type == 1 && formalDate == 1">
+            <p>聘用期限<span>3</span>年，试用期<span>3</span>个月</p>
+        </div>
+        <div ng-show="type != 1">
+            <p>聘用期限<span>6</span>个月</p>
+        </div>
+        <p>试用期工资：
+            <span ng-class="{'offer-line': probationarySalary.isExist}">{{probationarySalary.str}}</span>元（人民币／月）。转正工资：
+            <span ng-class="{'offer-line':
+            baseSalary.isExist}">{{baseSalary.str}}</span>
+            元（人民币／月）
+        </p>
+        <p>月工资指满勤月收入，支付工资根据实际出勤进行计算。月工资中包含个人所得税</p>
+        <strong>报到时需要您提供以下入职文件：</strong>
+        <ol>
+            <li>原单位离职证明（加盖原单位红印章）1份；</li>
+            <li>二代身份证原件及复印件（正反面在一张纸上）1份；</li>
+            <li>学位证、毕业证原件及复印件1份； </li>
+            <li>北京招商银行借记卡及复印件（复印件上注明银行卡号）1份；</li>
+            <li>个人彩色一寸白底免冠照片电子版1张（用于办理员工卡使用）；</li>
+            <li>入职体检证明（公司指定的体检机构）;</li>
+            <li>员工基础信息采集卡电子打印版（见邮件附件）。</li>
+        </ol>
+        <strong>注意事项</strong>
+        <ol>
+            <li>社保公积金转移业务于每月15日之前办理，15日之后入职的将于下月办理； </li>
+            <li>未在北京参加过社保的同学，需提供一寸白底彩色电子照片（正面、免冠、彩色、白底、服装与背景颜色的反差要大的，jpg格式，宽度：358 像素，高度：441 像素；文件不小于 9KB，不大于 20KB）</li>
+        </ol>
+        <p>以上内容如有任何疑问，请与人力资源部联系。</p>
+        &nbsp;&nbsp;&nbsp;
+        <strong>本通知书为公司保密文件，请认真阅读，不得向任何第三方透露。
+        </strong>
+        <br>
+        <br>
+        <br>
+        <div style="float: right;width: 100px;text-align: center">
+            <span>跟谁学</span><br>
+            <span>{{sendDate.dateStr}}</span>
+        </div>
+    </div>
+
+
+</div>

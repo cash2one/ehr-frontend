@@ -1,0 +1,2118 @@
+<!doctype html>
+<html lang="en" ng-app="shiziLogin">
+<head>
+<meta charset="utf-8">
+</head>
+<body></br><p>1 指定role tag获取多个账号信息</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 指定role tag获取多个账号信息</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>POST</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/ac/getAccounts</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "roleTag": "yunying_shizi_jingli_jigou"
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "data": [{
+        "id": 0,
+        "name": "test0",
+        "displayName": "测试0",
+        "allowedApps": [{
+            "id": 3,
+            "name": "客服系统",
+            "domain": "kefu.genshuixue.com",
+            "description": "客服系统"
+        }],
+        "hasRoles": [{
+            "id": "00",
+            "name": "客服经理",
+            "nickName": "客服经理nickname00",
+            "appId": 3,
+            "tag": "yunying_shizi_jingli_kefu",
+            "parentAccountId": 0,
+            "parentAccountRoleId": 0,
+            "openRoleUid": "openRoleUid00"
+        }, {
+            "id": "01",
+            "name": "客服经理",
+            "nickName": "客服经理nickname01",
+            "appId": 3,
+            "tag": "yunying_shizi_jingli_kefu",
+            "parentAccountId": 0,
+            "parentAccountRoleId": 0,
+            "openRoleUid": "openRoleUid01"
+        }, {
+            "id": "02",
+            "name": "高校主管",
+            "nickName": "高校主管nickname02",
+            "appId": 3,
+            "tag": "yunying_shizi_zhuguan_gaoxiao",
+            "parentAccountId": 0,
+            "parentAccountRoleId": 0,
+            "openRoleUid": "openRoleUid02"
+        }, {
+            "id": "03",
+            "name": "机构总监",
+            "nickName": "机构总监nickname03",
+            "appId": 3,
+            "tag": "yunying_shizi_zongjian_jigou",
+            "parentAccountId": 0,
+            "parentAccountRoleId": 0,
+            "openRoleUid": "openRoleUid03"
+        }, {
+            "id": "04",
+            "name": "客服经理",
+            "nickName": "客服经理nickname04",
+            "appId": 3,
+            "tag": "yunying_shizi_jingli_kefu",
+            "parentAccountId": 0,
+            "parentAccountRoleId": 0,
+            "openRoleUid": "openRoleUid04"
+        }],
+        "currentRole": {
+            "id": "00",
+            "name": "客服经理",
+            "nickName": "客服经理nickname00",
+            "appId": 3,
+            "tag": "yunying_shizi_jingli_kefu",
+            "parentAccountId": 0,
+            "parentAccountRoleId": 0,
+            "openRoleUid": "openRoleUid00"
+        }
+    }],
+    "error": null,
+    "pageDto": null
+}</pre>
+        </td>
+    </tr>
+</table></br><p>2 获取登陆人信息</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 获取登陆人信息</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>GET</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/ac/getAuth</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "openRoleUid": 0,
+    "searchLevel": 5,
+    "returnAllOnSearhPath": true,
+    "searchKey": "123213"
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "data": {
+        "id": 1,
+        "name": "test1",
+        "displayName": "测试1",
+        "allowedApps": [{
+            "id": 3,
+            "name": "客服系统",
+            "domain": "kefu.genshuixue.com",
+            "description": "客服系统"
+        }],
+        "hasRoles": [{
+            "id": "10",
+            "name": "客服经理",
+            "nickName": "客服经理nickname10",
+            "appId": 3,
+            "tag": "yunying_shizi_jingli_kefu",
+            "parentAccountId": 0,
+            "parentAccountRoleId": 0,
+            "openRoleUid": "openRoleUid10"
+        }, {
+            "id": "11",
+            "name": "客服主管",
+            "nickName": "客服主管nickname11",
+            "appId": 3,
+            "tag": "yunying_shizi_zhuguan_kefu",
+            "parentAccountId": 0,
+            "parentAccountRoleId": 0,
+            "openRoleUid": "openRoleUid11"
+        }, {
+            "id": "23",
+            "name": "超级管理员",
+            "nickName": "超级管理员",
+            "appId": 3,
+            "tag": "yunying_shizi_admin",
+            "parentAccountId": 0,
+            "parentAccountRoleId": 0,
+            "openRoleUid": "openRoleUid000"
+        }, {
+            "id": "12",
+            "name": "机构总监",
+            "nickName": "机构总监nickname12",
+            "appId": 3,
+            "tag": "yunying_shizi_zongjian_jigou",
+            "parentAccountId": 0,
+            "parentAccountRoleId": 0,
+            "openRoleUid": "openRoleUid12"
+        }, {
+            "id": "20",
+            "name": "机构客服经理",
+            "nickName": "机构客服经理nickname20",
+            "appId": 3,
+            "tag": "yunying_shizi_jingli_jigoukefu",
+            "parentAccountId": 0,
+            "parentAccountRoleId": 0,
+            "openRoleUid": "openRoleUid20"
+        }, {
+            "id": "13",
+            "name": "分公司总监",
+            "nickName": "分公司总监nickname13",
+            "appId": 3,
+            "tag": "yunying_shizi_zongjian_fengongsi",
+            "parentAccountId": 0,
+            "parentAccountRoleId": 0,
+            "openRoleUid": "openRoleUid13"
+        }, {
+            "id": "14",
+            "name": "机构经理",
+            "nickName": "机构经理nickname14",
+            "appId": 3,
+            "tag": "yunying_shizi_jingli_jigou",
+            "parentAccountId": 0,
+            "parentAccountRoleId": 0,
+            "openRoleUid": "openRoleUid14"
+        }, {
+            "id": "15",
+            "name": "高校经理",
+            "nickName": "高校经理nickname15",
+            "appId": 3,
+            "tag": "yunying_shizi_jingli_gaoxiao",
+            "parentAccountId": 0,
+            "parentAccountRoleId": 0,
+            "openRoleUid": "openRoleUid15"
+        }, {
+            "id": "16",
+            "name": "机构主管",
+            "nickName": "机构主管nickname16",
+            "appId": 3,
+            "tag": "yunying_shizi_zhuguan_jigou",
+            "parentAccountId": 0,
+            "parentAccountRoleId": 0,
+            "openRoleUid": "openRoleUid16"
+        }, {
+            "id": "17",
+            "name": "高校专员",
+            "nickName": "高校专员nickname17",
+            "appId": 3,
+            "tag": "yunying_shizi_zhuanyuan_gaoxiao",
+            "parentAccountId": 0,
+            "parentAccountRoleId": 0,
+            "openRoleUid": "openRoleUid17"
+        }, {
+            "id": "18",
+            "name": "机构经理",
+            "nickName": "机构经理nickname18",
+            "appId": 3,
+            "tag": "yunying_shizi_jingli_jigou",
+            "parentAccountId": 0,
+            "parentAccountRoleId": 0,
+            "openRoleUid": "openRoleUid18"
+        }, {
+            "id": "19",
+            "name": "分公司主管",
+            "nickName": "分公司主管nickname19",
+            "appId": 3,
+            "tag": "yunying_shizi_zhuguan_fengongsi",
+            "parentAccountId": 0,
+            "parentAccountRoleId": 0,
+            "openRoleUid": "openRoleUid19"
+        }],
+        "loginAccount": {
+            "id": 2,
+            "name": "test1",
+            "displayName": "测试1",
+            "allowedApps": [{
+                "id": 3,
+                "name": "客服系统",
+                "domain": "kefu.genshuixue.com",
+                "description": "客服系统"
+            }],
+            "hasRoles": [{
+                "id": "10",
+                "name": "客服经理",
+                "nickName": "客服经理nickname10",
+                "appId": 3,
+                "tag": "yunying_shizi_jingli_kefu",
+                "parentAccountId": 0,
+                "parentAccountRoleId": 0,
+                "openRoleUid": "openRoleUid10"
+            }],
+            "currentRole": {
+                "id": "10",
+                "name": "超级账号",
+                "nickName": "超级账号yanlingling",
+                "appId": 3,
+                "tag": "yunying_shizi_admin",
+                "parentAccountId": 0,
+                "parentAccountRoleId": 0,
+                "openRoleUid": "openRoleUid10"
+            }
+        }
+    },
+    "error": null,
+    "pageDto": null
+}</pre>
+        </td>
+    </tr>
+</table></br><p>3 获取环境信息</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 获取环境信息</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>GET</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/ac/getEnv</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "openRoleUid": 0,
+    "searchLevel": 5,
+    "returnAllOnSearhPath": true,
+    "searchKey": "123213"
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "data": {
+        "cas.login": "https://test-cas.genshuixue.com/cas/login",
+        "cas.app.index": "http://test.kefu.genshuixue.com/main.do",
+        "cas.api.baseUrl": "https://test-cas.genshuixue.com/cas",
+        "cas.noAuth": "https://test-cas.genshuixue.com/cas/noAuth",
+        "cas.logout": "https://test-cas.genshuixue.com/cas/logout",
+        "cas.appId": "3",
+        "cas.server.logout": "https://test-cas.genshuixue.com/cas/logout"
+    },
+    "error": null,
+    "pageDto": null
+}</pre>
+        </td>
+    </tr>
+</table></br><p>4 获取子账号</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 获取子账号</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>POST</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/ac/getSubAccounts</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "openRoleUid": 0,
+    "searchLevel": 5,
+    "returnAllOnSearhPath": true
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "data": [{
+        "id": 0,
+        "name": "test0",
+        "displayName": "测试0",
+        "mobile": 18611008763,
+        "allowedApps": [{
+            "id": 3,
+            "name": "客服系统",
+            "domain": "kefu.genshuixue.com",
+            "description": "客服系统"
+        }],
+        "hasRoles": [{
+            "id": "00",
+            "name": "机构主管",
+            "nickName": "机构主管nickname00",
+            "appId": 3,
+            "tag": "yunying_shizi_zhuguan_jigou",
+            "parentAccountId": 0,
+            "parentAccountRoleId": 0,
+            "openRoleUid": "openRoleUid00"
+        }, {
+            "id": "01",
+            "name": "高校主管",
+            "nickName": "高校主管nickname01",
+            "appId": 3,
+            "tag": "yunying_shizi_zhuguan_gaoxiao",
+            "parentAccountId": 0,
+            "parentAccountRoleId": 0,
+            "openRoleUid": "openRoleUid01"
+        }],
+        "currentRole": {
+            "id": "00",
+            "name": "机构主管",
+            "nickName": "机构主管nickname00",
+            "appId": 3,
+            "tag": "yunying_shizi_zhuguan_jigou",
+            "parentAccountId": 0,
+            "parentAccountRoleId": 0,
+            "openRoleUid": "openRoleUid00"
+        }
+    }],
+    "error": null,
+    "pageDto": null
+}</pre>
+        </td>
+    </tr>
+</table></br><p>5 指定role tag获取多个账号信息</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 指定role tag获取多个账号信息</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>no path find/ac/getSubRole</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/ac/getSubRole</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>no path find /ac/getSubRole</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "data": [{
+        "id": 1,
+        "name": "客服专员",
+        "appId": 3,
+        "tag": "yunying_kefu_zhuanyuan",
+        "parentAccountRoleId": 0,
+        "hasPermissions": [{
+            "id": 0,
+            "name": null,
+            "tag": "yunying_kefu_trans_teacher"
+        }]
+    }],
+    "error": null,
+    "pageDto": null
+}</pre>
+        </td>
+    </tr>
+</table></br><p>6 添加账号</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 添加账号</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>POST</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/ac/setAccount</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "openRoleUid": "openRoleUid10"
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "data": [],
+    "error": {}
+}</pre>
+        </td>
+    </tr>
+</table></br><p>7 申请邀请码</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 申请邀请码</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>no path find/invitecode/apply</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/invitecode/apply</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>no path find /invitecode/apply</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "errorCode": null,
+    "data": [{
+        "id": 1,
+        "code": "llllll",
+        "status": 0,
+        "memo": "hello 189",
+        "name": "李老师",
+        "createTime": 34567845678,
+        "mobile": 18988888888,
+        "statusName": "未使用"
+    }]
+}</pre>
+        </td>
+    </tr>
+</table></br><p>8 邀请码编辑备注</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 邀请码编辑备注</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>POST</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/invitecode/edit</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "id": 3,
+    "memo": "erere"
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "errorCode": null
+}</pre>
+        </td>
+    </tr>
+</table></br><p>9 申请新的邀请码</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 申请新的邀请码</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>no path find/invitecode/getOne</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/invitecode/getOne</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>no path find /invitecode/getOne</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "data": "456789UX"
+}</pre>
+        </td>
+    </tr>
+</table></br><p>10 获取邀请码</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 获取邀请码</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>no path find/invitecode/list</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/invitecode/list</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>no path find /invitecode/list</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "errorCode": null,
+    "data": [{
+        "id": 1,
+        "code": "TK6DFCQ",
+        "status": 0,
+        "memo": "",
+        "name": "李老师111112222",
+        "mobile": 18988888888,
+        "used": 18,
+        "quota": 0,
+        "statusName": "未使用"
+    }]
+}</pre>
+        </td>
+    </tr>
+</table></br><p>11 发送邀请码</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 发送邀请码</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>POST</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/invitecode/send</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "id": 1,
+    "mobile": "18611007518"
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "errorCode": null
+}</pre>
+        </td>
+    </tr>
+</table></br><p>12 添加账号</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 添加账号</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>POST</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/manager/addRole</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "accountName": "12313",
+    "credentials": "12313",
+    "roleNickNames": {
+        "yunying_kefu_zhuanyuan": "123"
+    },
+    "roleTag": "yunying_kefu_zhuanyuan"
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "data": [],
+    "error": {
+        "code": 400,
+        "message": "不能转出"
+    }
+}</pre>
+        </td>
+    </tr>
+</table></br><p>13 查询账号可以新建的角色</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 查询账号可以新建的角色</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>no path find/manager/getCreateRoles</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/manager/getCreateRoles</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>no path find /manager/getCreateRoles</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "data": [{
+        "id": 1,
+        "name": "客服专员",
+        "appId": 3,
+        "tag": "yunying_kefu_zhuanyuan",
+        "parentAccountRoleId": 0,
+        "hasPermissions": [{
+            "id": 0,
+            "name": null,
+            "tag": "yunying_kefu_trans_teacher"
+        }]
+    }],
+    "error": null,
+    "pageDto": null
+}</pre>
+        </td>
+    </tr>
+</table></br><p>14 获取所有的师资账号</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 获取所有的师资账号</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>no path find/manager/getManagers</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/manager/getManagers</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>no path find /manager/getManagers</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "errorCode": null,
+    "data": [{
+        "id": 0,
+        "position": "成都分公司经理0",
+        "type": 31,
+        "systemType": 0,
+        "username": "test1",
+        "name": "李明0",
+        "mobile": "13800139000",
+        "organization": "erer",
+        "email": "shizi@genshuixue.com"
+    }]
+}</pre>
+        </td>
+    </tr>
+</table></br><p>15 获取下级关系 跟时间关联，指定时间的从属关系</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 获取下级关系 跟时间关联，指定时间的从属关系</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>POST</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/manager/searchHistorySubManagers</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "mid": "",
+    "start": "20150115000000",
+    "end": "20150121235959"
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "errorCode": null,
+    "data": [{
+        "id": 0,
+        "openRoleUid": 1000,
+        "displayName": "李明01000",
+        "position": "成都分公司经理0",
+        "type": 31,
+        "name": "test1",
+        "mobile": "13800139000",
+        "email": "shizi@genshuixue.com",
+        "organization": "机构名称"
+    }]
+}</pre>
+        </td>
+    </tr>
+</table></br><p>16 超级账号登陆到某个账号</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 超级账号登陆到某个账号</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>no path find/manager/superlogin</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/manager/superlogin</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>no path find /manager/superlogin</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "data": 100
+}</pre>
+        </td>
+    </tr>
+</table></br><p>17 机构分配</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 机构分配</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>POST</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/org/allot</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "oids": ["0orgId", "1orgId"],
+    "mid": "openRoleUid50"
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200
+}</pre>
+        </td>
+    </tr>
+</table></br><p>18 机构的count</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 机构的count</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>POST</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/org/countOrg</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "data": {
+        "hasResident": 100,
+        "residenting": 12,
+        "notAllot": 12
+    }
+}</pre>
+        </td>
+    </tr>
+</table></br><p>19 机构查询</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 机构查询</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>POST</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/org/search</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "key": "",
+    "status": 1
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "data": [{
+        "shortName": "机构简称",
+        "registeTime": "1237888888",
+        "firstEfficientTime": "7895678978",
+        "id": "45678",
+        "orgId": "0orgId",
+        "region": "机构所在地",
+        "type": "机构类型",
+        "name": "机构名称",
+        "contacts": {
+            "name": "联系人",
+            "mobile": "18711007318"
+        },
+        "status": 2,
+        "managerHover": {
+            "value": "顾问名字",
+            "status": 15,
+            "tips": "1342;343"
+        },
+        "source": 0
+    }]
+}</pre>
+        </td>
+    </tr>
+</table></br><p>20  系统范围查询任意的机构</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>  系统范围查询任意的机构</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>POST</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/org/searchAllOrg</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "key": "123123"
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "data": [{
+        "shortName": "机构简称",
+        "registeTime": "1237888888",
+        "firstEfficientTime": "7895678978",
+        "id": "45678",
+        "region": "机构所在地",
+        "type": "机构类型",
+        "name": "机构名称",
+        "contacts": {
+            "name": "联系人"
+        },
+        "status": 2,
+        "managerHover": {
+            "value": "顾问名字",
+            "status": 15,
+            "tips": ""
+        },
+        "manageMobile": 234567890
+    }]
+}</pre>
+        </td>
+    </tr>
+</table></br><p>21 转出机构</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 转出机构</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>POST</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/org/transferOrg</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "oids": ["0orgId", "1orgId", "2orgId", "3orgId", "4orgId", "5orgId", "6orgId", "7orgId", "8orgId", "9orgId"],
+    "mid": "openRoleUid10"
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "data": [],
+    "error": {
+        "code": 400,
+        "message": "不能转出"
+    }
+}</pre>
+        </td>
+    </tr>
+</table></br><p>22 获取业绩数字的详情</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 获取业绩数字的详情</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>POST</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/performance/getPerformanceDetail</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "item": 0,
+    "mid": "8",
+    "start": "20150109000000",
+    "end": "20150115235959"
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "data": [{
+        "id": "5678",
+        "name": "张航",
+        "number": "7895678978",
+        "createAt": "7895678978",
+        "firstEfficientTime": "7895678978",
+        "mid": "5678",
+        "managerName": "管理员",
+        "managerType": 15,
+        "managerUsername": "username"
+    }]
+}</pre>
+        </td>
+    </tr>
+</table></br><p>23 业绩查询</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 业绩查询</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>POST</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/performance/searchPerformance</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "key": "",
+    "type": 15,
+    "start": "20150115000000",
+    "end": "20150121235959"
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "errorCode": null,
+    "data": {
+        "list": [{
+            "type": 31,
+            "nickName": "成都分公司经理",
+            "name": "test0",
+            "nameInfo": {
+                "value": "黎明",
+                "tips": "总监:张翔,经理:小王"
+            },
+            "invitedActiveCount": 0,
+            "allotActiveCount": 8,
+            "hasIncomeCount": 8,
+            "studentCount": 8,
+            "orderCount": 0,
+            "registTeacherCount": 12,
+            "finishClassHour": 90,
+            "income": 186,
+            "m1Id": 1,
+            "m2Id": 2,
+            "m4Id": 2,
+            "mid": 8,
+            "m3Id": 3
+        }],
+        "totalActiveTeacher": 2,
+        "totalTeacher": 30,
+        "totalOrderIncome": 30,
+        "totalTeacherHasIncome": 6789,
+        "totalIncome": 50000000
+    }
+}</pre>
+        </td>
+    </tr>
+</table></br><p>24 按天显示某个人的业绩</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 按天显示某个人的业绩</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>POST</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/performance/searchPerformanceByDay</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "key": "",
+    "start": "20150115000000",
+    "end": "20150121235959"
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "data": {
+        "list": [{
+            "time": 34567890,
+            "registTeacherCount": 0.4384314212948084,
+            "inactiveTransfer": 12,
+            "invitedActiveCount": 12,
+            "allotActiveCount": 12,
+            "orderCount": 1,
+            "orderIncome": 12,
+            "finishClassHour": 123,
+            "income": 1212
+        }],
+        "totalRegistTeacher": 129875,
+        "totalActiveTeacher": 1213,
+        "totalIncome": 5000,
+        "totalOrderIncome": 6789
+    }
+}</pre>
+        </td>
+    </tr>
+</table></br><p>25 添加老师的跟进记录</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 添加老师的跟进记录</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>POST</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/teacher/addRecord</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "tid": "99",
+    "detail": "34343344"
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "data": 100
+}</pre>
+        </td>
+    </tr>
+</table></br><p>26 分配老师</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 分配老师</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>POST</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/teacher/allot</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "tids": [99, 99],
+    "mid": "openRoleUid40"
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "data": [],
+    "error": {
+        "code": 400,
+        "message": "不能分配"
+    }
+}</pre>
+        </td>
+    </tr>
+</table></br><p>27 获取老师的数量</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 获取老师的数量</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>POST</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/teacher/countTeacher</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "isNewTrans": 1
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "data": 100
+}</pre>
+        </td>
+    </tr>
+</table></br><p>28 编辑老师</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 编辑老师</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>POST</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/teacher/editTeacher</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "tid": 99,
+    "comment": "备注"
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200
+}</pre>
+        </td>
+    </tr>
+</table></br><p>29  导出</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>  导出</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>no path find/teacher/exportTeacher</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/teacher/exportTeacher</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>no path find /teacher/exportTeacher</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "data": [],
+    "error": {
+        "code": 400,
+        "message": "不能转出"
+    }
+}</pre>
+        </td>
+    </tr>
+</table></br><p>30 获取老师的跟进记录列表</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 获取老师的跟进记录列表</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>POST</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/teacher/record</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "tid": "99"
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "data": [{
+        "id": 1,
+        "time": 1213131,
+        "position": "机构主管-121",
+        "name": "hello 189",
+        "opt": "转出看看",
+        "detail": "6777777777777777777777777777777777777888888999999999999999888888888888889977667899998766666"
+    }]
+}</pre>
+        </td>
+    </tr>
+</table></br><p>31  老师列表</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>  老师列表</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>POST</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/teacher/search</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "key": "",
+    "start": "20150115000000",
+    "end": "20150121235959"
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "errorCode": null,
+    "data": {
+        "list": [{
+            "id": 99,
+            "name": null,
+            "mobile": "18611007518",
+            "profileHover": {
+                "value": "0%",
+                "status": 0,
+                "tips": "hiihhii"
+            },
+            "verifyInfos": [{
+                "type": 1,
+                "status": 0,
+                "reason": "4567io"
+            }, {
+                "type": 2,
+                "status": 1,
+                "reason": "wheth"
+            }, {
+                "type": 4,
+                "status": 0,
+                "reason": "wheth"
+            }, {
+                "type": 3,
+                "status": 1,
+                "reason": "uuu"
+            }],
+            "category": 1,
+            "city": "北京",
+            "remainDays": 5,
+            "statusHover": {
+                "value": "0",
+                "status": 0,
+                "tips": "6789"
+            },
+            "source": 0,
+            "currentManagerId": 7,
+            "managerHover": {
+                "value": "顾问四字",
+                "status": 7,
+                "tips": "ni,12,34"
+            },
+            "studentCount": null,
+            "orderCount": 11,
+            "isAppUser": 0,
+            "firstAppLoginTime": 661996800000,
+            "appActivity": 0,
+            "isNewTrans": 1,
+            "isActive": 0,
+            "paidClassHour": 60,
+            "income": null,
+            "progress": "标记为...",
+            "createdAt": null,
+            "firstEfficientTime": 1412934406901,
+            "birthday": 661996800000,
+            "comment": "备注"
+        }],
+        "totalActiveTeacher": 2,
+        "totalOrderIncome": 2,
+        "totalTeacherHasIncome": 6789,
+        "totalIncome": 50000000
+    }
+}</pre>
+        </td>
+    </tr>
+</table></br><p>32 系统范围查询所有老师</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 系统范围查询所有老师</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>POST</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/teacher/searchAllTeacher</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "key": "13"
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "data": [{
+        "name": "xiaoming",
+        "id": 0.3528473228216171,
+        "createdAt": 12,
+        "firstEfficientTime": 12,
+        "allotActiveCount": 12,
+        "category": 1,
+        "city": 12,
+        "hasRole": "老师、学生",
+        "status": 0,
+        "source": 0,
+        "organization": null,
+        "managerHover": {
+            "value": "顾问四字",
+            "status": 7,
+            "tips": "ni,12,34"
+        },
+        "manageMobile": 1213232
+    }]
+}</pre>
+        </td>
+    </tr>
+</table></br><p>33 转出老师</p>
+<table cellspacing="0" style="width: 100%">
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口名称
+        </td>
+        <td style="border:1px solid gray;">
+       <pre> 转出老师</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        接口类型
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>POST</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        path
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>/teacher/transferTeacher</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        参数
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "tids": [99, 99],
+    "mid": "openRoleUid10",
+    "detail": "xiangqing"
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 20%;border:1px solid gray;">
+        返回内容
+        </td>
+        <td style="border:1px solid gray;">
+       <pre>{
+    "status": 200,
+    "data": [],
+    "error": {
+        "code": 400,
+        "message": "不能分配"
+    }
+}</pre>
+        </td>
+    </tr>
+</table></body></html>

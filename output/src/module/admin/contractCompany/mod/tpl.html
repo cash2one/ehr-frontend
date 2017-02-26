@@ -1,0 +1,31 @@
+<div class="admin-structure-mod">
+    <div class="modal-header">
+        <button type="button" class="close"
+                ng-click="closeHandler()"
+                data-dismiss="modal"><span
+                aria-hidden="true">&times;</span><span
+                class="sr-only">Close</span>
+        </button>
+        <h4 class="modal-title">{{title}}</h4>
+    </div>
+
+    <div class="modal-body">
+        <form class="form-horizontal" name="modContractCompanyForm"
+              novalidate="novalidate">
+            <div class="form-group">
+                <div input-control options="inputOptions.name"
+                     ng-model="name">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary"
+                ng-click="saveHandler(modContractCompanyForm)">保存
+        </button>
+        <button type="button" class="btn btn-default"
+                ng-click="closeHandler()"
+                data-dismiss="modal">关闭
+        </button>
+    </div>
+</div>

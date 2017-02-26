@@ -1,0 +1,55 @@
+<div class="">
+    <ul class='list-inline sub-tab' ng-hide="userInfo.isAgent">
+        <li role="presentation" ui-sref-active="active">
+            <a
+                    ui-sref="{{entry}}.all">全部 ( {{count.all}} )</a>
+        </li>
+        <li role="presentation" ui-sref-active="active">
+            <a ui-sref="{{entry}}.staffEnter">新员工入职 ( {{count.staffEnter}} )</a>
+        </li>
+        <li role="presentation" ui-sref-active="active">
+            <a ui-sref="{{entry}}.rejoin">员工再入职 ( {{count.rejoin}} )</a>
+        </li>
+        <li role="presentation" ui-sref-active="active">
+            <a ui-sref="{{entry}}.leave">离职处理 ( {{count.leave}} )</a>
+        </li>
+        <li role="presentation" ui-sref-active="active">
+            <a ui-sref="{{entry}}.workInfo">薪酬岗位调整 ( {{count.workInfo}} )</a>
+        </li>
+        <li role="presentation" ui-sref-active="active">
+            <a ui-sref="{{entry}}.structure">人事调动 ( {{count.structure}} )</a>
+        </li>
+        <li role="presentation" ui-sref-active="active">
+            <a ui-sref="{{entry}}.transFullMember">实习生/劳务转正式 ( {{count
+                .transFullMember}} )</a>
+        </li>
+        <li role="presentation" ui-sref-active="active">
+            <a ui-sref="{{entry}}.workTarget">试用期工作目标( {{count.workTarget}})</a>
+        </li>
+        <li role="presentation" ui-sref-active="active">
+            <a ui-sref="{{entry}}.formalApply">试用期转正申请( {{count.formalApply}})</a>
+        </li>
+        <li role="presentation" ui-sref-active="active">
+            <a ui-sref="{{entry}}.multiple">综合审批 ( {{count
+                .multiple}} )</a>
+        </li>
+    </ul>
+    <ul class='list-inline sub-tab' ng-show="userInfo.isAgent">
+        <li role="presentation" ui-sref-active="active">
+            <a ui-sref="{{entry}}.all">全部 ( {{count.all}} )</a>
+        </li>
+        <li role="presentation" ui-sref-active="active">
+            <a ui-sref="{{entry}}.agentEnter">新员工入职 ( {{count.agentEnter}} )</a>
+        </li>
+        <li role="presentation" ui-sref-active="active">
+            <a ui-sref="{{entry}}.agentRejoin">员工再入职 ( {{count.agentRejoin}} )</a>
+        </li>
+        <li role="presentation" ui-sref-active="active">
+            <a ui-sref="{{entry}}.agentStructure">人事调动 ( {{count.agentStructure}} )</a>
+        </li>
+        <li role="presentation" ui-sref-active="active">
+            <a ui-sref="{{entry}}.agentLeave">离职处理 ( {{count.agentLeave}} )</a>
+        </li>
+    </ul>
+    <div ui-view></div>
+</div>

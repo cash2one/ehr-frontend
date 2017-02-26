@@ -1,0 +1,12 @@
+<div class="inline-opt-area">
+    <div ng-show="!mainScope.onlyViewMode">
+        <a
+                ng-show="item.isEdit"
+                ng-click="mainScope.onSave($parent.$parent.$index)">保存</a>
+        <a
+                ng-show="item.isEdit"
+                ng-click="mainScope.onConfirm($parent.$parent.$index)">确认</a>
+        <a ng-show="!item.isEdit && mainScope.canEditSalary"
+           ng-click="mainScope.onEdit($parent.$parent.$index)">编辑</a>
+    </div>
+</div>
